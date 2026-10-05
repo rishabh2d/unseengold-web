@@ -1,8 +1,9 @@
 const $=s=>document.querySelector(s);
+const newId=()=>globalThis.crypto?.randomUUID?.()||`${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const C=ParallelCore,query=new URLSearchParams(location.search);
 const single=query.has('screen'),screenSlot=Math.max(0,Math.trunc(Number(query.get('screen'))||0));
-const client=crypto.randomUUID();
+const client=newId();
 const bus=new BroadcastChannel('parallel-v2');
 const audioKey='parallel-audio-v2';
 let playbackRequested=false,startupMuted=true;

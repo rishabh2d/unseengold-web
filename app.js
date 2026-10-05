@@ -1,4 +1,5 @@
 const $=s=>document.querySelector(s),G=GoldExplorer;
+const newId=()=>globalThis.crypto?.randomUUID?.()||`${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
 const escape=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safe=url=>{try{const u=new URL(url,location.href);return ['https:','http:'].includes(u.protocol)?escape(u.href):''}catch{return ''}};
 const number=n=>G.count(n)===null?'—':new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n);
@@ -13,7 +14,7 @@ const defaultFolders=()=>[
 ];
 let folders=defaultFolders(),folderEditorOpen=false,folderNotice='';
 const channel=new BroadcastChannel('unseen-gold-explorer-v1');
-const peerId=crypto.randomUUID(),peers=new Map();
+const peerId=newId(),peers=new Map();
 function presence(){channel.postMessage({type:'presence',id:peerId,companion})}
 function updateDisplays(){const next=[...peers.values()].some(p=>p.companion!==companion);if(next!==dual){dual=next;render()}}
 setInterval(()=>{for(const [id,p] of peers)if(Date.now()-p.seen>6500)peers.delete(id);updateDisplays();presence()},2000);
@@ -56,7 +57,7 @@ function renderFolderBar(){
  bar.querySelectorAll('[data-folder-id]').forEach(b=>b.onclick=()=>saveToFolder(b.dataset.folderId));
  const add=bar.querySelector('#folder-add');if(add)add.onclick=()=>{folderEditorOpen=true;folderNotice='';renderFolderBar();bar.querySelector('#folder-name')?.focus()};
  const cancel=bar.querySelector('#folder-cancel');if(cancel)cancel.onclick=()=>{folderEditorOpen=false;renderFolderBar()};
- const form=bar.querySelector('#folder-create');if(form)form.onsubmit=e=>{e.preventDefault();const name=bar.querySelector('#folder-name').value.trim();if(!name)return;if(folders.some(f=>f.name.toLowerCase()===name.toLowerCase())){folderNotice='That folder already exists';renderFolderBar();bar.querySelector('#folder-name')?.focus();return}const id=crypto.randomUUID();folders.push({id,name,urls:[]});folderEditorOpen=false;persistFolders();if(activePost)saveToFolder(id);else{folderNotice=`Created ${name}`;renderFolderBar();sync()}};
+ const form=bar.querySelector('#folder-create');if(form)form.onsubmit=e=>{e.preventDefault();const name=bar.querySelector('#folder-name').value.trim();if(!name)return;if(folders.some(f=>f.name.toLowerCase()===name.toLowerCase())){folderNotice='That folder already exists';renderFolderBar();bar.querySelector('#folder-name')?.focus();return}const id=newId();folders.push({id,name,urls:[]});folderEditorOpen=false;persistFolders();if(activePost)saveToFolder(id);else{folderNotice=`Created ${name}`;renderFolderBar();sync()}};
 }
 function mediaHTML(p){return (p.xMedia||[]).map(m=>{
  const url=safe(m.url),poster=safe(m.previewImageURL);if(m.type==='photo'&&url)return `<img loading="lazy" src="${url}" alt="${escape(m.altText||'Post photo')}">`;
