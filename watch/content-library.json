@@ -1,0 +1,852 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-22",
+  "status": "staged_for_ui_integration",
+  "relevantDefinition": "Provisional cross-category editorial selection using featured; not a live or personalized ranking.",
+  "categories": [
+    {
+      "id": "relevant",
+      "label": "Relevant"
+    },
+    {
+      "id": "sports",
+      "label": "Sports"
+    },
+    {
+      "id": "beauty",
+      "label": "Cosmetics / Beauty"
+    },
+    {
+      "id": "food",
+      "label": "Food"
+    },
+    {
+      "id": "space",
+      "label": "Space"
+    },
+    {
+      "id": "technology",
+      "label": "Technology"
+    },
+    {
+      "id": "culture",
+      "label": "Culture"
+    },
+    {
+      "id": "environment",
+      "label": "Environment"
+    }
+  ],
+  "collections": [
+    {
+      "id": "wimbledon-2023-perspectives",
+      "type": "post_collection",
+      "title": "Alcaraz’s Wimbledon breakthrough",
+      "category": "sports",
+      "tags": [
+        "sports"
+      ],
+      "featured": true,
+      "topic": "Carlos Alcaraz defeats Novak Djokovic in the 2023 Wimbledon final.",
+      "editorialNote": "A shared result viewed through tournament history, national legacy, grass-court adaptation, audience experience, maturity and sportsmanship. Reactions are opinions, not technical match analysis.",
+      "temporalContext": "Historical collection; dates refer to original posts.",
+      "layout": {
+        "screens": 2,
+        "columnsPerScreen": 3,
+        "packing": "height"
+      },
+      "posts": [
+        {
+          "id": "1680636396548005896",
+          "url": "https://twitter.com/Wimbledon/status/1680636396548005896",
+          "author": {
+            "name": "Wimbledon",
+            "handle": "Wimbledon"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Tournament result",
+          "summary": "The tournament announces its new men’s singles champion.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "official_announcement",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 950
+        },
+        {
+          "id": "1680639579664048128",
+          "url": "https://twitter.com/RafaelNadal/status/1680639579664048128",
+          "author": {
+            "name": "Rafa Nadal",
+            "handle": "RafaelNadal"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Spanish tennis legacy",
+          "summary": "Nadal places the victory alongside Manolo Santana’s legacy.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 950
+        },
+        {
+          "id": "1680645639733129216",
+          "url": "https://twitter.com/rodlaver/status/1680645639733129216",
+          "author": {
+            "name": "Rod Laver",
+            "handle": "rodlaver"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Grass-court development",
+          "summary": "Laver praises Alcaraz’s progress on grass and anticipates future battles.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 350
+        },
+        {
+          "id": "1680637564204580868",
+          "url": "https://twitter.com/NickKyrgios/status/1680637564204580868",
+          "author": {
+            "name": "Nicholas Kyrgios",
+            "handle": "NickKyrgios"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Viewer experience",
+          "summary": "Kyrgios credits both finalists for holding his attention throughout.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 350
+        },
+        {
+          "id": "1680641613540802564",
+          "url": "https://twitter.com/PHShriver/status/1680641613540802564",
+          "author": {
+            "name": "Pam Shriver",
+            "handle": "PHShriver"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Composure off court",
+          "summary": "Shriver focuses on Alcaraz’s maturity during the post-match ceremony.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 350
+        },
+        {
+          "id": "1680641074111324160",
+          "url": "https://twitter.com/rennaestubbs/status/1680641074111324160",
+          "author": {
+            "name": "Rennae Stubbs",
+            "handle": "rennaestubbs"
+          },
+          "publishedAt": "2023-07-16",
+          "dateBasis": "publisher_embed",
+          "perspective": "Runner-up sportsmanship",
+          "summary": "Stubbs highlights Djokovic’s gracious assessment of the final game.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          },
+          "heightHint": 350
+        },
+        {
+          "id": "1680644947563905024",
+          "url": "https://twitter.com/Clijsterskim/status/1680644947563905024",
+          "author": {
+            "name": "Kim Clijsters",
+            "handle": "Clijsterskim"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 800,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        },
+        {
+          "id": "1680636759053414407",
+          "url": "https://twitter.com/delpotrojuan/status/1680636759053414407",
+          "author": {
+            "name": "Juan M. del Potro",
+            "handle": "delpotrojuan"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 300,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        },
+        {
+          "id": "1680647043004416001",
+          "url": "https://twitter.com/sabatinigabyok/status/1680647043004416001",
+          "author": {
+            "name": "Gabriela Sabatini",
+            "handle": "sabatinigabyok"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 800,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        },
+        {
+          "id": "1680645430256754689",
+          "url": "https://twitter.com/MirzaSania/status/1680645430256754689",
+          "author": {
+            "name": "Sania Mirza",
+            "handle": "MirzaSania"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 800,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        },
+        {
+          "id": "1680645538155200512",
+          "url": "https://twitter.com/vika7/status/1680645538155200512",
+          "author": {
+            "name": "victoria azarenka",
+            "handle": "vika7"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 300,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        },
+        {
+          "id": "1680642085945331714",
+          "url": "https://twitter.com/denis_shapo/status/1680642085945331714",
+          "author": {
+            "name": "Denis Shapovalov",
+            "handle": "denis_shapo"
+          },
+          "publishedAt": "2023-07-16",
+          "perspective": "A fellow player’s reaction",
+          "summary": "A fellow player reacts to the 2023 Wimbledon final.",
+          "heightHint": 800,
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://scroll.in/field/1052726/wimbledon-a-new-name-a-new-reign-reactions-as-carlos-alcaraz-wins-second-grand-slam-title",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL, author and date present in publisher embed; live rendering checked separately."
+          }
+        }
+      ]
+    },
+    {
+      "id": "t20-final-2024-perspectives",
+      "type": "post_collection",
+      "title": "One final. Two nations. Six turning points.",
+      "category": "sports",
+      "tags": [
+        "sports"
+      ],
+      "featured": true,
+      "topic": "India versus South Africa, 2024 men’s T20 World Cup final.",
+      "editorialNote": "Mixes in-match reactions with post-match responses. Read dates and sequence as historical commentary; praise for individual moments is not a claim they alone decided the result.",
+      "temporalContext": "Historical collection; dates refer to original posts.",
+      "layout": {
+        "screens": 2,
+        "itemsPerScreen": 3
+      },
+      "posts": [
+        {
+          "id": "1807084601833038296",
+          "url": "https://twitter.com/KamiAkmal23/status/1807084601833038296",
+          "author": {
+            "name": "Kamran Akmal",
+            "handle": "KamiAkmal23"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "Batting recovery",
+          "summary": "Akmal praises Kohli and Axar’s rebuilding partnership.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1807103868884353371",
+          "url": "https://twitter.com/PoppingCreaseSA/status/1807103868884353371",
+          "author": {
+            "name": "ThePoppingCrease",
+            "handle": "PoppingCreaseSA"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "South African momentum",
+          "summary": "The South African cricket account celebrates Klaasen’s rapid fifty.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "fan_commentary",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1807105310680924258",
+          "url": "https://twitter.com/cricketaakash/status/1807105310680924258",
+          "author": {
+            "name": "Aakash Chopra",
+            "handle": "cricketaakash"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "Wicket changes the game",
+          "summary": "Chopra treats Hardik’s dismissal of Klaasen as a turning point.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1807110752844517758",
+          "url": "https://twitter.com/robbieuthappa/status/1807110752844517758",
+          "author": {
+            "name": "Robin Aiyuda Uthappa",
+            "handle": "robbieuthappa"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "Decisive fielding",
+          "summary": "Uthappa reacts to Suryakumar Yadav’s catch with match-winning praise.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1807112434173280362",
+          "url": "https://twitter.com/AlviroPetersen/status/1807112434173280362",
+          "author": {
+            "name": "Alviro Petersen",
+            "handle": "AlviroPetersen"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "South African disappointment",
+          "summary": "Petersen congratulates India while lamenting South Africa’s missed opportunity.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1807112419388608725",
+          "url": "https://twitter.com/virendersehwag/status/1807112419388608725",
+          "author": {
+            "name": "Virender Sehwag",
+            "handle": "virendersehwag"
+          },
+          "publishedAt": "2024-06-29",
+          "dateBasis": "publisher_embed",
+          "perspective": "Long-awaited title",
+          "summary": "Sehwag celebrates the end of India’s wait for another T20 title.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.crictracker.com/twitter-reactions-cricket/twitter-reactions-india-end-trophy-drought-defy-odds-to-beat-south-africa-in-t20-world-cup-2024-final/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        }
+      ]
+    },
+    {
+      "id": "fenty-launch-2017-perspectives",
+      "type": "post_collection",
+      "title": "What Fenty’s launch meant to people",
+      "category": "beauty",
+      "tags": [
+        "beauty"
+      ],
+      "featured": true,
+      "topic": "The September 2017 Fenty Beauty launch and its reception.",
+      "editorialNote": "A historical launch collection, not current shade or product advice. Includes founder promotion, inclusion, personal experience and cultural reception. Some originals are inaccessible: publisher context is explicitly distinguished from readable post text.",
+      "temporalContext": "Historical collection; dates refer to original posts.",
+      "layout": {
+        "screens": 2,
+        "itemsPerScreen": 3
+      },
+      "posts": [
+        {
+          "id": "905840739690663941",
+          "url": "https://twitter.com/rihanna/status/905840739690663941",
+          "author": {
+            "name": "Rihanna",
+            "handle": "rihanna"
+          },
+          "publishedAt": "2017-09-07",
+          "dateBasis": "publisher_embed",
+          "perspective": "Founder announcement",
+          "summary": "Rihanna announces the collection’s midnight availability.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "brand_promotion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.grammy.com/news/rihannas-fenty-beauty-collection-now-available/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "905994541718794241",
+          "url": "https://twitter.com/catquinn/status/905994541718794241",
+          "author": {
+            "name": "Cat Quinn",
+            "handle": "catquinn"
+          },
+          "publishedAt": null,
+          "dateBasis": "unverified",
+          "perspective": "Designing for inclusion",
+          "summary": "REVOLT links Quinn’s post with Rihanna’s explanation of inclusive shades and undertones.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "reported_interview",
+          "verification": {
+            "status": "publisher_context",
+            "sourceUrl": "https://www.revolt.tv/article/2017-09-11/31989/the-best-twitter-reactions-to-rihannas-fentybeauty-makeup-line-launch",
+            "checkedAt": "2026-09-22",
+            "notes": "Publisher links the exact post and supplies interview context; original post text, date and media could not be retrieved."
+          }
+        },
+        {
+          "id": "906519651705917440",
+          "url": "https://twitter.com/GabbySidibe/status/906519651705917440",
+          "author": {
+            "name": "Gabby Sidibe",
+            "handle": "GabbySidibe"
+          },
+          "publishedAt": "2017-09-09",
+          "dateBasis": "publisher_embed",
+          "perspective": "Personal experience on dark skin",
+          "summary": "Sidibe gives a positive personal response to Fenty on dark skin.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "personal_experience",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://resources.latana.com/post/build-brand-awareness-fenty/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "906172310842818562",
+          "url": "https://twitter.com/mindykaling/status/906172310842818562",
+          "author": {
+            "name": "Mindy Kaling",
+            "handle": "mindykaling"
+          },
+          "publishedAt": "2017-09-08",
+          "dateBasis": "publisher_embed",
+          "perspective": "Breadth of shade choice",
+          "summary": "Kaling welcomes the available shade range and thanks Rihanna.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://resources.latana.com/post/build-brand-awareness-fenty/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "906679111204184064",
+          "url": "https://twitter.com/dearra/status/906679111204184064",
+          "author": {
+            "name": "De’arra",
+            "handle": "dearra"
+          },
+          "publishedAt": null,
+          "dateBasis": "unverified",
+          "perspective": "Highlighter reception",
+          "summary": "REVOLT places this post among humorous reactions to the Trophy Wife highlighter.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "fan_commentary",
+          "verification": {
+            "status": "publisher_context",
+            "sourceUrl": "https://www.revolt.tv/article/2017-09-11/31989/the-best-twitter-reactions-to-rihannas-fentybeauty-makeup-line-launch",
+            "checkedAt": "2026-09-22",
+            "notes": "Only exact URL and publisher topic context verified; full text, date and media unavailable. Do not display an invented quotation."
+          }
+        },
+        {
+          "id": "907025127304437760",
+          "url": "https://twitter.com/TheAffinityMag/status/907025127304437760",
+          "author": {
+            "name": "Affinity Magazine",
+            "handle": "TheAffinityMag"
+          },
+          "publishedAt": null,
+          "dateBasis": "unverified",
+          "perspective": "Cultural impact",
+          "summary": "REVOLT groups this post under the launch’s longer-term impact.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "commentary",
+          "verification": {
+            "status": "publisher_context",
+            "sourceUrl": "https://www.revolt.tv/article/2017-09-11/31989/the-best-twitter-reactions-to-rihannas-fentybeauty-makeup-line-launch",
+            "checkedAt": "2026-09-22",
+            "notes": "Exact URL and editorial grouping verified; specific argument, original text and date remain inaccessible."
+          }
+        }
+      ]
+    },
+    {
+      "id": "guacamole-peas-2015",
+      "type": "post_collection",
+      "title": "Should guacamole have peas?",
+      "category": "food",
+      "tags": [
+        "food"
+      ],
+      "featured": true,
+      "topic": "The July 2015 debate about the New York Times’ pea guacamole recommendation.",
+      "editorialNote": "Taste, tradition, recipe attribution and internet backlash. Includes supporters who ate it. Political figures appear only as participants in a food conversation; no view represents culinary consensus.",
+      "temporalContext": "Historical collection; dates refer to original posts.",
+      "layout": {
+        "screens": 2,
+        "itemsPerScreen": 3
+      },
+      "posts": [
+        {
+          "id": "616303020574441472",
+          "url": "https://twitter.com/nytimes/status/616303020574441472",
+          "author": {
+            "name": "The New York Times",
+            "handle": "nytimes"
+          },
+          "publishedAt": "2015-07-01",
+          "dateBasis": "publisher_embed",
+          "perspective": "Recipe proposal",
+          "summary": "The newspaper invites readers to try peas in guacamole.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "publisher_recommendation",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.poynter.org/reporting-editing/2015/the-new-york-times-told-people-to-add-peas-to-guac-people-said-nope/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "616314625446035456",
+          "url": "https://twitter.com/MelissaClark/status/616314625446035456",
+          "author": {
+            "name": "Melissa Clark",
+            "handle": "MelissaClark"
+          },
+          "publishedAt": "2015-07-01",
+          "dateBasis": "publisher_embed",
+          "perspective": "Recipe attribution",
+          "summary": "Clark credits ABC Cocina for the recipe and defends its taste.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.pbs.org/newshour/nation/great-guacamole-debate-pea-pea",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "616457429547548672",
+          "url": "https://twitter.com/rohinivibha/status/616457429547548672",
+          "author": {
+            "name": "Rohini Vibha",
+            "handle": "rohinivibha"
+          },
+          "publishedAt": "2015-07-02",
+          "dateBasis": "publisher_embed",
+          "perspective": "Firsthand diner",
+          "summary": "Vibha says she enjoyed the dish at ABC Cocina.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "personal_experience",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.pbs.org/newshour/nation/great-guacamole-debate-pea-pea",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "616338528138608640",
+          "url": "https://twitter.com/POTUS44/status/616338528138608640",
+          "author": {
+            "name": "President Obama",
+            "handle": "POTUS44"
+          },
+          "publishedAt": "2015-07-01",
+          "dateBasis": "publisher_embed",
+          "perspective": "Traditional preference",
+          "summary": "Obama prefers guacamole without peas.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://observer.com/2015/07/new-york-times-takes-heat-for-peas-and-guacamole-post/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "616605242994483200",
+          "url": "https://twitter.com/SplendidTable/status/616605242994483200",
+          "author": {
+            "name": "The Splendid Table",
+            "handle": "SplendidTable"
+          },
+          "publishedAt": "2015-07-02",
+          "dateBasis": "publisher_embed",
+          "perspective": "Culinary support",
+          "summary": "The food program sides with Clark on trying the variation.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.pbs.org/newshour/nation/great-guacamole-debate-pea-pea",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "616312696657604608",
+          "url": "https://twitter.com/TheStalwart/status/616312696657604608",
+          "author": {
+            "name": "Joe Weisenthal",
+            "handle": "TheStalwart"
+          },
+          "publishedAt": "2015-07-01",
+          "dateBasis": "publisher_embed",
+          "perspective": "Reaction to the backlash",
+          "summary": "Weisenthal jokes about an imminent backlash to the backlash.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "humor",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://observer.com/2015/07/new-york-times-takes-heat-for-peas-and-guacamole-post/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        }
+      ]
+    },
+    {
+      "id": "vision-pro-announcement-2023",
+      "type": "post_collection",
+      "title": "A new computer—or a developer experiment?",
+      "category": "technology",
+      "tags": [
+        "technology"
+      ],
+      "featured": true,
+      "topic": "Responses to Apple’s June 2023 Vision Pro announcement.",
+      "editorialNote": "Launch-day expectations, not a current product review or buying recommendation. Separates company promotion, short hands-on experience, developer work and independent skepticism.",
+      "temporalContext": "Historical collection; dates refer to original posts.",
+      "layout": {
+        "screens": 2,
+        "itemsPerScreen": 3
+      },
+      "posts": [
+        {
+          "id": "1665806600261763072",
+          "url": "https://twitter.com/tim_cook/status/1665806600261763072",
+          "author": {
+            "name": "Tim Cook",
+            "handle": "tim_cook"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Company vision",
+          "summary": "Cook introduces Vision Pro as the start of spatial computing.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "brand_promotion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.techmeme.com/230605/p22",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1665824426225700864",
+          "url": "https://twitter.com/mkbhd/status/1665824426225700864",
+          "author": {
+            "name": "Marques Brownlee",
+            "handle": "mkbhd"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Short hands-on impression",
+          "summary": "Brownlee reports enthusiasm after a thirty-minute demonstration.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "personal_experience",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.techmeme.com/230605/p22",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1665805201767374849",
+          "url": "https://twitter.com/siglesias/status/1665805201767374849",
+          "author": {
+            "name": "Sam Iglesias",
+            "handle": "siglesias"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Builder perspective",
+          "summary": "Iglesias reflects on the difficult interaction and productivity work behind the device.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "firsthand_account",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.techmeme.com/230605/p22",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1665799082214928385",
+          "url": "https://twitter.com/KyleOrl/status/1665799082214928385",
+          "author": {
+            "name": "Kyle Orland",
+            "handle": "KyleOrl"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Gaming priorities",
+          "summary": "Orland notices gaming’s small role in the announcement.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.gamespot.com/articles/apple-vision-pro-reactions-for-the-3500-headset-are-all-over-the-place/1100-6514824/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1665798486032371714",
+          "url": "https://twitter.com/patrickklepek/status/1665798486032371714",
+          "author": {
+            "name": "Patrick Klepek",
+            "handle": "patrickklepek"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Mainstream readiness",
+          "summary": "Klepek questions whether the headset feels more like a developer kit.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.gamespot.com/articles/apple-vision-pro-reactions-for-the-3500-headset-are-all-over-the-place/1100-6514824/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        },
+        {
+          "id": "1665798508799045632",
+          "url": "https://twitter.com/DevinReimer/status/1665798508799045632",
+          "author": {
+            "name": "Devin Reimer",
+            "handle": "DevinReimer"
+          },
+          "publishedAt": "2023-06-05",
+          "dateBasis": "publisher_embed",
+          "perspective": "Interaction optimism",
+          "summary": "Reimer welcomes the use of hands and eyes as inputs.",
+          "summaryType": "editorial_paraphrase",
+          "evidenceType": "opinion",
+          "verification": {
+            "status": "publisher_embedded",
+            "sourceUrl": "https://www.gamespot.com/articles/apple-vision-pro-reactions-for-the-3500-headset-are-all-over-the-place/1100-6514824/",
+            "checkedAt": "2026-09-22",
+            "notes": "Original URL and attributed post text/date found in publisher embed. Current original availability, full thread and embedded media not verified."
+          }
+        }
+      ]
+    }
+  ]
+}

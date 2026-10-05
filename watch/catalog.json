@@ -1,0 +1,450 @@
+[
+  {
+    "id": "nba-game-seven",
+    "category": "Sport",
+    "title": "The block. The shot. Game seven.",
+    "subtitle": "Cavaliers \u00d7 Warriors \u00b7 2016 NBA Finals",
+    "type": "Same event",
+    "description": "The closing minutes alongside the five defining plays.",
+    "note": "Official NBA edits of Game 7. A closing sequence and a ranked recap, not aligned alternate angles.",
+    "imageId": "wgVOgGLtPtc",
+    "views": [
+      {
+        "id": "wgVOgGLtPtc",
+        "label": "Final 3:39",
+        "creator": "NBA",
+        "start": 0
+      },
+      {
+        "id": "HeMcoJci8ug",
+        "label": "Top five plays",
+        "creator": "NBA",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "wimbledon",
+    "category": "Sport",
+    "title": "A new king on Centre Court.",
+    "subtitle": "Alcaraz \u00d7 Djokovic \u00b7 Wimbledon 2023",
+    "type": "Same event",
+    "description": "Relive the final through the official highlights, extended edit, and the deciding game.",
+    "note": "Official Wimbledon edits of the same final. These are different cuts, not independent court cameras. Play each separately or position the matching points manually.",
+    "imageId": "K-VmllVIOXA",
+    "views": [
+      {
+        "id": "K-VmllVIOXA",
+        "label": "Match highlights",
+        "creator": "Wimbledon",
+        "start": 0
+      },
+      {
+        "id": "18pE_iRbty4",
+        "label": "The final game",
+        "creator": "Wimbledon",
+        "start": 0
+      },
+      {
+        "id": "dvBr9Wr8BCY",
+        "label": "Extended highlights",
+        "creator": "Wimbledon",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "qatar-final",
+    "category": "Sport",
+    "title": "A final beyond belief.",
+    "subtitle": "Argentina \u00d7 France \u00b7 Qatar 2022",
+    "type": "Same event",
+    "description": "Three official ways to revisit the final: two highlight edits and the penalty shoot-out.",
+    "note": "Three official FIFA edits of the same match. Different timelines, not simultaneous camera feeds. Publisher or region restrictions may require opening YouTube.",
+    "imageId": "zhEWqfP6V_w",
+    "views": [
+      {
+        "id": "zhEWqfP6V_w",
+        "label": "Original highlights",
+        "creator": "FIFA",
+        "start": 0
+      },
+      {
+        "id": "MCWJNOfJoSM",
+        "label": "Full penalty shoot-out",
+        "creator": "FIFA",
+        "start": 0
+      },
+      {
+        "id": "IipmpVcISXE",
+        "label": "Anniversary highlights",
+        "creator": "FIFA",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "bolt",
+    "category": "Sport",
+    "title": "Nine seconds. A lifetime of work.",
+    "subtitle": "Usain Bolt \u00b7 London 2012 & Olympic career",
+    "type": "Companion videos",
+    "description": "The London sprints alongside a career-spanning reel of Olympic finals.",
+    "note": "Companion videos selected for side-by-side viewing. These are different edits or performances, not synchronized alternate-camera feeds.",
+    "imageId": "lacjJVxC5d0",
+    "views": [
+      {
+        "id": "lacjJVxC5d0",
+        "label": "London 100m & interview",
+        "creator": "Olympic Games",
+        "start": 0
+      },
+      {
+        "id": "LWZQAVtkMBo",
+        "label": "London 200m final",
+        "creator": "Olympic Games",
+        "start": 0
+      },
+      {
+        "id": "FuiJHJz4f5Q",
+        "label": "All Olympic finals",
+        "creator": "Olympic Games",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "tiny-desk",
+    "category": "Music",
+    "title": "Three desks. Three worlds.",
+    "subtitle": "Dua Lipa \u00b7 Mac Miller \u00b7 Billie Eilish",
+    "type": "Companion performances",
+    "description": "Three intimate NPR performances. Choose the screen you want to hear.",
+    "note": "Three separate artists and recording sessions. Compare the performances visually and listen to one at a time; these are not angles of one concert.",
+    "imageId": "y38qQRg3UDI",
+    "views": [
+      {
+        "id": "y38qQRg3UDI",
+        "label": "Dua Lipa \u00b7 Tiny Desk",
+        "creator": "NPR Music",
+        "start": 0
+      },
+      {
+        "id": "QrR_gm6RqCo",
+        "label": "Mac Miller \u00b7 Tiny Desk",
+        "creator": "NPR Music",
+        "start": 0
+      },
+      {
+        "id": "fOAIrUZbOwo",
+        "label": "Billie Eilish \u00b7 Tiny Desk",
+        "creator": "NPR Music",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "silverstone",
+    "category": "Motorsport",
+    "title": "Chasing Max at 300 km/h.",
+    "subtitle": "Silverstone \u00b7 FPV meets Formula 1",
+    "type": "Same event",
+    "description": "The extraordinary drone chase, alongside the story of building a camera that could keep up.",
+    "note": "The FPV lap and Red Bull\u2019s documentary cover the same filming project. The documentary includes development and other runs; these are complementary edits, not two continuous synchronized angles.",
+    "imageId": "9pEqyr_uT-k",
+    "views": [
+      {
+        "id": "QkFo05ZTyxw",
+        "label": "The FPV lap",
+        "creator": "Dutch Drone Gods",
+        "start": 0
+      },
+      {
+        "id": "9pEqyr_uT-k",
+        "label": "The chase & its making",
+        "creator": "Red Bull",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "macaskill",
+    "category": "Sport",
+    "title": "An ordinary bike. Impossible lines.",
+    "subtitle": "Danny MacAskill \u00b7 Scotland",
+    "type": "Companion videos",
+    "description": "Two beautifully filmed rides through Scotland, full of improbable tricks.",
+    "note": "Companion videos selected for side-by-side viewing. These are different edits or performances, not synchronized alternate-camera feeds.",
+    "imageId": "Cj6ho1-G6tw",
+    "views": [
+      {
+        "id": "Cj6ho1-G6tw",
+        "label": "Way Back Home",
+        "creator": "Red Bull",
+        "start": 0
+      },
+      {
+        "id": "K_7k3fnxPq0",
+        "label": "Wee Day Out",
+        "creator": "Red Bull",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "earth",
+    "category": "Space",
+    "title": "The best window in the house.",
+    "subtitle": "NASA \u00b7 Earth from orbit",
+    "type": "Companion videos",
+    "description": "Orbital views and crew observations, spread across your displays.",
+    "note": "Two NASA films of Earth from space, edited at different times. A visual companion pair, not synchronized cameras.",
+    "imageId": "oFDeNcu3mnc",
+    "views": [
+      {
+        "id": "oFDeNcu3mnc",
+        "label": "Planet Earth \u00b7 4K",
+        "creator": "NASA Johnson",
+        "start": 0
+      },
+      {
+        "id": "c7OO3qCfH9Y",
+        "label": "Crew Earth observations \u00b7 4K",
+        "creator": "NASA Johnson",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "starship-catch",
+    "category": "Space",
+    "title": "Starship, from every distance.",
+    "subtitle": "Starship Flight 5 \u00b7 October 13, 2024",
+    "type": "Chapter samples",
+    "description": "Three short samples from Everyday Astronaut\u2019s Flight 5 supercut.",
+    "note": "Different chapter samples from one published supercut, including ascent. Chapter timing and same-moment alignment are not verified. These are not synchronized catch angles.",
+    "imageId": "dpxB1S-ohEU",
+    "featured": true,
+    "views": [
+      {
+        "id": "dpxB1S-ohEU",
+        "label": "Flight sample \u00b7 wide",
+        "creator": "Everyday Astronaut",
+        "start": 42,
+        "end": 75
+      },
+      {
+        "id": "dpxB1S-ohEU",
+        "label": "Flight sample \u00b7 tower",
+        "creator": "Everyday Astronaut",
+        "start": 103,
+        "end": 133
+      },
+      {
+        "id": "dpxB1S-ohEU",
+        "label": "Flight sample \u00b7 pad",
+        "creator": "Everyday Astronaut",
+        "start": 173,
+        "end": 200
+      }
+    ]
+  },
+  {
+    "id": "pneuma",
+    "category": "Music",
+    "title": "Behind the kit. Inside the crowd.",
+    "subtitle": "TOOL \u00b7 Pneuma \u00b7 Boston",
+    "type": "Performance perspectives",
+    "description": "Danny Carey\u2019s mesmerizing drum performance, paired with an audience view of Pneuma in Boston.",
+    "note": "Vic Firth\u2019s drum-camera film is identified as Boston; the audience upload is dated November 14, 2019. An exact same-performance match and offsets have not been verified. Treat these as performance perspectives, not a synchronized pair.",
+    "imageId": "FssULNGSZIA",
+    "views": [
+      {
+        "id": "FssULNGSZIA",
+        "label": "Danny Carey \u00b7 drum camera",
+        "creator": "Vic Firth",
+        "start": 0
+      },
+      {
+        "id": "bz79XOzCF7o",
+        "label": "Boston \u00b7 audience perspective",
+        "creator": "iWasAtThatShow w/JhonnyO",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "wellington",
+    "category": "Food",
+    "title": "The Wellington masterclass.",
+    "subtitle": "Gordon Ramsay \u00b7 two recipes, one signature dish",
+    "type": "Companion videos",
+    "description": "Compare Gordon\u2019s fillet masterclass with the restaurant\u2019s recipe. Watch the technique, then try it yourself.",
+    "note": "Two separate recipe videos. They are not alternate cameras of the same cooking session. Independent playback lets you compare matching steps at your own pace.",
+    "imageId": "TE2omM_NoXU",
+    "views": [
+      {
+        "id": "TE2omM_NoXU",
+        "label": "The chef\u2019s masterclass",
+        "creator": "Gordon Ramsay",
+        "start": 0
+      },
+      {
+        "id": "JET8YfClvKk",
+        "label": "The restaurant recipe",
+        "creator": "Gordon Ramsay Restaurants",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "wellington-record",
+    "category": "Food",
+    "title": "Dinner, taken to record scale.",
+    "subtitle": "Gordon Ramsay \u00d7 Nick DiGiovanni",
+    "type": "Companion videos",
+    "description": "A world-record Beef Wellington alongside the classic recipe that started the obsession.",
+    "note": "The Guinness record attempt and the classic recipe are related food videos, not matching angles. Watch the record for spectacle and the recipe for technique.",
+    "imageId": "h9InKk9dYaM",
+    "views": [
+      {
+        "id": "h9InKk9dYaM",
+        "label": "The world-record attempt",
+        "creator": "Guinness World Records",
+        "start": 0
+      },
+      {
+        "id": "TE2omM_NoXU",
+        "label": "The original technique",
+        "creator": "Gordon Ramsay",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "starship-launch",
+    "category": "Space",
+    "title": "Same launch. Different front rows.",
+    "subtitle": "Starship Flight 5 \u00b7 launch coverage",
+    "type": "Same event",
+    "description": "Two independent teams cover the same history-making flight from Starbase.",
+    "note": "Independent full-length broadcasts from the same launch. Their pre-show lengths differ; find a shared launch moment before playing together. They are not pre-synchronized.",
+    "imageId": "pIKI7y3DTXk",
+    "views": [
+      {
+        "id": "pIKI7y3DTXk",
+        "label": "Everyday Astronaut coverage",
+        "creator": "Everyday Astronaut",
+        "start": 8663
+      },
+      {
+        "id": "YC87WmFN_As",
+        "label": "NASASpaceflight coverage",
+        "creator": "NASASpaceflight",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "wimbledon-2008",
+    "category": "Sport",
+    "title": "The final that had everything.",
+    "subtitle": "Federer \u00d7 Nadal \u00b7 Wimbledon 2008",
+    "type": "Single broadcast",
+    "description": "An extended cut of the classic Wimbledon final. Repeat this view across your displays.",
+    "note": "One official highlights edit. Extra displays repeat the same source; no alternate angles are claimed.",
+    "imageId": "f8YEiCAPAbg",
+    "views": [
+      {
+        "id": "f8YEiCAPAbg",
+        "label": "Extended highlights",
+        "creator": "Wimbledon",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "murray",
+    "category": "Sport",
+    "title": "The wait ends on Centre Court.",
+    "subtitle": "Andy Murray \u00b7 Wimbledon 2013",
+    "type": "Same event",
+    "description": "Extended final highlights alongside the penultimate point, revisited.",
+    "note": "Two official edits from the 2013 final. The point clip is short; it is not a continuous second camera.",
+    "imageId": "zD162uH4i8U",
+    "views": [
+      {
+        "id": "zD162uH4i8U",
+        "label": "Extended final highlights",
+        "creator": "Wimbledon",
+        "start": 0
+      },
+      {
+        "id": "Uydfg99s4oI",
+        "label": "Penultimate point",
+        "creator": "Wimbledon",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "biles-paris",
+    "category": "Sport",
+    "title": "Power, precision, Simone.",
+    "subtitle": "Simone Biles \u00b7 performance & technique",
+    "type": "Companion videos",
+    "description": "A Paris floor routine alongside a visual explanation of her gymnastics.",
+    "note": "A Paris 2024 performance paired with a 2016 New York Times analysis. Different dates and contexts; not alternate cameras.",
+    "imageId": "z4p0Jw3U8zc",
+    "views": [
+      {
+        "id": "z4p0Jw3U8zc",
+        "label": "Qualifying floor routine",
+        "creator": "Olympic Games",
+        "start": 0
+      },
+      {
+        "id": "yqds04bRxQM",
+        "label": "The technique \u00b7 2016 analysis",
+        "creator": "The New York Times",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "tokyo-park",
+    "category": "Sport",
+    "title": "Concrete, flight, and a gold medal.",
+    "subtitle": "Men\u2019s park skateboarding \u00b7 Tokyo 2020",
+    "type": "Single broadcast",
+    "description": "The complete Olympic park final, ready to fill every screen.",
+    "note": "One official full-event replay. Additional monitors repeat the broadcast.",
+    "imageId": "YVXZMOoxrpE",
+    "views": [
+      {
+        "id": "YVXZMOoxrpE",
+        "label": "Full park final",
+        "creator": "Olympics Skateboarding",
+        "start": 0
+      }
+    ]
+  },
+  {
+    "id": "stratos",
+    "category": "Sport",
+    "title": "A very long way down.",
+    "subtitle": "Felix Baumgartner \u00b7 Red Bull Stratos",
+    "type": "Single POV",
+    "description": "A first-person view of the jump from the stratosphere.",
+    "note": "One published POV film. Extra displays repeat it; they do not create additional camera angles.",
+    "imageId": "raiFrxbHxV0",
+    "views": [
+      {
+        "id": "raiFrxbHxV0",
+        "label": "Full jump POV",
+        "creator": "Red Bull",
+        "start": 0
+      }
+    ]
+  }
+]
