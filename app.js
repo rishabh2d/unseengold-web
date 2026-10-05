@@ -4,6 +4,7 @@ const safe=url=>{try{const u=new URL(url,location.href);return ['https:','http:'
 const number=n=>G.count(n)===null?'—':new Intl.NumberFormat('en-US',{notation:'compact',maximumFractionDigits:1}).format(n);
 const minimum=n=>n?number(n)+'+':'Any';
 const companion=new URLSearchParams(location.search).has('screen');document.body.classList.toggle('companion',companion);
+let renderedPostURL=null;
 let data,posts=[],state=G.defaults(),saved=[],dual=companion,otherWindow=null,activePost=null;
 const defaultFolders=()=>[
  {id:'favorites',name:'Favorites',urls:[]},
@@ -84,6 +85,31 @@ function pieceHTML(p){
  }
  return `<article class="card"><div class="card-body"><h2>${escape(p.title)}</h2>${p.kind==='image'?`<img style="width:100%" loading="lazy" src="${safe(p.url)}" alt="${escape(p.title)}">`:''}<p class="post-text">${escape(p.summary||'')}</p></div></article>`;
 }
+function renderThumbnails(filtered){
+ const start=Math.max(0,Math.min(state.page-1,filtered.length-5));
+ $('#post-thumbnails').innerHTML=filtered.slice(start,start+5).map((p,i)=>{
+ const index=start+i,media=(p.xMedia||[]).find(m=>m.type==='photo'||m.previewImageURL);
+ const image=media?(media.type==='photo'?media.url:media.previewImageURL):p.xAvatarURL;
+ const name=p.xAuthorName||p.author||p.title||'Post';
+ const text=p.xText||p.summary||p.title||'Open post';
+ return `<button class="post-thumbnail" data-post-index="${index}" aria-label="Post ${index+1}: ${escape(name)}" ${index===state.page?'aria-current="true"':''} title="${escape(name+': '+text.slice(0,130))}">${image?`<img src="${safe(image)}" alt="" loading="lazy">`:`<span class="thumbnail-excerpt">${escape(text.slice(0,65))}</span>`}<span class="thumbnail-number">${index+1}</span></button>`;
+ }).join('');
+ $('#post-thumbnails').querySelectorAll('button').forEach(b=>b.onclick=()=>change({page:Number(b.dataset.postIndex)}));
+}
+// Read long posts normally; another scroll at either edge moves one post.
+let wheelAmount=0,wheelLast=0,wheelLocked=false,wheelIdle;
+$('.post-stage').addEventListener('wheel',e=>{
+ if(e.ctrlKey||e.metaKey||Math.abs(e.deltaX)>Math.abs(e.deltaY)||e.target.closest('video,#post-thumbnails'))return;
+ clearTimeout(wheelIdle);wheelIdle=setTimeout(()=>{wheelLocked=false;wheelAmount=0},220);
+ const reading=$('.post-position'),down=e.deltaY>0;
+ const edge=down?reading.scrollTop+reading.clientHeight>=reading.scrollHeight-2:reading.scrollTop<=2;
+ if(!edge&&!wheelLocked){wheelAmount=0;return;}
+ e.preventDefault();if(wheelLocked)return;
+ const now=Date.now();if(now-wheelLast>250||Math.sign(wheelAmount)!==Math.sign(e.deltaY))wheelAmount=0;wheelLast=now;
+ wheelAmount+=e.deltaY*(e.deltaMode===1?16:e.deltaMode===2?reading.clientHeight:1);
+ const button=$(down?'#next':'#prev');
+ if(Math.abs(wheelAmount)>=65&&!button.disabled){wheelLocked=true;wheelAmount=0;button.click();}
+},{passive:false});
 function render(){if(!data)return;filterControls();document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.tab===state.tab));$('#saved-count').textContent=saved.length;
  const filtered=state.tab==='explore'?G.filter(posts,state):state.tab==='curated'?G.flatten(data.curated):saved;
  const total=filtered.length;state.page=Math.min(Math.max(0,state.page),Math.max(0,total-1));
@@ -96,8 +122,11 @@ function render(){if(!data)return;filterControls();document.querySelectorAll('[d
  $('#empty p').textContent=state.tab==='saved'?'Tap the star on a post to keep it here.':'Try a lower minimum or a wider date range. Unknown metrics cannot meet a minimum.';
  $('#empty-reset').hidden=state.tab==='saved';
  $('#feed').innerHTML=selected?pieceHTML(selected):'';
+ renderThumbnails(filtered);
+ if(selected?.url!==renderedPostURL){$('.post-position').scrollTop=0;$('#insights').scrollTop=0;renderedPostURL=selected?.url;}
+
  $('#insights').innerHTML=selected?insights(selected):'';
- if(selected){currentDiscussionPost=selected;currentDiscussionIndex=posts.findIndex(p=>p.url===selected.url);if(currentDiscussionIndex>=0){renderDiscussionOnly()}else{$('#discussion-host').innerHTML='<p class="discussion-empty">Discussion preview is available for the two Explore posts.</p>'}}
+ if(selected){currentDiscussionPost=selected;currentDiscussionIndex=posts.findIndex(p=>p.url===selected.url);if(currentDiscussionIndex>=0){renderDiscussionOnly()}else{$('#discussion-host').innerHTML='<p class="discussion-empty">Discussion preview is available for the twelve Explore posts.</p>'}}
  document.querySelectorAll('[data-save]').forEach(button=>button.onclick=()=>{const url=button.dataset.save,p=posts.find(p=>p.url===url)||saved.find(p=>p.url===url)||G.flatten(data.curated).find(p=>p.url===url);if(!p)return;const wasSaved=saved.some(x=>x.url===url);saved=wasSaved?saved.filter(x=>x.url!==url):[p,...saved];if(wasSaved){folders.forEach(f=>f.urls=f.urls.filter(u=>u!==url));persistFolders()}try{localStorage.setItem('ug-web-saved',JSON.stringify(saved))}catch{}render();sync()});
  // Keep one audible player across the two windows.
  document.querySelectorAll('video').forEach(v=>{v.addEventListener('volumechange',()=>{if(!v.muted){document.querySelectorAll('video').forEach(o=>{if(o!==v)o.muted=true});channel.postMessage({type:'mute'})}})});
@@ -118,4 +147,4 @@ channel.onmessage=({data:m})=>{
 window.addEventListener('pagehide',()=>channel.postMessage({type:'closed',id:peerId}));
 window.addEventListener('keydown',e=>{if(e.altKey||e.metaKey||e.ctrlKey||e.target.closest('input,textarea,select,video'))return;if(e.key==='ArrowRight'&&!$('#next').disabled){e.preventDefault();$('#next').click()}if(e.key==='ArrowLeft'&&!$('#prev').disabled){e.preventDefault();$('#prev').click()}});
 let resize;window.addEventListener('resize',()=>{clearTimeout(resize);resize=setTimeout(render,200)});
-fetch('data.json').then(r=>{if(!r.ok)throw Error('Library unavailable');return r.json()}).then(value=>{data=value;posts=G.flatten(data.explore).sort((a,b)=>(b.xLikes||0)-(a.xLikes||0)).slice(0,2);if(!localStorage.getItem('ug-web-saved')){saved=G.flatten(data.saved).filter(p=>p.kind==='post');}render();presence()}).catch(()=>{$('#summary').textContent='The local library could not load.';$('#feed').innerHTML='<div class="error">Please reload the page. If this continues, rerun the local asset export.</div>'});
+fetch('data.json').then(r=>{if(!r.ok)throw Error('Library unavailable');return r.json()}).then(value=>{data=value;posts=G.flatten(data.explore).sort((a,b)=>(b.xLikes||0)-(a.xLikes||0)).slice(0,12);if(!localStorage.getItem('ug-web-saved')){saved=G.flatten(data.saved).filter(p=>p.kind==='post');}render();presence()}).catch(()=>{$('#summary').textContent='The local library could not load.';$('#feed').innerHTML='<div class="error">Please reload the page. If this continues, rerun the local asset export.</div>'});

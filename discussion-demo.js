@@ -35,6 +35,61 @@ const discussionSeeds=[[
  ['Is there a useful comparison with other delayed sequels?','AI questions','History','Comparisons should match the production circumstances. A list of successful delayed movies alone would introduce selection bias.'],
  ['Can we have a rumors-free version of this conversation?','AI questions','Evidence','Filter for direct sources and keep unresolved questions visible. The absence of confirmation should remain uncertainty, not become a confident claim.']
 ]];
+/* Sample Grok prompts for the next ten real cached posts. Answers are fictional UI copy. */
+const morePostQuestions=[
+ [
+ ['Is the GTA 6 claim from official footage or a rating description?','Check the linked source and distinguish a rating-board description from a developer demonstration. The cached post alone does not prove the final interaction.'],
+ ['What part of this claim is actually confirmed?','The post attributes the claim to another source. Verification needs that source and its exact wording.'],
+ ['Does this affect the game rating?','A drug-use depiction may be relevant to a rating, but the exact classification requires the rating-board listing.'],
+ ['Is the linked clip genuine gameplay?','The demo cannot authenticate the linked media. A real answer should compare it with an official release.']
+ ],[
+ ['What are these trophies awarded for?','The image shows awards, but the precise category and date need the chart organization’s original record.'],
+ ['Is this a new record or a photo from an earlier ceremony?','Compare the image and award titles with a dated official announcement before calling it a new record.'],
+ ['What does the chart result measure?','Chart awards may reflect sales, streams or a combined measure. The specific chart methodology should be linked.'],
+ ['Where can I see the original photo and caption?','Follow the source post and then its credited photographer or chart organization when available.']
+ ],[
+ ['Why is October 3rd a pop-culture reference?','The date is commonly connected with a scene in Mean Girls. The attached image may add context, so inspect it before assuming that is the only reference.'],
+ ['What does the image add to this short post?','A one-line post can depend almost entirely on its media. A real assistant should describe the image only after checking it.'],
+ ['Is this an annual meme or a current announcement?','Check the date and the media. A recurring date reference is different from a new event.'],
+ ['What is the original source of the image?','An attribution trail should lead to the source work or credited creator.']
+ ],[
+ ['Is this clip from a released finale or a preview?','Check the network’s official channel and release date. “First clip” does not by itself say whether the episode is available.'],
+ ['What happens before this scene?','A responsible recap would use the released episode or official synopsis and label spoilers.'],
+ ['Who published the clip first?','Trace the video to an official publisher before presenting it as studio material.'],
+ ['Can I watch the full episode?','Availability depends on service and region; the demo has no current streaming data.']
+ ],[
+ ['How was the sea arch collapse confirmed?','Look for the park service’s dated notice and any official images or field report.'],
+ ['Did the storm cause the collapse?','The reported dates overlap a closure during the storm, but timing alone does not establish the physical cause.'],
+ ['Where was the arch and can visitors still reach the area?','The location can be mapped, but access rules must come from current park guidance.'],
+ ['Was anyone hurt?','The post does not say. A real answer should check an official incident update rather than infer.']
+ ],[
+ ['Is this the same GTA 6 claim in another post?','It appears related to the earlier GTA 6 item. A plaque could group them and show each source’s wording.'],
+ ['What exactly does PEGI say?','Quote the relevant rating description with a link before interpreting its implications.'],
+ ['Does the inventory detail come from PEGI or the post?','Compare the post’s phrasing with the cited listing; avoid treating a paraphrase as the original.'],
+ ['Is this confirmed for the shipped game?','Pre-release descriptors can change. Confirmation needs official game material or the final release.']
+ ],[
+ ['Are these figures official products or concept renders?','Check the manufacturer’s product page and release information.'],
+ ['Do the figures reveal anything about the film plot?','Merchandise can suggest a visual design, but it is weak evidence for story events.'],
+ ['What scale and materials are listed?','Those product details need the official listing; the photo alone is insufficient.'],
+ ['Who created the first-look images?','Preserve image credit and link to the original reveal.']
+ ],[
+ ['Is this scene from the latest released episode?','Verify the episode title and air date from the show’s official guide.'],
+ ['Is the portrayal meant as satire?','That is an interpretation. A useful answer separates what happens on screen from the intended meaning.'],
+ ['What context does the episode give this scene?','A recap needs the episode itself and should warn about spoilers.'],
+ ['Who is credited with the performance?','Use the episode credits, since the social post may simplify a role or cameo.']
+ ],[
+ ['Who observes National Boyfriend Day and where?','The post names a social observance. Its origins and reach vary; it is not a government holiday.'],
+ ['Is this date official anywhere?','An official designation would need a named authority and source; the post does not provide one.'],
+ ['What is the origin of the day?','Popular observances often have disputed origins. A real answer should show evidence and uncertainty.'],
+ ['What are people posting about it today?','That requires live public posts; this design preview does not fetch them.']
+ ],[
+ ['Where did Willem Dafoe tell this story?','The post credits NPR. Find the original interview and timestamp for the full context.'],
+ ['Is the quote exact?','Compare the cached quotation with NPR’s transcript or recording before treating punctuation as verbatim.'],
+ ['What was the larger conversation about?','A short animal anecdote can lose the surrounding interview topic; follow the primary source.'],
+ ['Can I see the animals he mentions?','Only link photos or video that the owner or publisher made available with appropriate rights.']
+ ]
+];
+const additionalDiscussionSeeds=morePostQuestions.map((set,index)=>set.map(([question,answer])=>[question,'AI questions',index===4?'Evidence':'Context',answer]));
 /* Follow-up turns are fictional platform conversations, scoped to the two design-preview posts. */
 const followUps=[[
  ['If the viewer supplies the meaning, does the maker matter?', 'The maker still shapes what a viewer encounters. The disagreement is whether that contribution must come from lived experience or can be delegated in part to a tool.'],
@@ -70,14 +125,14 @@ function threadTurns(row,postIndex){
 }
 function metadataIcon(symbol,label,content){return `<span class="meta-control"><button type="button" class="meta-icon" aria-label="${escape(label)}" aria-expanded="false">${symbol}</button><span class="meta-popover" role="tooltip">${escape(content)}</span></span>`}
 function discussionMarkup(post,index){
- const seed=discussionSeeds[index%2];
+ const seed=index<2?discussionSeeds[index]:additionalDiscussionSeeds[index-2]||additionalDiscussionSeeds[0];
  const rows=seed.map((r,i)=>({title:r[0],kind:r[1],topic:r[2],answer:r[3],i})).filter(r=>discussionTab==='All'||r.kind===discussionTab);
  const counts=kind=>kind==='All'?seed.length:seed.filter(r=>r[1]===kind).length;
  return `<section class="discussion"><nav class="discussion-tabs" aria-label="Discussion categories">${['All','AI questions','Human replies','Disagreements'].map(t=>`<button data-discussion-tab="${t}" aria-pressed="${t===discussionTab}">${t}<span>${counts(t)}</span></button>`).join('')}</nav><nav class="view-tabs" aria-label="Discussion view"><button data-discussion-view="list" aria-pressed="${discussionView==='list'}">List</button><button data-discussion-view="grid" aria-pressed="${discussionView==='grid'}">Grid</button></nav><div class="threads ${discussionView}">${rows.map(r=>{
   const turns=threadTurns(r,index),key=`${index}:${r.i}`,step=Math.min(discussionSteps.get(key)||0,turns.length-1),turn=turns[step];
   const revealed=discussionRevealed.has(key),suppressed=discussionSuppressed.has(key);
   return `<article class="thread ${revealed?'revealed':''} ${suppressed?'hover-suppressed':''}" data-thread-key="${key}" aria-label="Conversation ${r.i+1}, turn ${step+1} of ${turns.length}"><div class="thread-top"><h2 class="thread-question"><button type="button" class="question-trigger" data-reveal="${r.i}" aria-expanded="${revealed}" aria-controls="thread-answer-${index}-${r.i}">${escape(turn.question)}</button></h2><div class="thread-icons">${metadataIcon('◉','Person and date',`${demoNames[r.i%8]} · October 4, 2026 · ${r.i+2} minutes ago`)}${metadataIcon('⌗','Topic and type',`${r.topic} · ${r.kind==='AI questions'?'Question':r.kind==='Disagreements'?'Disagreement':'Human reply'}`)}</div></div><div class="thread-answer" id="thread-answer-${index}-${r.i}"><span class="answer-by">${r.kind==='AI questions'?'Grok':'Community'} <span>· sample response</span></span><p>${escape(turn.answer)}</p></div><div class="thread-navigation"><span class="turn-counter">${String(step+1).padStart(2,'0')} / ${String(turns.length).padStart(2,'0')}</span><span class="turn-controls"><button type="button" data-turn="${r.i}" data-direction="-1" aria-label="Previous question in this thread" ${step===0?'disabled':''}>↑</button><button type="button" data-turn="${r.i}" data-direction="1" aria-label="Next question in this thread" ${step===turns.length-1?'disabled':''}>↓</button></span></div></article>`;
- }).join('')}</div><div class="discussion-bottom"><span>DESIGN PREVIEW · ${seed.length} FICTIONAL PUBLIC THREADS · NO LIVE AI</span></div></section>`;
+ }).join('')}</div><div class="discussion-bottom"><span>DESIGN PREVIEW · ${seed.length} SAMPLE GROK QUESTIONS · NO LIVE AI</span></div></section>`;
 }
 function bindDiscussion(){
  document.querySelectorAll('[data-discussion-tab]').forEach(b=>b.onclick=()=>{discussionTab=b.dataset.discussionTab;renderDiscussionOnly()});
