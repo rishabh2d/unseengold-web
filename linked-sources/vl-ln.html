@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="https://0309hws.github.io/VL-LN.github.io/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
+  <meta name="description" content="VL-LN Bench introduces Interactive Instance Goal Navigation (IIGN) and a large-scale dialog-augmented benchmark for training and evaluating dialog-enabled embodied navigation agents." />
+  <meta name="keywords" content="embodied AI, visual-language navigation, dialog, active perception, benchmark, IIGN, IGN, long-horizon navigation, Qwen2.5-VL" />
+  <meta name="author" content="Wensi Huang, Shaohao Zhu, Meng Wei, Jinming Xu, Xihui Liu, Hanqing Wang, Tai Wang, Feng Zhao, Jiangmiao Pang" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="English" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Shanghai AI Laboratory" />
+  <meta property="og:title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
+  <meta property="og:description" content="VL-LN Bench introduces IIGN and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE" />
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="VL-LN Bench - Research Preview" />
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z" />
+  <meta property="article:section" content="Research" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE" />
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE" />
+  <meta name="twitter:title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
+  <meta name="twitter:description" content="VL-LN Bench introduces IIGN and a large-scale dialog-augmented benchmark for dialog-enabled embodied navigation." />
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png" />
+  <meta name="twitter:image:alt" content="VL-LN Bench - Research Preview" />
+
+  <!-- Academic/Research Specific (optional) -->
+  <meta name="citation_title" content="VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs" />
+  <meta name="citation_publication_date" content="2024" />
+  <meta name="citation_conference_title" content="CONFERENCE_NAME" />
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf" />
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="msapplication-TileColor" content="#2563eb" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://ajax.googleapis.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <title>VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="static/images/favicon.ico" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="static/css/bulma.min.css" />
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  </noscript>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Your existing stylesheet (optional). Keep if you already have custom rules. -->
+  <link rel="stylesheet" href="static/css/index.css" />
+
+  <style>
+    :root{
+      --brand:#2563eb;
+      --brand2:#7c3aed;
+      --text:#0f172a;
+      --muted:#475569;
+      --bg:#f6f8fc;
+      --border: rgba(15,23,42,.08);
+      --shadow2: 0 10px 28px rgba(2,6,23,.10);
+      --radius: 16px;
+    }
+
+    html{ scroll-behavior:smooth; }
+    body{
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 50% -200px, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(124,58,237,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg), #fff 35%);
+      min-height: 100vh;
+    }
+    a{ color: var(--brand); }
+    a:hover{ color:#1d4ed8; }
+
+    .container.is-max-desktop{ max-width: 980px; }
+    .section{ padding: 4.0rem 1.25rem; }
+    .hero-body{ padding-top: 5rem; padding-bottom: 2.8rem; }
+
+    .publication-title{
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+    .publication-authors{ color: var(--muted); }
+    .ug-researcher-name{appearance:none;border:0;border-bottom:2px solid var(--ug-accent,#36bafa);border-radius:3px;background:color-mix(in srgb,var(--ug-accent,#36bafa) 23%,transparent);color:inherit;font:inherit;line-height:inherit;padding:0 2px;cursor:pointer;transition:background-color .15s ease}
+    .ug-researcher-name:hover,.ug-researcher-name:focus-visible{background:color-mix(in srgb,var(--ug-accent,#36bafa) 48%,transparent);outline:0}
+    .content p{ line-height: 1.8; }
+
+    /* Sticky top nav */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255,255,255,.72);
+      border-bottom: 1px solid rgba(15,23,42,.08);
+      backdrop-filter: blur(10px);
+    }
+    .topbar .navbar-item, .topbar .navbar-link{ color: #0b1220; }
+    .topbar .navbar-item:hover, .topbar .navbar-link:hover{ background: rgba(37,99,235,.06); }
+
+    /* Section title divider (your “simple title split”) */
+    .section-title{
+      text-align: center;
+      padding-bottom: .75rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(15,23,42,.08);
+    }
+    .section-subtitle{
+      margin-top: -0.9rem;
+      text-align:center;
+      color: var(--muted);
+    }
+
+    /* Media */
+    img, video{
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+    }
+    figure img{ width: 100%; height: auto; display:block; }
+    video{ width: 100%; height: auto; }
+    .media-16x9{
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    /* Hero video area (no "Teaser" title) */
+    .hero-video{
+      margin-top: 1.6rem;
+    }
+
+    /* Inline badges */
+    .badge-row{ display:flex; flex-wrap:wrap; gap: 10px; justify-content:center; margin: 1rem 0 1.25rem; }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: .4rem .7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,.08);
+      background: rgba(255,255,255,.7);
+      color: #0b1220;
+      font-size: .9rem;
+    }
+    .badge i{ color: var(--brand); }
+
+    /* BibTeX */
+    #bibtex-code{
+      background: #0b1220;
+      color: #e2e8f0;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem;
+      border: 1px solid rgba(148,163,184,.18);
+      overflow: auto;
+    }
+    .bibtex-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      margin-bottom: .75rem;
+    }
+    .copy-bibtex-btn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.9);
+      border-radius: 999px;
+      padding: .55rem .9rem;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .copy-bibtex-btn:hover{
+      transform: translateY(-1px);
+      box-shadow: 0 10px 28px rgba(2,6,23,.10);
+    }
+
+    /* Floating buttons */
+    .scroll-to-top{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      box-shadow: var(--shadow2);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform .15s ease, opacity .15s ease;
+      z-index: 80;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .scroll-to-top.is-visible{
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .scroll-to-top:hover{ transform: translateY(-2px); }
+
+    /* More Works */
+    .more-works-container{
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 80;
+    }
+    .more-works-btn{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      border-radius: 999px;
+      padding: .6rem 1rem;
+      box-shadow: var(--shadow2);
+      cursor: pointer;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .more-works-dropdown{
+      width: min(420px, calc(100vw - 36px));
+      margin-top: 10px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.92);
+      box-shadow: 0 14px 40px rgba(2,6,23,.12);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      display: none;
+    }
+    .more-works-dropdown.is-open{ display:block; }
+    .dropdown-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(15,23,42,.06);
+    }
+    .dropdown-header h4{ margin: 0; font-size: 1rem; font-weight: 700; }
+    .close-btn{
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 10px;
+    }
+    .close-btn:hover{ background: rgba(37,99,235,.06); }
+    .work-item{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap: 14px;
+      padding: 14px 16px;
+      border-top: 1px solid rgba(15,23,42,.06);
+      color: inherit;
+    }
+    .work-item:hover{ background: rgba(37,99,235,.06); }
+    .work-info h5{ margin: 0 0 6px; font-weight: 700; }
+    .work-info p{ margin: 0 0 6px; color: var(--muted); }
+    .work-venue{ font-size: .9rem; color: #111827; opacity: .9; }
+
+    /* Small fixes */
+    .eql-cntrb small{ color: var(--muted); }
+    .footer{
+      background: transparent;
+      padding-bottom: 3rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px){
+      .hero-body{ padding-top: 3.5rem; padding-bottom: 2.2rem; }
+      .section{ padding: 3.0rem 1rem; }
+      .publication-title{ font-size: 2.05rem !important; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    /* 防止浮层容器变成“透明挡板” */
+    .more-works-container { pointer-events: none; }
+    .more-works-container * { pointer-events: auto; }
+    .scroll-to-top { pointer-events: auto; }
+  </style>
+
+  <!-- Structured Data for Academic Papers -->
+
+  <!-- Defer JS -->
+
+
+
+
+
+
+  <!-- Small self-contained helpers -->
+
+<style>
+[data-source-highlight] { background: color-mix(in srgb,var(--ug-accent,#36bafa) 35%,transparent); color: inherit; border-radius: .15em; box-shadow: inset 0 -.08em 0 var(--ug-accent,#36bafa); cursor: pointer; transition: background .15s, box-shadow .15s; }
+[data-source-highlight]:hover, [data-source-highlight]:focus-visible, [data-source-highlight][aria-pressed="true"] { background: color-mix(in srgb,var(--ug-accent,#36bafa) 60%,transparent); box-shadow: inset 0 -.11em 0 var(--ug-accent,#36bafa), 0 0 0 2px color-mix(in srgb,var(--ug-accent,#36bafa) 36%,transparent); outline: none; }
+</style>
+</head>
+
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <nav class="navbar topbar" role="navigation" aria-label="main navigation">
+    <div class="container is-max-desktop">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#top" aria-label="Go to top">
+          <strong>VL-LN Bench</strong>
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="topNavMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="topNavMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#abstract">Abstract</a>
+          <a class="navbar-item" href="#task-intro">Task</a>
+          <a class="navbar-item" href="#vl-ln-benchmark">Benchmark</a>
+          <a class="navbar-item" href="#evaluation">Evaluation</a>
+          <a class="navbar-item" href="#BibTeX">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <!-- <div class="more-works-container" aria-label="More works">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View more works from our lab" aria-haspopup="true" aria-controls="moreWorksDropdown">
+      <i class="fas fa-flask" aria-hidden="true"></i>
+      <span>More Works</span>
+      <i class="fas fa-chevron-down" aria-hidden="true"></i>
+    </button>
+
+    <div class="more-works-dropdown" id="moreWorksDropdown" role="menu" aria-label="More works dropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()" aria-label="Close">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank" rel="noreferrer">
+          <div class="work-info">
+            <h5>Paper Title 1</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank" rel="noreferrer">
+          <div class="work-info">
+            <h5>Paper Title 2</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank" rel="noreferrer">
+          <div class="work-info">
+            <h5>Paper Title 3</h5>
+            <p>Brief description of the work and its main contribution.</p>
+            <span class="work-venue">Conference/Journal 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div> -->
+
+  <main id="top">
+
+    <!-- HERO -->
+     <!-- TOP VIDEO (no title, no card wrapper) -->
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+
+              <h1 class="title is-1 publication-title">
+                VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs
+              </h1>
+
+              <div class="badge-row" aria-label="Highlights">
+                <span class="badge"><i class="fas fa-compass" aria-hidden="true"></i> Long-horizon</span>
+                <span class="badge"><i class="fas fa-comments" aria-hidden="true"></i> Active Dialog</span>
+                <span class="badge"><i class="fas fa-cubes" aria-hidden="true"></i> Instance-level</span>
+                <span class="badge"><i class="fas fa-robot" aria-hidden="true"></i> Embodied Agent</span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="wensi-huang">Wensi Huang</button><sup>1,2*</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="shaohao-zhu">Shaohao Zhu</button><sup>2,3*</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="meng-wei">Meng Wei</button><sup>2,4</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="jinming-xu">Jinming Xu</button><sup>3</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="xihui-liu">Xihui Liu</button><sup>4</sup>,</span><br />
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="hanqing-wang">Hanqing Wang</button><sup>2+</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="tai-wang">Tai Wang</button><sup>2+</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="feng-zhao">Feng Zhao</button><sup>1+</sup>,</span>
+                <span class="author-block"><button type="button" class="ug-researcher-name" data-researcher="jiangmiao-pang">Jiangmiao Pang</button><sup>2</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors" style="margin-top: .75rem;">
+                <span class="author-block"><sup>1</sup>University of Science and Technology of China</span>
+                <span class="author-block"><sup>2</sup>Shanghai AI Laboratory</span>
+                <span class="author-block"><sup>3</sup>Zhejiang University</span>
+                <span class="author-block"><sup>4</sup>The University of Hong Kong</span>
+
+                <span class="eql-cntrb">
+                  <small>
+                    <br />
+                    <span style="font-size: 1.05em;"><sup>*</sup>Equal Contribution</span>
+                    <span style="display:inline-block; width:12px;"></span>
+                    <span style="font-size: 1.05em;"><sup>+</sup>Corresponding Author</span>
+                  </small>
+                </span>
+              </div>
+
+              <div class="publication-links" style="margin-top: 1.25rem;">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2512.22342" target="_blank" rel="noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/InternRobotics/VL-LN" target="_blank" rel="noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/InternRobotics/VL-LN-Bench" target="_blank" rel="noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" style="vertical-align: middle; font-size: 20px;">🤗</span>
+                    <span style="vertical-align: middle;">Data</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/InternRobotics/VL-LN-Bench-basemodel" target="_blank" rel="noreferrer"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon" style="vertical-align: middle; font-size: 20px;">🤗</span>
+                    <span style="vertical-align: middle;">Model</span>
+                  </a>
+                </span>
+              </div>
+
+              <!-- <p class="has-text-centered" style="margin-top: 1.1rem; color: var(--muted);">
+                A benchmark and protocol for training & evaluating dialog-enabled embodied navigation agents under ambiguous instructions.
+              </p> -->
+              <section class="section video-section" aria-label="Project video">
+                <div class="container is-max-desktop">
+                  <video id="projectVideo"
+                        class="media-16x9"
+                        controls
+                        muted
+                        loop
+                        preload="metadata"
+                        playsinline
+                        aria-label="Project video">
+                    <source src="static/videos/vlln.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </section>
+              <!-- Video (no "Teaser" title) -->
+              <!-- <div class="hero-video">
+                <video class="media-16x9" controls muted loop preload="metadata" poster="" aria-label="Project video">
+                  <source src="static/videos/vlln.mp4" type="video/mp4" />
+                </video>
+              </div> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABSTRACT -->
+    <section class="section" id="abstract">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In most existing embodied navigation tasks, instructions are well-defined and unambiguous, such as instruction following and object searching.
+            Under this idealized setting, agents are required solely to produce effective navigation outputs conditioned on vision and language inputs.
+            However, real-world navigation instructions are often <mark data-source-highlight="0" tabindex="0" role="button" aria-label="Explain vague and ambiguous" aria-pressed="false">vague and ambiguous</mark>, requiring the agent to resolve uncertainty and infer user intent through <mark data-source-highlight="1" tabindex="0" role="button" aria-label="Explain active dialog" aria-pressed="false">active dialog</mark>.
+            To address this gap, we propose Interactive Instance Goal Navigation (IIGN),
+            a task that requires agents not only to generate navigation actions but also to produce language outputs via active dialog,
+            thereby aligning more closely with practical settings. IIGN extends Instance Goal Navigation (IGN) by allowing agents to freely consult an oracle in natural language while navigating.
+            Building on this task, we present the Vision Language-Language Navigation (VL-LN) benchmark, which provides a large-scale,
+            automatically generated dataset and a comprehensive evaluation protocol for training and assessing dialog-enabled navigation models.
+            VL-LN comprises over <mark data-source-highlight="2" tabindex="0" role="button" aria-label="Explain 41k long-horizon" aria-pressed="false">41k long-horizon</mark> dialog-augmented trajectories for training and an automatic evaluation protocol with an oracle capable of responding to agent queries.
+            Using this benchmark, we train a navigation model equipped with dialog capabilities and show that it achieves significant improvements over the baselines.
+            Extensive experiments and analyses further demonstrate the effectiveness and reliability of VL-LN for advancing research on dialog-enabled embodied navigation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASK INTRO -->
+    <section class="section" id="task-intro">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 section-title">Task Introduction</h2>
+
+        <figure>
+          <img src="static/images/first_image.png" alt="Overview of IIGN task and oracle interactions" loading="lazy" />
+          <figcaption class="has-text-left" style="margin-top: .85rem; color: var(--muted);">
+            We propose <strong>Interactive Instance Goal Navigation (IIGN)</strong>: an agent explores an unknown scene to find a specific object instance,
+            asking an all-knowing oracle when uncertain. The oracle knows the scene and the agent's state, gives the initial goal (e.g., “Search for the chair”),
+            and answers three question types (<strong>attribute</strong>, <strong>route</strong>, and <strong>disambiguation</strong>) to resolve ambiguity and guide the agent to the target.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- VL-LN BENCHMARK -->
+    <section class="section" id="vl-ln-benchmark">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 section-title">VL-LN Benchmark</h2>
+
+        <!-- Data Generation -->
+        <section id="data-generation" style="margin-top: 2rem;">
+          <h3 class="title is-4">Data Generation</h3>
+
+          <figure>
+            <img src="static/images/data_process.png" alt="Data generation pipeline overview" loading="lazy" />
+          </figure>
+
+          <div class="content is-size-6" style="margin-top: 1rem;">
+            <p>
+              To collect data for policy training, we use a three-step data generation pipeline:
+              (i) aggregate hierarchical room-level labels into house-level meta-annotations;
+              (ii) pair each target instance with a start point to form episodes; and
+              (iii) run a frontier-based exploration (FBE) agent to explore unknown scenes and, via rule-based prompts,
+              generate Q&amp;A to produce dialog-augmented trajectories.
+            </p>
+          </div>
+
+          <div id="results-carousel" class="carousel results-carousel" aria-label="Dialog-augmented trajectory examples">
+            <div class="item">
+              <video class="media-16x9" controls muted loop preload="metadata" poster="" aria-label="Example trajectory 1">
+                <source src="static/videos/1.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="item">
+              <video class="media-16x9" controls muted loop preload="metadata" poster="" aria-label="Example trajectory 2">
+                <source src="static/videos/2.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="item">
+              <video class="media-16x9" controls muted loop preload="metadata" poster="" aria-label="Example trajectory 3">
+                <source src="static/videos/4.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="item">
+              <video class="media-16x9" controls muted loop preload="metadata" poster="" aria-label="Example trajectory 4">
+                <source src="static/videos/3.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <div class="content is-size-6" style="margin-top: 1rem;">
+            <p>
+              Below we show <strong>summary statistics</strong> for the collected trajectories—path length, step count, number of dialog turns, per-turn dialog length,
+              and the distributions of object types and question types.
+            </p>
+          </div>
+
+          <div class="columns is-multiline is-variable is-5">
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/path_length.png" alt="Path length distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Path length distribution.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/steps.png" alt="Step count distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Step count distribution.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/dialog_turns.png" alt="Dialog turns distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Dialog turns per trajectory.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/dialog_length.png" alt="Dialog length distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Per-turn dialog length.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/object_types.png" alt="Object type distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Object type distribution.
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="column is-one-third">
+              <figure>
+                <img src="static/images/question_types.png" alt="Question type distribution" loading="lazy" />
+                <figcaption class="has-text-centered" style="margin-top: .5rem; color: var(--muted);">
+                  Question type distribution.
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- Policy Training -->
+        <section id="policy-training" style="margin-top: 2.5rem;">
+          <h3 class="title is-4">Policy Training</h3>
+          <div class="content is-size-6">
+            <p>
+              We employ <strong>Qwen2.5-VL-7B-Instruct</strong> as our baseline model and train it following the InternVLA-N1 procedure,
+              but with a different data mixture comprising visual-language navigation, goal-oriented navigation, and IIGN data.
+            </p>
+          </div>
+        </section>
+
+        <!-- Evaluation -->
+        <section id="evaluation" style="margin-top: 2.5rem;">
+          <h3 class="title is-4">Evaluation</h3>
+
+          <div class="columns is-multiline">
+
+            <div class="column is-6">
+              <div class="content has-text-centered">
+                <video class="media-16x9" autoplay controls muted loop preload="metadata" poster="" aria-label="Evaluation: Search for the couch">
+                  <source src="static/videos/3895.mp4" type="video/mp4" />
+                </video>
+                <p class="subtitle" style="margin-top: .6rem;">🤖 Search for the couch.</p>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="content has-text-centered">
+                <video class="media-16x9" autoplay controls muted loop preload="metadata" poster="" aria-label="Evaluation: Search for the oven">
+                  <source src="static/videos/3874.mp4" type="video/mp4" />
+                </video>
+                <p class="subtitle" style="margin-top: .6rem;">🤖 Search for the oven.</p>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="content has-text-centered">
+                <video class="media-16x9" autoplay controls muted loop preload="metadata" poster="" aria-label="Evaluation: Search for the plant">
+                  <source src="static/videos/6035.mp4" type="video/mp4" />
+                </video>
+                <p class="subtitle" style="margin-top: .6rem;">🤖 Search for the plant.</p>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="content has-text-centered">
+                <video class="media-16x9" autoplay controls muted loop preload="metadata" poster="" aria-label="Evaluation: Search for the fireplace">
+                  <source src="static/videos/4770.mp4" type="video/mp4" />
+                </video>
+                <p class="subtitle" style="margin-top: .6rem;">🤖 Search for the fireplace.</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- BIBTEX -->
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 section-title">BibTeX</h2>
+
+        <div class="bibtex-header">
+          <p class="section-subtitle" style="margin:0;">Copy &amp; cite the paper.</p>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard" aria-label="Copy BibTeX">
+            <i class="fas fa-copy" aria-hidden="true"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+
+        <pre id="bibtex-code"><code>@misc{huang2025vllnbenchlonghorizongoaloriented,
+      title={VL-LN Bench: Towards Long-horizon Goal-oriented Navigation with Active Dialogs},
+      author={Wensi Huang and Shaohao Zhu and Meng Wei and Jinming Xu and Xihui Liu and Hanqing Wang and Tai Wang and Feng Zhao and Jiangmiao Pang},
+      year={2025},
+      eprint={2512.22342},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2512.22342},
+}</code></pre>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container is-max-desktop">
+        <div class="content has-text-centered" style="color: var(--muted);">
+          <p>
+            This page was built using the
+            <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noreferrer">Academic Project Page Template</a>
+            adopted from the
+            <a href="https://nerfies.github.io" target="_blank" rel="noreferrer">Nerfies</a>
+            project page. Please link back if you reuse it.<br />
+            Licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a>.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+
+<script>
+(() => {
+  const syncTheme = () => {
+    try {
+      const parentTheme = getComputedStyle(parent.document.documentElement);
+      const accent = parentTheme.getPropertyValue('--theme-accent-text').trim() || parentTheme.getPropertyValue('--sky').trim();
+      if (accent) document.documentElement.style.setProperty('--ug-accent', accent);
+    } catch { /* Standalone reader keeps its default accent. */ }
+  };
+  syncTheme();
+  try { new MutationObserver(syncTheme).observe(parent.document.documentElement, {attributes:true,attributeFilter:['data-theme','data-light-theme','data-theme-family']}); } catch {}
+  const marks = document.querySelectorAll('[data-source-highlight]');
+  const send = (action, index) => parent.postMessage({type:'ug-source-highlight', action, index}, location.origin);
+  marks.forEach(mark => {
+    const index = Number(mark.dataset.sourceHighlight);
+    mark.addEventListener('mouseenter', () => send('hover', index));
+    mark.addEventListener('mouseleave', () => send('leave', index));
+    mark.addEventListener('focus', () => send('hover', index));
+    mark.addEventListener('blur', () => send('leave', index));
+    mark.addEventListener('click', () => send('toggle', index));
+    mark.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); send('toggle', index); } });
+  });
+  document.querySelectorAll('[data-researcher]').forEach(name => {
+    const report = action => {
+      const rect = name.getBoundingClientRect();
+      parent.postMessage({type:'ug-researcher', action, id:name.dataset.researcher, rect:{left:rect.left,top:rect.top,right:rect.right,bottom:rect.bottom}}, location.origin);
+    };
+    name.addEventListener('mouseenter', () => report('hover'));
+    name.addEventListener('mouseleave', () => report('leave'));
+    name.addEventListener('focus', () => report('hover'));
+    name.addEventListener('blur', () => report('leave'));
+    name.addEventListener('click', event => {event.preventDefault();event.stopPropagation();report('open')});
+  });
+  window.addEventListener('message', event => {
+    if (event.origin !== location.origin || event.data?.type !== 'ug-source-selection') return;
+    marks.forEach(mark => mark.setAttribute('aria-pressed', String(Number(mark.dataset.sourceHighlight) === event.data.index)));
+  });
+})();
+</script>
+</body>
+</html>

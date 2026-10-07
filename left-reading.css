@@ -1,0 +1,69 @@
+/* Left-panel reading controls and handwritten annotation views. */
+.post-reading-head{display:flex;align-items:center;min-width:0;gap:12px}
+.post-reading-head .post-avatar-link{order:0;flex:0 0 43px;margin:0}
+.post-reading-head .post-author{order:1;flex:0 1 auto;min-width:0}
+.post-reading-head .post-view-controls{order:2;display:flex;align-items:center;gap:3px;flex:0 0 auto;margin-left:auto}
+.post-reading-head .post-x-logo{order:3;flex:0 0 43px;margin:0}
+.post-view-control{display:grid;place-items:center;flex:0 0 31px;width:31px;height:34px;padding:3px;border:0;border-radius:3px;background:transparent;color:var(--theme-text,#fff);font-size:15px;font-weight:750;line-height:1;cursor:pointer;transition:background .16s ease,color .16s ease}
+.post-view-control svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.post-view-control:hover:not(:disabled),.post-view-control:focus-visible{background:var(--sky-soft);color:var(--theme-text,#fff)}
+.post-view-control[aria-pressed=true],.post-view-control[aria-pressed=true]:hover,.post-view-control[aria-pressed=true]:focus-visible{background:var(--sky-soft);color:var(--theme-text,#fff)}
+.post-view-control:disabled{opacity:.28;cursor:default}
+:root[data-light-theme=true] .post-view-control,
+:root[data-light-theme=true] .post-view-control:hover:not(:disabled){color:#172026}
+:root[data-light-theme=true] .post-view-control[aria-pressed=true]{color:var(--light-ink,#172026)}
+.post-body{min-width:0;opacity:1;transform:translateY(0);transition:opacity .18s ease,transform .18s ease}
+#feed.is-view-changing .post-body{opacity:0;transform:translateY(5px)}
+.feed-item[data-left-view=teen] .post-quick-summary{display:none!important}
+.feed-item[data-left-view=teen] .post-reading .post-text.teen-post-text{font-size:clamp(26px,2.1vw,38px);line-height:1.4;letter-spacing:-.025em;max-width:31ch}
+.post-highlight,.post-highlight.is-active{box-shadow:none!important;text-decoration:none!important}
+.post-highlight *{text-decoration:none!important}
+.scribble-text{font-size:clamp(22px,1.85vw,31px);font-weight:430;line-height:1.43;overflow-wrap:anywhere;color:var(--theme-text,#fff)}
+.scribble-line{display:grid;grid-template-areas:'main main' 'left right';grid-template-columns:1fr 1fr;column-gap:16px;row-gap:4px;align-items:start;margin:0 0 .78em}
+.scribble-main{grid-area:main;white-space:pre-wrap;min-width:0}
+.scribble-left{grid-area:left}
+.scribble-right{grid-area:right}
+.scribble-left,.scribble-right{display:flex;flex-direction:column;gap:8px;min-width:0}
+.scribble-left:empty,.scribble-right:empty{display:none}
+.scribble-gap{height:.48em}
+.scribble-ring{display:inline;border:1.6px solid currentColor;border-radius:46% 56% 47% 53% / 56% 46% 54% 44%;padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone;text-decoration:none;white-space:normal}
+.scribble-note{position:relative;display:block;max-width:32ch;margin:2px 0 0 16px;color:var(--theme-text,#fff);font-family:'Bradley Hand','Chalkboard SE','Marker Felt','Comic Sans MS',cursive;font-size:clamp(13px,1vw,17px);font-weight:500;line-height:1.15;letter-spacing:.005em}
+.scribble-note::before{content:'↳';position:absolute;right:calc(100% + 3px);top:-.2em;font-family:inherit;font-size:1.25em}
+#viewer[data-left-view=whiteboard]{grid-template-columns:minmax(0,61fr) minmax(0,39fr)}
+.feed-item[data-left-view=whiteboard]{padding-left:clamp(22px,2.6vw,48px);padding-right:clamp(22px,2.6vw,48px)}
+.feed-item[data-left-view=whiteboard] .scribble-text{font-size:clamp(20px,1.55vw,29px);line-height:1.36}
+.feed-item[data-left-view=whiteboard] .scribble-line{grid-template-areas:'left main right';grid-template-columns:minmax(90px,17%) minmax(0,1fr) minmax(90px,17%);gap:14px;align-items:center;margin-bottom:.28em}
+.feed-item[data-left-view=whiteboard] .scribble-note{margin:0;font-size:clamp(11px,.8vw,14px);line-height:1.2}
+.feed-item[data-left-view=whiteboard] .scribble-left .scribble-note{text-align:right}
+.feed-item[data-left-view=whiteboard] .scribble-left .scribble-note::before{content:'';position:absolute;top:50%;right:-13px;width:11px;border-top:1px solid currentColor;transform:rotate(-15deg)}
+.feed-item[data-left-view=whiteboard] .scribble-right .scribble-note::before{content:'';position:absolute;top:50%;left:-13px;right:auto;width:11px;border-top:1px solid currentColor;transform:rotate(15deg)}
+#viewer[data-left-view=whiteboard] #insights{padding-left:12px;padding-right:12px}
+#viewer[data-left-view=whiteboard] :is(.qa-preview .threads.list .thread-question,.qa-preview .threads.list.qa-view-grid .thread-question,.related-post-body,.storyline-card-title){font-size:clamp(17px,1.2vw,23px)!important;line-height:1.28}
+#viewer[data-left-view=whiteboard] :is(.qa-preview .threads.list .thread-answer p,.qa-preview .threads.list.qa-view-grid .thread-answer p){font-size:clamp(14px,.98vw,18px)!important;line-height:1.4}
+#viewer[data-left-view=whiteboard] :is(.qa-preview .threads.list .thread,.related-post,.storyline-step){padding-left:12px;padding-right:12px}
+@media(max-width:1000px){#viewer[data-left-view=whiteboard]{grid-template-columns:minmax(0,56fr) minmax(0,44fr)}.feed-item[data-left-view=whiteboard] .scribble-line{grid-template-columns:minmax(65px,15%) minmax(0,1fr) minmax(65px,15%);gap:8px}.post-reading-head{gap:7px}.post-view-control{width:28px;flex-basis:28px}}
+@media(max-width:650px){#viewer[data-left-view=whiteboard]{grid-template-columns:1fr}.feed-item[data-left-view=whiteboard] .scribble-line{grid-template-areas:'main main' 'left right';grid-template-columns:1fr 1fr;margin-bottom:.7em}.feed-item[data-left-view=whiteboard] .scribble-left .scribble-note{text-align:left}.feed-item[data-left-view=whiteboard] .scribble-note{font-size:13px}.feed-item[data-left-view=whiteboard] .scribble-left .scribble-note::before,.feed-item[data-left-view=whiteboard] .scribble-right .scribble-note::before{content:'↳';position:absolute;top:-.2em;left:-16px;right:auto;width:auto;border:0;transform:none}.post-reading-head .post-avatar-link,.post-reading-head .post-x-logo{flex-basis:36px;width:36px;height:36px}.post-reading-head .post-avatar-link .avatar{width:36px;height:36px}.post-reading-head .post-x-logo .x-mark{width:25px;height:25px}.post-view-control{width:26px;flex-basis:26px;height:30px}.post-view-control svg{width:18px;height:18px}}
+@media(prefers-reduced-motion:reduce){.post-body{transition:none}.post-view-control{transition:none}}
+
+/* Post links share the same themed hover surface as View on X. */
+.post-reading-actions a:has(time),
+.post-reading .post-text a{border-radius:3px;text-decoration:none}
+.post-reading-actions a:has(time){padding:3px 5px}
+.post-reading-actions a:has(time):hover,
+.post-reading-actions a:has(time):focus-visible,
+.post-reading .post-text a:hover,
+.post-reading .post-text a:focus-visible,
+.post-reading-head .post-x-logo:hover,
+.post-reading-head .post-x-logo:focus-visible{background:var(--sky-soft);text-decoration:none}
+.post-reading .post-text a{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.post-reading .post-text a:hover,.post-reading .post-text a:focus-visible{text-decoration:none}
+.post-reading-head .post-x-logo{flex:0 0 31px;width:31px;height:34px;border-radius:3px}
+.post-reading-head .post-x-logo .x-mark{width:20px;height:20px}
+
+/* The whole two-line author label is one link; hovering the portrait highlights only that label. */
+.post-reading-head .post-author{padding:4px 8px;margin:-4px -8px;border-radius:3px;text-decoration:none}
+.post-reading-head .post-avatar-link:hover + .post-author,
+.post-reading-head .post-avatar-link:focus-visible + .post-author,
+.post-reading-head .post-author:hover,
+.post-reading-head .post-author:focus-visible{background:var(--sky-soft);text-decoration:none}
+@media(max-width:650px){.post-reading-head .post-x-logo{flex-basis:26px;width:26px;height:30px}.post-reading-head .post-x-logo .x-mark{width:18px;height:18px}}

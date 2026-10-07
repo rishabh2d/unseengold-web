@@ -1,0 +1,161 @@
+/* Core reading palettes. Blue remains the original default. */
+:root[data-theme=black]{color-scheme:dark;--blue-page:#0d0e10;--blue-panel:#191b1f;--blue-deep:#090a0d;--blue-ink:#111215;--blue-line:rgba(238,241,244,.27);--sky:#e8edf1;--sky-soft:rgba(235,241,245,.19);--button-hover:rgba(235,241,245,.12);--theme-text:#f5f6f7;--theme-muted:#b7bec4;--theme-accent-text:#f1f4f6}
+:root[data-theme=gold]{color-scheme:dark;--blue-page:#2b1906;--blue-panel:#402606;--blue-deep:#1d1003;--blue-ink:#321c02;--blue-line:rgba(255,204,98,.43);--sky:#ffd452;--sky-soft:rgba(255,212,82,.25);--button-hover:rgba(255,212,82,.15);--theme-text:#fffaf0;--theme-muted:#f3dcad;--theme-accent-text:#ffe17a}
+:root[data-theme=white]{color-scheme:light;--blue-page:#f6f8fb;--blue-panel:#fff;--blue-deep:#e9eef5;--blue-ink:#152842;--blue-line:rgba(30,59,91,.24);--sky:#b7e9ff;--sky-soft:rgba(38,142,206,.17);--button-hover:rgba(38,142,206,.1);--theme-text:#17283d;--theme-muted:#586d81;--theme-accent-text:#196c9d}
+:root[data-theme=silver]{color-scheme:light;--blue-page:#e5eced;--blue-panel:#f5f8f7;--blue-deep:#d4dfe1;--blue-ink:#263943;--blue-line:rgba(72,102,109,.4);--sky:#c9dade;--sky-soft:rgba(90,127,134,.18);--button-hover:rgba(90,127,134,.13);--theme-text:#263943;--theme-muted:#5d7279;--theme-accent-text:#41636d}
+
+:root[data-theme]:not([data-theme=blue]) body,
+:root[data-theme]:not([data-theme=blue]) .post-stage,
+:root[data-theme]:not([data-theme=blue]) #insights{background-color:var(--blue-page);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) :is(.topbar,.folder-bar){background:var(--blue-deep);border-color:var(--blue-line);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) :is(.folder-bar .folder-tile,#bottom-settings button,#bottom-settings .filterbar>a,.qa-view-tabs button,.discussion-content-tabs button,.source-mode-tabs button,.source-link-tabs button,.custom-view-switch button){background:var(--blue-panel);border-color:var(--blue-line);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) :is(.folder-bar .folder-tile,#bottom-settings button,#bottom-settings .filterbar>a,.qa-view-tabs button,.discussion-content-tabs button,.source-mode-tabs button,.source-link-tabs button,.custom-view-switch button):hover:not(:disabled):not([aria-pressed=true]){background:var(--button-hover);border-color:var(--blue-line);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) :is(.folder-bar .folder-tile,#bottom-settings button,.qa-view-tabs button,.discussion-content-tabs button,.source-mode-tabs button,.source-link-tabs button,.custom-view-switch button)[aria-pressed=true],
+:root[data-theme]:not([data-theme=blue]) .folder-bar .settings-toggle[aria-expanded=true],
+:root[data-theme]:not([data-theme=blue]) #bottom-settings button.active{background:var(--sky);border-color:var(--sky);color:var(--blue-ink)}
+:root[data-theme]:not([data-theme=blue]) .folder-bar .folder-tile[aria-pressed=true] .folder-icon-box,
+:root[data-theme]:not([data-theme=blue]) #bottom-settings button[aria-pressed=true] strong{color:var(--blue-ink)}
+:root[data-theme]:not([data-theme=blue]) .folder-bar :is(.folder-icon-box,.folder-bar-label,.folder-notice){color:var(--theme-muted)}
+:root[data-theme]:not([data-theme=blue]) .post-reading .post-quick-summary,
+:root[data-theme]:not([data-theme=blue]) :is(.gist-eyebrow,.gist-explanation-label,.source-viewer-kind,.source-explanation-label,.source-preview-head,.source-reader-eyebrow,.storyline-kicker,.storyline-sequence,.retweet-expanded-label){color:var(--theme-accent-text)}
+:root[data-theme]:not([data-theme=blue]) :is(.source-explanation-bar,.source-ask-form,.source-viewer,.source-preview,.x-source-form,.x-import-dialog){background:var(--blue-panel);border-color:var(--blue-line)}
+:root[data-theme]:not([data-theme=blue]) :is(.source-link-tabs,.source-mode-tabs,.source-viewer-bar){background:var(--blue-deep);border-color:var(--blue-line)}
+:root[data-theme]:not([data-theme=blue]) .source-reader-unavailable{background:linear-gradient(145deg,var(--blue-panel),var(--blue-deep))}
+:root[data-theme]:not([data-theme=blue]) .post-highlight{background:var(--sky-soft);box-shadow:inset 0 -2px 0 var(--sky)}
+:root[data-theme]:not([data-theme=blue]) :is(.qa-preview .threads.list .thread,.storyline-step,.related-post-list){border-color:var(--blue-line);background:var(--blue-panel);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list.qa-view-grid{background:var(--blue-page)}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list.qa-view-grid .thread:not(.revealed){background:transparent}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list.qa-view-grid .thread:not(.revealed):hover{background:var(--button-hover)}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread.revealed{background:var(--sky)}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread.revealed .thread-answer{background:transparent}
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread.revealed :is(.thread-question,.question-trigger,.thread-answer p){color:var(--blue-ink)!important}
+:root[data-theme]:not([data-theme=blue]) .related-post:hover{background:var(--button-hover)}
+:root[data-theme]:not([data-theme=blue]) .source-viewer .source-viewer-bar{background:#fff;color:#263943;border-bottom-color:var(--blue-line)}
+:root[data-theme]:not([data-theme=blue]) .source-viewer .source-viewer-bar :is(.source-viewer-kind,.source-viewer-name,.source-step,a){color:#263943}
+
+/* Light palettes need dark reading text throughout the post and discussion. */
+:root[data-theme=white] :is(.post-reading,.post-reading .post-text,.post-reading .post-text a,.post-author-copy strong,.post-x-logo,.post-reading-actions,.post-actions-likes,.post-gist,.gist-summary,.attachment-heading,.questions-section-heading,.source-viewer-name,.source-explanation-bar p,.source-preview,.source-preview-intro,.storyline-head h2,.storyline-step-copy strong,.more-like-this-head h2,.related-post-body,.related-post-identity strong,.grok-question-identity strong,.qa-preview .threads.list .thread-question,.qa-preview .threads.list .thread-direct-answer,.qa-preview .threads.list .thread-answer p),
+:root[data-theme=silver] :is(.post-reading,.post-reading .post-text,.post-reading .post-text a,.post-author-copy strong,.post-x-logo,.post-reading-actions,.post-actions-likes,.post-gist,.gist-summary,.attachment-heading,.questions-section-heading,.source-viewer-name,.source-explanation-bar p,.source-preview,.source-preview-intro,.storyline-head h2,.storyline-step-copy strong,.more-like-this-head h2,.related-post-body,.related-post-identity strong,.grok-question-identity strong,.qa-preview .threads.list .thread-question,.qa-preview .threads.list .thread-direct-answer,.qa-preview .threads.list .thread-answer p){color:var(--theme-text)}
+:root[data-theme=white] :is(.post-author-copy>span,.post-reading-actions time,.grok-question-identity>span,.grok-sample-note,.related-post-identity>span,.related-post-reason,.more-like-this-head p,.source-preview-caveat,.source-viewer-fallback,.source-viewer-count,.source-explanation-bar p,.storyline-head p,.storyline-step-note),
+:root[data-theme=silver] :is(.post-author-copy>span,.post-reading-actions time,.grok-question-identity>span,.grok-sample-note,.related-post-identity>span,.related-post-reason,.more-like-this-head p,.source-preview-caveat,.source-viewer-fallback,.source-viewer-count,.source-explanation-bar p,.storyline-head p,.storyline-step-note){color:var(--theme-muted)}
+:root[data-theme=white] .source-highlight,:root[data-theme=silver] .source-highlight{color:var(--theme-text);background:var(--sky-soft)}
+:root[data-theme=white] .source-summary p,:root[data-theme=silver] .source-summary p{color:var(--theme-text)}
+:root[data-theme=white] .source-summary>span,:root[data-theme=silver] .source-summary>span{color:var(--theme-accent-text)}
+:root[data-theme=white] .source-preview-intro,:root[data-theme=silver] .source-preview-intro{color:var(--theme-text)}
+:root[data-theme=white] .source-ask-form label,:root[data-theme=silver] .source-ask-form label{color:var(--theme-text)}
+:root[data-theme=white] .source-ask-form .source-ask-cancel,:root[data-theme=silver] .source-ask-form .source-ask-cancel{color:var(--theme-text)}
+:root[data-theme=white] .post-highlight,:root[data-theme=silver] .post-highlight{color:var(--theme-text)}
+:root[data-theme=white] .qa-preview .threads.list .thread-answer p,:root[data-theme=silver] .qa-preview .threads.list .thread-answer p{color:var(--theme-text)!important}
+:root[data-theme=white] .qa-preview .threads.list.qa-view-medium .thread-top,:root[data-theme=silver] .qa-preview .threads.list.qa-view-medium .thread-top{background:#fff}
+:root[data-theme=white] .qa-preview .threads.list.qa-view-medium .thread-answer,:root[data-theme=silver] .qa-preview .threads.list.qa-view-medium .thread-answer{background:var(--blue-panel)}
+
+/* Silver Seam follows SS7's brushed blue-gray metal and luminous center seam. */
+:root[data-theme=silver] .post-stage,:root[data-theme=silver] #insights{background-image:linear-gradient(90deg,rgba(81,111,118,.055) 1px,transparent 1px),linear-gradient(rgba(81,111,118,.055) 1px,transparent 1px),linear-gradient(112deg,#d5dfe0,#f7f9f8 44%,#d8e2e3);background-size:36px 36px,36px 36px,100% 100%}
+:root[data-theme=silver] .post-stage{border-right:3px solid #a1b2b6;box-shadow:2px 0 0 #fff,5px 0 14px #8da5aa80}
+:root[data-theme=silver] :is(.folder-bar,.topbar){background:linear-gradient(112deg,#d0dbdd,#f9fbfa 45%,#cedbdd)}
+:root[data-theme=silver] :is(.qa-preview .threads.list.qa-view-grid,.related-post-list){background:linear-gradient(112deg,#d8e1e2,#f9fbfa 50%,#d7e1e2)}
+
+/* Open reading cards keep the same resting surface in every palette. */
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread:not(.direct-answer-card),
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread:not(.direct-answer-card):hover{background:transparent;border-color:var(--blue-line)}
+:root[data-theme=white] .qa-preview .threads.list .thread-answer p,
+:root[data-theme=white] .qa-preview .threads.list .thread:hover .thread-answer p,
+:root[data-theme=silver] .qa-preview .threads.list .thread-answer p,
+:root[data-theme=silver] .qa-preview .threads.list .thread:hover .thread-answer p{color:var(--theme-text)!important}
+:root[data-theme=white] .grok-question-avatar img,
+:root[data-theme=silver] .grok-question-avatar img{filter:invert(1);mix-blend-mode:multiply}
+:root[data-theme=white] .retweets-section h2,
+:root[data-theme=silver] .retweets-section h2{color:var(--theme-text)}
+:root[data-theme=silver] .qa-preview .threads.list.qa-view-grid .thread:nth-child(5n),:root[data-theme=silver] .related-post:nth-child(5n){border-left:2px solid #c79c4f}
+:root[data-theme=silver] .qa-preview .threads.list.qa-view-grid .thread.revealed{box-shadow:inset 3px 0 #c79c4f}
+
+/* The palette menu lives in its own top-bar toggle and closes as soon as hover ends. */
+.folder-bar .theme-control{position:relative;flex:0 0 auto;margin-left:auto}
+.folder-bar .theme-toggle{margin-left:0}
+.folder-bar .settings-toggle{margin-left:0}
+.theme-control .theme-picker{display:none;position:absolute;top:100%;right:0;z-index:30;box-sizing:border-box;width:min(570px,calc(100vw - 20px));max-height:calc(100dvh - 86px);overflow-y:auto;padding:14px;border:1px solid var(--blue-line);border-radius:0 0 5px 5px;background:var(--blue-deep);box-shadow:0 18px 38px #0005;color:var(--theme-text,#fff);scrollbar-width:thin}
+.theme-control:hover .theme-picker,.theme-control.is-open .theme-picker{display:block}
+.theme-picker-title{display:block;margin:0 0 9px;color:var(--theme-muted,#c4def4);font:700 11px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}
+.theme-picker-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.theme-picker-options button{display:flex;align-items:center;gap:9px;min-width:0;width:100%;padding:8px 10px;border:1px solid var(--blue-line);border-radius:3px;background:var(--blue-panel);color:var(--theme-text,#fff);text-align:left;font-size:13px;cursor:pointer}
+.theme-picker-options button:hover:not([aria-pressed=true]){background:var(--button-hover)}
+.theme-picker-options button[aria-pressed=true]{background:var(--sky);border-color:var(--sky);color:var(--blue-ink);font-weight:750}
+.theme-swatch{display:block;flex:0 0 27px;width:27px;height:21px;border:1px solid var(--blue-line);border-radius:2px}
+.theme-swatch-black{background:linear-gradient(135deg,#0d0e10 56%,#e8edf1 56%)}
+.theme-swatch-blue{background:linear-gradient(135deg,#081b72 56%,#79dcff 56%)}
+.theme-swatch-gold{background:linear-gradient(135deg,#2b1906 52%,#ffd452 52%)}
+.theme-swatch-white{background:linear-gradient(135deg,#fff 56%,#b7e9ff 56%)}
+.theme-swatch-silver{background:linear-gradient(100deg,#d4dfe1,#fff 46%,#9baeb3 52%,#f7f9f8)}
+@media(max-width:650px){.theme-control .theme-picker{right:-48px;width:min(490px,calc(100vw - 12px))}.theme-picker-options{grid-template-columns:minmax(0,1fr)}}
+
+/* Storyline cards keep readable text and the same hover/selected palette. */
+:root[data-theme]:not([data-theme=blue]) .storyline-steps{background:var(--blue-page);border-color:var(--blue-line)}
+:root[data-theme]:not([data-theme=blue]) .storyline-item{border-color:var(--blue-line)}
+:root[data-theme]:not([data-theme=blue]) .storyline-item:hover:not(:has(.storyline-step[aria-current=step])){background:var(--button-hover)}
+:root[data-theme]:not([data-theme=blue]) .storyline-item:has(.storyline-step[aria-current=step]){background:var(--sky)}
+:root[data-theme]:not([data-theme=blue]) .storyline-window-button{background:var(--blue-panel);border-color:var(--blue-line);color:var(--theme-text)}
+:root[data-theme]:not([data-theme=blue]) .storyline-window-button:hover{background:var(--button-hover)}
+:root[data-theme=white] :is(.storyline-step,.storyline-card-title,.storyline-card-header .related-post-identity strong),
+:root[data-theme=silver] :is(.storyline-step,.storyline-card-title,.storyline-card-header .related-post-identity strong){color:var(--theme-text)}
+:root[data-theme=white] :is(.storyline-date,.storyline-step-meta,.storyline-card-header .storyline-step-action),
+:root[data-theme=silver] :is(.storyline-date,.storyline-step-meta,.storyline-card-header .storyline-step-action){color:var(--theme-accent-text)}
+:root[data-theme=white] :is(.storyline-date span,.storyline-step-note),
+:root[data-theme=silver] :is(.storyline-date span,.storyline-step-note){color:var(--theme-muted)}
+:root[data-theme]:not([data-theme=blue]) .storyline-item:has(.storyline-step[aria-current=step]) :is(.storyline-date,.storyline-date span,.storyline-step,.storyline-step-meta,.storyline-card-title,.storyline-step-note,.storyline-card-header .storyline-step-action,.storyline-card-header .related-post-identity strong,.storyline-card-header .related-post-identity>span){color:var(--blue-ink)}
+
+/* Keep question hover and answer accents consistent across the reading palettes. */
+:root[data-theme]:not([data-theme=blue]) .qa-preview .threads.list .thread:not(.direct-answer-card):is(:hover,:focus-within){background:var(--button-hover)}
+:root[data-theme=white] .qa-preview .threads.list .thread:not(.direct-answer-card) .thread-answer p,
+:root[data-theme=white] .qa-preview .threads.list .thread:not(.direct-answer-card):hover .thread-answer p,
+:root[data-theme=silver] .qa-preview .threads.list .thread:not(.direct-answer-card) .thread-answer p,
+:root[data-theme=silver] .qa-preview .threads.list .thread:not(.direct-answer-card):hover .thread-answer p{color:var(--theme-accent-text)!important}
+:root[data-theme=white] .discussion-content-toolbar .questions-section-heading,
+:root[data-theme=silver] .discussion-content-toolbar .questions-section-heading{color:var(--theme-text)}
+:root[data-theme=white] .grok-question-arrow,
+:root[data-theme=silver] .grok-question-arrow{color:var(--theme-accent-text)}
+
+/* Every light palette uses dark reading text and dark line icons, including hover. */
+:root[data-light-theme=true]{--light-ink:#172026;--light-muted:#3e4a4c;--blue-ink:var(--light-ink);--theme-text:var(--light-ink);--theme-muted:var(--light-muted);--theme-accent-text:var(--light-ink)}
+:root[data-light-theme=true] :is(.post-reading,.post-reading .post-text,.post-reading .post-text a,.post-author-copy strong,.post-x-logo,.post-avatar-link,.post-reading-actions,.post-actions-likes,.post-gist,.gist-summary,.attachment-heading,.questions-section-heading,.source-viewer-name,.source-explanation-bar p,.source-preview,.source-preview-intro,.source-ask-form label,.source-ask-form textarea,.source-ask-form .source-ask-cancel,.x-source-form input,.storyline-head h2,.storyline-progress,.storyline-step,.storyline-card-title,.storyline-card-header .related-post-identity strong,.more-like-this-head h2,.related-post,.related-post-body,.related-post-avatar,.related-post-identity strong,.related-post-arrow,.grok-question-profile,.grok-question-identity strong,.grok-question-arrow,.retweets-section h2,.retweet-card,.qa-preview .threads.list .thread-question,.qa-preview .threads.list .thread-direct-answer,.qa-preview .threads.list .thread-answer p,.discussion-content-toolbar .questions-section-heading,.related-path,.related-path button){color:var(--light-ink)}
+:root[data-light-theme=true] :is(.post-author-copy>span,.post-reading-actions time,.grok-question-identity>span,.grok-sample-note,.related-post-identity>span,.related-post-reason,.more-like-this-head p,.source-preview-caveat,.source-viewer-fallback,.source-viewer-count,.storyline-head p,.storyline-step-note,.storyline-date span,.storyline-hint,.related-path span){color:var(--light-muted)}
+:root[data-light-theme=true] :is(.post-x-logo,.post-avatar-link,.related-post-arrow,.grok-question-arrow,.related-post-avatar,.folder-icon-box,.settings-toggle svg,.theme-toggle svg,.source-step,.source-step svg,.source-viewer-bar svg,.source-viewer-bar button svg,.nav-arrow svg){color:var(--light-ink);stroke:currentColor}
+:root[data-light-theme=true] .folder-bar .folder-icon-box{color:var(--light-ink)}
+:root[data-light-theme=true] .folder-bar .settings-toggle,
+:root[data-light-theme=true] .folder-bar .settings-toggle:hover,
+:root[data-light-theme=true] .folder-bar .settings-toggle[aria-expanded=true]{color:var(--light-ink)}
+:root[data-light-theme=true] .source-summary p,
+:root[data-light-theme=true] .source-highlight,
+:root[data-light-theme=true] .post-highlight{color:var(--light-ink)}
+:root[data-light-theme=true] .qa-preview .threads.list .thread-answer p,
+:root[data-light-theme=true] .qa-preview .threads.list .thread:hover .thread-answer p,
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-grid .thread:hover:not(.hover-suppressed) .thread-answer p{color:var(--light-ink)!important}
+:root[data-light-theme=true] .qa-preview .threads.list .thread:not(.direct-answer-card):hover .thread-answer p{color:var(--light-ink)!important}
+
+/* Retweet cards and the expanded preview use the same palette as the rest of the discussion. */
+:root[data-theme] .retweet-list .retweet-card{background:var(--blue-panel);border-color:var(--blue-line);color:var(--theme-text,#fff)}
+:root[data-theme] .retweet-list .retweet-card:hover:not([aria-pressed=true]){background:var(--button-hover);border-color:var(--blue-line);color:var(--theme-text,#fff)}
+:root[data-theme] .retweet-list .retweet-card[aria-pressed=true]{background:var(--sky-soft);border-color:var(--sky);color:var(--theme-text,#fff)}
+:root[data-theme] .retweet-card-text,
+:root[data-theme] .retweet-expanded :is(strong,p){color:var(--theme-text,#fff)}
+:root[data-theme] .retweet-card-top span{color:var(--theme-muted,#c4def4)}
+:root[data-theme] .retweet-expanded{background:var(--sky-soft);border-color:var(--sky);color:var(--theme-text,#fff)}
+:root[data-theme] .retweet-expanded-label{color:var(--theme-accent-text,var(--sky))}
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-grid .thread-question,
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-grid .thread:hover:not(.hover-suppressed) .thread-question,
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-grid .thread.revealed .thread-question,
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-grid .direct-answer-card .thread-direct-answer{color:var(--light-ink)}
+:root[data-light-theme=true] .grok-question-avatar img{filter:invert(1);mix-blend-mode:multiply}
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-medium .thread-top{background:#fff}
+:root[data-light-theme=true] .qa-preview .threads.list.qa-view-medium .thread-answer{background:var(--blue-panel)}
+:root[data-light-theme=true] :is(.qa-view-tabs,.discussion-content-tabs,.source-mode-tabs,.source-link-tabs,.custom-view-switch) button:hover:not(:disabled):not([aria-pressed=true]){color:var(--light-ink)}
+:root[data-light-theme=true] .related-post:hover,
+:root[data-light-theme=true] .related-post:focus-visible{color:var(--light-ink);background:var(--button-hover)}
+:root[data-light-theme=true] .related-post:hover :is(.related-post-body,.related-post-identity strong,.related-post-arrow){color:var(--light-ink)}
+:root[data-light-theme=true] .related-path button:hover,
+:root[data-light-theme=true] .related-home-top:hover{color:var(--light-ink)}
+:root[data-light-theme=true] .storyline-step:hover,
+:root[data-light-theme=true] .storyline-step:focus-visible{color:var(--light-ink)}
+:root[data-light-theme=true] .nav-arrow{background:var(--blue-panel);border-color:var(--blue-line);color:var(--light-ink)}
+:root[data-light-theme=true] .nav-arrow:hover{background:var(--button-hover);border-color:var(--blue-line);color:var(--light-ink)}
+:root[data-light-theme=true] .qa-preview .threads.list .thread:not(.direct-answer-card) .thread-answer p,
+:root[data-light-theme=true] .qa-preview .threads.list .thread:not(.direct-answer-card):hover .thread-answer p{color:var(--light-ink)!important}

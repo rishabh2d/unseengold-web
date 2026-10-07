@@ -1,0 +1,19 @@
+/* Storyline is the same post grid as More like this, ordered by date. */
+#discussion-host .storyline{padding-top:0;border-top:0}
+#discussion-host .storyline-head{display:block;margin-bottom:17px}
+#discussion-host .storyline-head h2{margin:0}
+#discussion-host .storyline-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;padding:0;border:1px solid var(--blue-line);background:var(--blue-page)}
+#discussion-host .storyline-steps::before,#discussion-host .storyline-step::before{content:none}
+#discussion-host .storyline-item{display:flex;min-width:0;border-right:1px solid var(--blue-line);border-bottom:1px solid var(--blue-line);background:transparent}
+#discussion-host .storyline-item:nth-child(even){border-right:0}
+#discussion-host .storyline-item:hover,#discussion-host .storyline-item:focus-within,#discussion-host .storyline-item:has(.storyline-step[aria-current=step]){background:transparent}
+#discussion-host .storyline-step.related-post{display:flex;flex:1;flex-direction:column;align-items:stretch;gap:18px;min-width:0;min-height:0;height:auto;margin:0;padding:22px 23px;border:0;background:transparent;color:var(--theme-text,#fff);box-shadow:none;text-align:left}
+#discussion-host .storyline-step.related-post:hover,#discussion-host .storyline-step.related-post:focus-visible{background:var(--button-hover);color:var(--theme-text,#fff)}
+#discussion-host .storyline-step.related-post[aria-current=step]{box-shadow:inset 0 0 0 1px var(--sky);background:transparent;color:var(--theme-text,#fff)}
+#discussion-host .storyline-step.related-post[aria-current=step]:hover{background:var(--button-hover)}
+#discussion-host .storyline-date{display:block;align-self:flex-start;margin:0;padding:0;color:var(--theme-muted,#b5dfff);font:600 12px system-ui,sans-serif;letter-spacing:0;text-transform:none}
+#discussion-host .storyline-step .related-post-header{display:flex;align-items:center;gap:10px;min-width:0;width:100%}
+#discussion-host .storyline-step .related-post-identity strong,#discussion-host .storyline-step .related-post-body{color:var(--theme-text,#fff)}
+#discussion-host .storyline-step .related-post-identity>span{color:var(--theme-muted,#c0dbff)}
+#discussion-host .storyline-step .related-post-arrow{margin-left:auto;color:var(--theme-accent-text,var(--sky))}
+@media(max-width:760px){#discussion-host .storyline-steps{grid-template-columns:minmax(0,1fr)}#discussion-host .storyline-item{border-right:0}#discussion-host .storyline-step.related-post{padding:18px}}
