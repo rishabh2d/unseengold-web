@@ -44,6 +44,11 @@ window.MobileSite = (() => {
       const discussion = insights.querySelector('.qa-preview');
       if (overview && discussion && overview.parentElement !== discussion) discussion.prepend(overview);
     }
+    insights.querySelectorAll('.world-context-here').forEach(badge => {
+      if (!badge.dataset.desktopLabel) badge.dataset.desktopLabel = badge.textContent;
+      const label = media.matches ? 'You Are Here' : badge.dataset.desktopLabel;
+      if (badge.textContent !== label) badge.textContent = label;
+    });
     if (opened) updateHeading();
   }
   function closePopup() {
@@ -97,6 +102,7 @@ window.MobileSite = (() => {
     opened = true;
     closePopup();
     bridge.dismiss();
+    feed.querySelectorAll('.mobile-media-strip video').forEach(video => video.pause());
     bridge.select(index);
     savedFeed = bridge.captureFeed();
     updateHeading();
@@ -126,15 +132,49 @@ window.MobileSite = (() => {
 
   function enhance() {
     feed.querySelectorAll('[data-feed-index]').forEach(item => {
-      if (item.querySelector('.mobile-details-button')) return;
-      const head = item.querySelector('.post-reading-head,.card-body');
-      if (!head) return;
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.className = 'mobile-details-button';
-      button.textContent = 'View details';
-      button.setAttribute('aria-controls', 'insights');
-      head.append(button);
+      const head = item.querySelector('.post-reading-head');
+      const info = item.querySelector('.post-info-row');
+      if (!head || !info) return;
+      let metadata = head.querySelector('.mobile-post-metadata');
+      if (media.matches) {
+        if (!metadata) {
+          metadata = document.createElement('div');
+          metadata.className = 'mobile-post-metadata';
+          const link = info.querySelector('.post-view-on-x');
+          const date = info.querySelector('.post-inline-date');
+          if (link && date) metadata.append(link, link.nextElementSibling, date);
+          head.append(metadata);
+        }
+        if (info.parentElement !== head) head.append(info);
+        const content = item.querySelector('.post-reading-content');
+        if (content && !content.querySelector('.mobile-feed-attachments')) {
+          const attachment = bridge.attachments(Number(item.dataset.feedIndex));
+          if (attachment?.media || attachment?.links) {
+            const section = document.createElement('section');
+            section.className = 'mobile-feed-attachments';
+            section.setAttribute('aria-label', 'Original post attachments');
+            section.innerHTML = `${attachment.media ? `<div class="mobile-media-strip" aria-label="Attached images and videos">${attachment.media}</div>` : ''}${attachment.links ? `<div class="mobile-attached-links" aria-label="Attached web links">${attachment.links}</div>` : ''}`;
+            content.querySelector('.post-thread-top').after(section);
+          }
+        }
+        // The same navigation row appears above and below the complete post.
+        item.querySelectorAll('.post-thread-top').forEach(row => {
+          if (row.querySelector('.mobile-details-button')) return;
+          const button = document.createElement('button');
+          button.type = 'button';
+          button.className = 'mobile-details-button post-thread-heading';
+          button.textContent = 'Explore More';
+          button.setAttribute('aria-controls', 'insights');
+          row.prepend(button);
+        });
+      } else {
+        if (metadata) {
+          info.append(...metadata.childNodes);
+          metadata.remove();
+        }
+        if (info.parentElement === head) head.after(info);
+        item.querySelectorAll('.mobile-details-button,.mobile-feed-attachments').forEach(node => node.remove());
+      }
     });
     if (opened) updateHeading();
   }
@@ -166,6 +206,9 @@ window.MobileSite = (() => {
     event.stopImmediatePropagation();
     if (details) openDetails(details); else showPopup(trigger);
   }, true);
+  feed.addEventListener('keydown', event => {
+    if (media.matches && event.target.closest('.mobile-media-strip')) event.stopPropagation();
+  });
   function responsive() {
     closePopup();
     back();

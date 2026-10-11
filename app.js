@@ -249,7 +249,7 @@ function renderFolderBar(){
  themeControl.querySelectorAll('[data-theme-choice]').forEach(button=>button.onclick=()=>{setTheme(button.dataset.themeChoice);if(matchMedia('(hover:none)').matches)closeThemeMenu()});
 
 }
-function mediaHTML(p){return (p.xMedia||[]).filter(m=>state.tab==='custom'||!Array.isArray(p.xQuestions)||!p.xQuestions.length).map(m=>{
+function mediaHTML(p,includeAll=false){return (p.xMedia||[]).filter(m=>includeAll||state.tab==='custom'||!Array.isArray(p.xQuestions)||!p.xQuestions.length).map(m=>{
  const url=m.url?safe(m.url):'',poster=m.previewImageURL?safe(m.previewImageURL):'';if(m.type==='photo'&&url)return `<img loading="lazy" src="${url}" alt="${escape(m.altText||'Post photo')}">`;
  if(['video','animated_gif'].includes(m.type)&&url)return `<video controls playsinline muted loop preload="none" ${poster?`poster="${poster}"`:''} src="${url}"></video>`;
  return poster?`<a href="${safe(p.url)}" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="${poster}" alt="Video preview — open original to watch"></a>`:'';
@@ -276,15 +276,13 @@ function card(root){
 
  return `<article class="post-reading ${size}${DailyReading.enabled(p)?' reading-lab-post':''}">${CardStickers.markup(root)}<header class="post-reading-head"><div class="post-profile-trigger-group"><a class="post-avatar-link" href="${safe(profile)}" target="_blank" rel="noopener noreferrer" aria-label="View ${escape(authorName)} profile on X" aria-controls="author-profile-preview" aria-expanded="false">${avatar}</a><a class="post-author" href="${safe(profile)}" target="_blank" rel="noopener noreferrer" aria-controls="author-profile-preview" aria-expanded="false"><span class="post-author-copy"><strong>${escape(authorName)}</strong><span>${p.xUsername?'@'+escape(p.xUsername):escape(p.source||'X')}</span></span></a></div>${likes}</header><div class="post-info-row" role="group" aria-label="Post details">${infoMarkup}<a class="post-view-on-x" href="${safe(p.url)}" target="_blank" rel="noopener noreferrer">View on X</a><span class="post-info-dot" aria-hidden="true">·</span><time class="post-inline-date" datetime="${escape(p.date||'')}">${escape(dateLabel(p.date))}</time></div><div class="post-reading-content">${threadHeading(root)}<div class="post-body">${postBodyMarkup(p,displayBody)}</div>${media?`<div class="media">${media}</div>`:''}</div>${threadBand(root)}<div class="post-reading-actions post-design-actions" role="group" aria-label="Explore this post"><button type="button">Explain Like I'm 15</button><button type="button">Do a Deep Dive</button><button type="button">Audio Explanation</button><button type="button">Let's Talk About This</button></div></article>`;
 }
-function threadHeading(root){
- const parts=ThreadReading.parts(root),index=ThreadReading.index(root);if(parts.length<2)return '';
- return `<div class="post-thread-top"><button type="button" class="post-thread-heading" data-thread-jump aria-label="Thread ${index+1} of ${parts.length} — go to thread controls">Thread ${index+1} of ${parts.length}</button><button type="button" class="post-thread-arrow" data-thread-step="-1" aria-label="Previous thread part" ${index===0?'disabled':''}>←</button><button type="button" class="post-thread-arrow" data-thread-step="1" aria-label="Next thread part" ${index===parts.length-1?'disabled':''}>→</button></div>`;
+function threadControls(root,bottom=false){
+ const parts=ThreadReading.parts(root),index=ThreadReading.index(root);
+ const controls=parts.length<2?'':`<button type="button" class="post-thread-heading post-thread-count" data-thread-jump aria-label="Thread ${index+1} of ${parts.length} — go to thread controls">Thread ${index+1} of ${parts.length}</button><button type="button" class="post-thread-arrow" data-thread-step="-1" aria-label="Previous thread part" ${index===0?'disabled':''}>←</button><button type="button" class="post-thread-arrow" data-thread-step="1" aria-label="Next thread part" ${index===parts.length-1?'disabled':''}>→</button>`;
+ return bottom?`<nav class="post-thread-top post-thread-band" aria-label="Thread navigation">${controls}</nav>`:`<div class="post-thread-top">${controls}</div>`;
 }
-
-function threadBand(root){
- const parts=ThreadReading.parts(root),index=ThreadReading.index(root);if(parts.length<2)return '';
- return `<nav class="post-thread-band" aria-label="Thread navigation"><button type="button" data-thread-step="-1" ${index===0?'disabled':''}>← Previous</button><span class="post-thread-count" role="status">${index+1} of ${parts.length}</span><button type="button" data-thread-step="1" ${index===parts.length-1?'disabled':''}>Next in thread →</button></nav>`;
-}
+function threadHeading(root){return threadControls(root)}
+function threadBand(root){return threadControls(root,true)}
 function jumpToThreadControls(button){
  const band=button.closest('.post-reading')?.querySelector('.post-thread-band'),panel=$('.post-position');
  if(!band||!panel)return;
@@ -489,6 +487,12 @@ window.MobileSiteBridge = {
   state={...snapshot.state};selectedCollectionDay=snapshot.day;calendarMonth=selectedCollectionDay.slice(0,7);
   CategoryFilters.setState(snapshot.categories);relatedTrail=[...snapshot.relatedTrail];relatedOrigin=snapshot.relatedOrigin;storylineOrigin=snapshot.storylineOrigin;storylineSelectedUrl=snapshot.storylineSelectedUrl;
   render();
+ },
+ attachments(index) {
+  const post=ThreadReading.current(visiblePosts[index]);
+  if(!post)return null;
+  const seen=new Set(),links=sourceLinksForPost(post).filter(link=>{const url=new URL(link.url),key=url.hostname.replace(/^www\./,'')+url.pathname+url.search+url.hash;if(seen.has(key))return false;seen.add(key);return true});
+  return {media:mediaHTML(post,true),links:links.map(link=>`<a href="${safe(link.url)}" target="_blank" rel="noopener noreferrer">${escape(link.title)} ↗</a>`).join('')};
  },
  post(index = state.page) {
   const root = visiblePosts[index], post = ThreadReading.current(root);

@@ -13,7 +13,7 @@ window.PostExplorations = (() => {
   function overview(post) {
     const item = lookup(post);
     const summary = item?.overview || post?.xSummary;
-    return `<div class="discussion-content-toolbar questions-toolbar exploration-overview"><h2 class="questions-section-heading">${text(summary || 'Overview')}</h2></div>`;
+    return `<div class="discussion-content-toolbar questions-toolbar exploration-overview"><h2 class="questions-section-heading">${text(summary || 'Overview')}</h2></div>${item ? '<div class="attachment-rule"></div>' : ''}`;
   }
   function question(entry, index) {
     const sources = (entry.sources || []).filter(source => url(source.url));
@@ -36,6 +36,10 @@ window.PostExplorations = (() => {
   function resources(post, showHeading = true) {
     const item = lookup(post);
     if (!item?.resources?.length) return '';
+    if (window.GuidedExploration) {
+      const guided = window.GuidedExploration.markup(post,item);
+      if (guided) return guided;
+    }
     const preview = item.resources.find(resource => resource.url === item.previewURL);
     return `<section class="exploration-resources" aria-label="Products and further exploration">${showHeading ? '<h2>Explore it yourself</h2><div class="attachment-rule"></div>' : ''}<div class="exploration-resource-grid">${item.resources.filter(resource => url(resource.url)).map(resource => `<a class="exploration-resource" href="${url(resource.url)}" target="_blank" rel="noopener noreferrer"><span class="exploration-eyebrow">${text(resource.kind)} <span aria-hidden="true">↗</span></span><h3>${text(resource.title)}</h3>${resource.price ? `<strong class="exploration-price">${text(resource.price)}</strong>` : ''}<p>${text(resource.description)}</p><span class="exploration-domain">${text(new URL(resource.url).hostname.replace(/^www\./,''))}</span></a>`).join('')}</div>${preview ? `<div class="exploration-live-preview"><div class="exploration-preview-head"><strong>${text(preview.title)}</strong><a href="${url(preview.url)}" target="_blank" rel="noopener noreferrer">Open ↗</a></div><iframe src="${url(preview.url)}" loading="lazy" title="Live preview: ${text(preview.title)}" sandbox="allow-scripts allow-same-origin allow-forms allow-popups" referrerpolicy="strict-origin-when-cross-origin"></iframe><p>If the preview is unavailable, <a href="${url(preview.url)}" target="_blank" rel="noopener noreferrer">open the website ↗</a></p></div>` : ''}</section>`;
   }

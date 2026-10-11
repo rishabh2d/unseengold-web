@@ -315,7 +315,7 @@ function sourceLinksForPost(post) {
     }
     const paper = /(^|\.)arxiv\.org$/.test(url.hostname) && /^\/abs\/[^/]+$/.test(url.pathname);
     const blockedHost = /(^|\.)(medium\.com|huggingface\.co|anthropic\.com|github\.com)$/.test(url.hostname);
-    found.push({url: url.href, title, viewerUrl: paper ? `https://arxiv.org/pdf/${url.pathname.split('/').pop()}` : url.href, kind: paper ? 'PAPER' : 'SOURCE', embed: typeof item === 'object' && item?.embed === false ? false : !blockedHost, summary: typeof item === 'object' ? String(item?.summary || '') : ''});
+    found.push({url: url.href, title, viewerUrl: paper ? `https://arxiv.org/pdf/${url.pathname.split('/').pop()}` : url.href, kind: paper ? 'PAPER' : 'SOURCE', embed: typeof item === 'object' && item?.embed === false ? false : !blockedHost, embeddingStatus: typeof item === 'object' ? item?.embeddingStatus : undefined, summary: typeof item === 'object' ? String(item?.summary || '') : ''});
   }
   return found;
 }
@@ -329,9 +329,10 @@ function sourceViewerMarkup(post, showHeading = true) {
   const selected = sourceActiveHighlight.get(active.url);
   const summary = Number.isInteger(selected) && notes.highlights[selected] ? notes.highlights[selected][1] : notes.summary;
   const localReader = active.url === 'https://0309hws.github.io/VL-LN.github.io/' ? 'linked-sources/vl-ln.html?v=theme-highlights-1' : null;
-  const content = active.embed ? `<iframe class="source-frame" src="${safe(active.kind === 'VIDEO' ? YouTubeReading.frameURL(active.viewerUrl) : localReader || active.viewerUrl)}" title="Linked source: ${escape(active.title)}" referrerpolicy="no-referrer" ${active.kind === 'VIDEO' ? 'allow="encrypted-media; picture-in-picture" allowfullscreen' : active.kind === 'PAPER' ? '' : 'sandbox="allow-same-origin allow-scripts allow-forms allow-popups"'} loading="lazy"></iframe>` : `<div class="source-reader-unavailable"><span class="source-reader-eyebrow">LINKED SOURCE</span><h3>${escape(active.title)}</h3><p class="source-reader-note">This publisher does not allow its page inside another site.</p><a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">Read the original ↗</a></div>`;
+  const omitMobilePreview = window.MobileSourcePreviews?.blocked(active);
+  const content = omitMobilePreview ? '' : active.embed ? `<iframe class="source-frame" src="${safe(active.kind === 'VIDEO' ? YouTubeReading.frameURL(active.viewerUrl) : localReader || active.viewerUrl)}" title="Linked source: ${escape(active.title)}" referrerpolicy="no-referrer" ${active.kind === 'VIDEO' ? 'allow="encrypted-media; picture-in-picture" allowfullscreen' : active.kind === 'PAPER' ? '' : 'sandbox="allow-same-origin allow-scripts allow-forms allow-popups"'} loading="lazy"></iframe>` : `<div class="source-reader-unavailable"><span class="source-reader-eyebrow">LINKED SOURCE</span><h3>${escape(active.title)}</h3><p class="source-reader-note">This publisher does not allow its page inside another site.</p><a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">Read the original ↗</a></div>`;
   const tabs = links.length > 1 ? `<nav class="attached-link-tabs" aria-label="Choose attached link">${links.map((link, linkIndex) => `<button type="button" data-source-index="${linkIndex}" aria-pressed="${linkIndex === index}" title="${escape(link.title)}">${escape(link.title)}</button>`).join('')}</nav>` : '';
-  return `<section class="attachment-section attachment-section--links" aria-label="Attached links">${showHeading ? '<div class="discussion-content-toolbar"><h2 class="questions-section-heading">Web Link</h2></div><div class="attachment-rule" aria-hidden="true"></div>' : ''}${tabs}<div class="source-viewer" data-source-url="${escape(active.url)}" ${active.kind === 'VIDEO' ? `data-youtube-video="${YouTubeReading.idFor(active.url)}"` : ''}>${active.kind === 'VIDEO' ? YouTubeReading.toolbar(active.url,active.title) : ''}<div class="source-viewer-head"><div class="source-viewer-bar"><span class="source-viewer-kind">${escape(active.kind)}</span><span class="source-viewer-name">${escape(active.title)}</span><a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">Open ↗</a></div><div class="source-summary" aria-live="polite"><span>SUMMARY</span><p>${escape(summary)}</p></div></div><div class="source-frame-shell">${content}</div>${active.embed && !localReader ? `<div class="source-viewer-fallback">If this site blocks the viewer, <a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">open the original ↗</a></div>` : ''}</div></section>`;
+  return `<section class="attachment-section attachment-section--links" aria-label="Attached links">${showHeading ? '<div class="discussion-content-toolbar"><h2 class="questions-section-heading">Web Link</h2></div><div class="attachment-rule" aria-hidden="true"></div>' : ''}${tabs}<div class="source-viewer${omitMobilePreview ? ' source-viewer--summary' : ''}" data-source-url="${escape(active.url)}" ${active.kind === 'VIDEO' ? `data-youtube-video="${YouTubeReading.idFor(active.url)}"` : ''}>${active.kind === 'VIDEO' ? YouTubeReading.toolbar(active.url,active.title) : ''}<div class="source-viewer-head"><div class="source-viewer-bar"><span class="source-viewer-kind">${escape(active.kind)}</span><span class="source-viewer-name">${escape(active.title)}</span><a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">${omitMobilePreview ? 'Open original ↗' : 'Open ↗'}</a></div><div class="source-summary" aria-live="polite"><span>SUMMARY</span><p>${escape(summary)}</p></div></div>${omitMobilePreview ? '' : `<div class="source-frame-shell">${content}</div>`}${!omitMobilePreview && active.embed && !localReader ? `<div class="source-viewer-fallback">If this site blocks the viewer, <a href="${safe(active.url)}" target="_blank" rel="noopener noreferrer">open the original ↗</a></div>` : ''}</div></section>`;
 }
 
 function videoSoundIcon(muted) {
@@ -466,12 +467,12 @@ function discussionMarkup(post, index) {
   const leadingLinks = !media && !videos ? renderLinks() : '';
   const questions = PostExplorations.questions(post);
   const trailingLinks = media || videos ? renderLinks() : '';
-  // Try this reading order on Playground before applying it to other posts.
-  const playgroundPilot = exploration?.id === 'https://x.com/GoogleLabs/status/2107800195748737042';
-  const content = playgroundPilot
+  // Keep the guided reading order limited to the five researched pilot posts.
+  const guidedPilot = !!exploration;
+  const content = guidedPilot
     ? `${media}${keyEntitiesPreviewMarkup(post)}${questions}${renderLinks()}`
     : `${media}${videos}${leadingLinks}${keyEntitiesPreviewMarkup(post)}${questions}${trailingLinks}`;
-  return `<section class="discussion qa-preview">${path}${content}${storylineMarkup(post)}${hasRetweets ? `<section class="retweets-section" aria-label="Retweets"><h2>Retweets</h2><div class="attachment-rule"></div>${retweetMarkup(post)}</section>` : ''}${relatedMarkup(post)}${playgroundPilot ? videos : ''}${WorldContext.markup(post)}</section>`;
+  return `<section class="discussion qa-preview">${path}${content}${storylineMarkup(post)}${hasRetweets ? `<section class="retweets-section" aria-label="Retweets"><h2>Retweets</h2><div class="attachment-rule"></div>${retweetMarkup(post)}</section>` : ''}${relatedMarkup(post)}${guidedPilot ? videos : ''}${WorldContext.markup(post)}</section>`;
 }
 
 function bindStoryline() {
@@ -504,6 +505,7 @@ function bindDiscussion() {
   }
   bindStoryline();
   YouTubeReading.bind(document.querySelector('#discussion-host'));
+  window.GuidedExploration?.bind(document.querySelector('#discussion-host'));
   document.querySelectorAll('#discussion-host .exploration-question').forEach(card => card.addEventListener('toggle', scheduleAnnotationConnector));
   document.querySelectorAll('#discussion-host .lab-expandable').forEach(card=>{
     const toggle=()=>{const open=card.getAttribute('aria-expanded')!=='true';card.setAttribute('aria-expanded',String(open));card.classList.toggle('is-expanded',open);card.querySelector('.lab-answer-details').hidden=!open;scheduleAnnotationConnector();};
