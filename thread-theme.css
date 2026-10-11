@@ -1,2 +1,2 @@
-.post-thread-top .post-thread-heading { background: var(--theme-text,#111); color: var(--blue-page,#b8d2e8); }
+.post-thread-top .post-thread-heading { background: var(--theme-text,#fff); color: var(--blue-page,#b8d2e8); }
 .post-thread-top .post-thread-arrow:disabled { display: none; }

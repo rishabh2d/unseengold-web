@@ -1,4 +1,4 @@
-.post-thread-heading { display: inline-block; margin: 0px 0px 14px; padding: 5px 9px; border: 0px; border-radius: 3px; background: var(--theme-text,#111); color: var(--blue-page,#b8d2e8); font-size: 14px; line-height: 1.4; font-weight: 600; cursor: pointer; }
+.post-thread-heading { display: inline-block; margin: 0px 0px 14px; padding: 5px 9px; border: 0px; border-radius: 3px; background: var(--theme-text,#fff); color: var(--blue-page,#b8d2e8); font-size: 14px; line-height: 1.4; font-weight: 600; cursor: pointer; }
 .post-thread-count.is-thread-arrival { animation: 450ms ease-in-out 0s 3 normal none running thread-arrival-pulse; }
 @keyframes thread-arrival-pulse { 
   0%, 100% { background: var(--sky-soft,#7773); }
@@ -9,8 +9,8 @@
 }
 .post-thread-top { display: flex; align-items: center; gap: 4px; margin: 0px 0px 14px; }
 .post-thread-top .post-thread-heading { margin: 0px; }
-.post-thread-arrow { display: grid; place-items: center; width: 24px; height: 24px; padding: 0px; border: 0px; border-radius: 3px; background: transparent; color: var(--theme-text,#111); font-size: 16px; line-height: 1; cursor: pointer; }
-.post-thread-arrow:hover:not(:disabled) { background: color-mix(in srgb,var(--theme-text,#111) 12%,transparent); }
+.post-thread-arrow { display: grid; place-items: center; width: 24px; height: 24px; padding: 0px; border: 0px; border-radius: 3px; background: transparent; color: var(--theme-text,#fff); font-size: 16px; line-height: 1; cursor: pointer; }
+.post-thread-arrow:hover:not(:disabled) { background: color-mix(in srgb,var(--theme-text,#fff) 12%,transparent); }
 .post-thread-arrow:disabled { display: none; }
 .post-info-row .post-inline-date { flex: 0 0 auto; white-space: nowrap; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-language-override: inherit; line-height: 1.35; color: inherit; cursor: default; }
 .post-thread-top:empty { display: none; }
