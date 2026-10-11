@@ -4,7 +4,7 @@
    Top-post collection stays separate and is not rendered in this profile preview. */
 (function (global) {
   'use strict';
-  let popup, anchor;
+  let popup, anchor, dialog, dialogAnchor;
   const imageCache = new Map();
   const handle = post => String(post?.xUsername || '').replace(/^@/, '').toLowerCase();
   const name = post => String(post?.xAuthorName || post?.author || post?.xUsername || 'Author');
@@ -106,26 +106,9 @@
   function link(url, className, text) {
     const node = element('a',className,text); node.href=url;node.target='_blank';node.rel='noopener noreferrer';return node;
   }
-  function show({anchor:nextAnchor, post} = {}) {
-    if (!post || !nextAnchor?.isConnected) return;
-    if (anchor === nextAnchor && popup && !popup.hidden) return;
-    global.PostHighlightPopup?.hide({immediate:true});
-    if (typeof PostMiniView !== 'undefined') PostMiniView.hide();
-    hide();
-    if (!popup) {
-      popup=element('aside','author-profile-preview');popup.id='author-profile-preview';popup.setAttribute('aria-label','Author profile preview');
-      document.body.append(popup);
-      popup.addEventListener('pointerleave',event=>hide(event.relatedTarget));
-      popup.addEventListener('focusout',event=>hide(event.relatedTarget));
-      document.addEventListener('keydown',event=>{if(event.key==='Escape')hide()});
-      document.addEventListener('scroll',position,{capture:true,passive:true});
-      global.addEventListener('resize',position);
-    }
-    anchor=nextAnchor;
-    anchor.querySelectorAll('[aria-controls="author-profile-preview"]').forEach(node=>node.setAttribute('aria-expanded','true'));
+  function cardFor(post, {interactiveIdentity=true, actionLabel='Open profile on X ↗'} = {}) {
     prewarm(post);
     const sourced=enrichment(post), profile=profileURL(post), card=element('div','author-profile-card');
-    popup.replaceChildren(card);
     // A cold/slow/failed banner uses the clean text card immediately, without a blank slot.
     // Show it only when prewarming already loaded it; never insert a late banner and shift text.
     if (sourced.bannerURL && imageCache.get(sourced.bannerURL)?.state==='ready') {
@@ -133,7 +116,7 @@
       banner.width=390;banner.height=120;card.classList.add('has-banner');card.append(banner);
     }
     const body=element('div','author-preview-body');card.append(body);
-    const header=profile ? link(profile,'author-preview-identity') : element('div','author-preview-identity');
+    const header=profile && interactiveIdentity ? link(profile,'author-preview-identity') : element('div','author-preview-identity');
     const avatar=element('span','author-preview-avatar',name(post)[0]);
     const avatarURL=sourced.avatarURL || sourceURL(post.xAvatarURL);
     if(avatarURL){const image=element('img');image.src=avatarURL;image.alt='';image.referrerPolicy='no-referrer';image.onerror=()=>avatar.replaceChildren(document.createTextNode(name(post)[0]));avatar.replaceChildren(image)}
@@ -156,11 +139,65 @@
       stat.append(element('strong','',number),document.createTextNode(' '+key));stats.append(stat);
     }
     if(stats.childNodes.length)body.append(stats);
-    if(profile)body.append(link(profile,'author-preview-open','Open profile on X ↗'));
+    if(profile)body.append(link(profile,'author-preview-open',actionLabel));
+    return card;
+  }
+  function show({anchor:nextAnchor, post} = {}) {
+    if (!post || !nextAnchor?.isConnected) return;
+    if (anchor === nextAnchor && popup && !popup.hidden) return;
+    global.PostHighlightPopup?.hide({immediate:true});
+    if (typeof PostMiniView !== 'undefined') PostMiniView.hide();
+    hide();
+    if (!popup) {
+      popup=element('aside','author-profile-preview');popup.id='author-profile-preview';popup.setAttribute('aria-label','Author profile preview');
+      document.body.append(popup);
+      popup.addEventListener('pointerleave',event=>hide(event.relatedTarget));
+      popup.addEventListener('focusout',event=>hide(event.relatedTarget));
+      document.addEventListener('keydown',event=>{if(event.key==='Escape')hide()});
+      document.addEventListener('scroll',position,{capture:true,passive:true});
+      global.addEventListener('resize',position);
+    }
+    anchor=nextAnchor;
+    anchor.querySelectorAll('[aria-controls="author-profile-preview"]').forEach(node=>node.setAttribute('aria-expanded','true'));
+    const card=cardFor(post);
+    popup.replaceChildren(card);
     popup.hidden=false;card.scrollTop=0;position();
   }
+  function hasCard(post) {return Boolean(enrichment(post).source);}
+  function open({anchor:nextAnchor, post} = {}) {
+    if (!post || !hasCard(post) || !nextAnchor?.isConnected) return false;
+    hide();
+    global.PostHighlightPopup?.hide({immediate:true});
+    if (typeof PostMiniView !== 'undefined') PostMiniView.hide();
+    if (!dialog) {
+      dialog=element('dialog','author-profile-dialog');
+      dialog.id='author-profile-dialog';
+      dialog.setAttribute('aria-labelledby','author-profile-dialog-title');
+      const top=element('header','author-profile-dialog-head');
+      const title=element('h2','','Profile');title.id='author-profile-dialog-title';
+      const close=element('button','','×');close.type='button';close.setAttribute('aria-label','Close profile');
+      close.onclick=()=>dialog.close();top.append(title,close);
+      dialog.append(top,element('div','author-profile-dialog-content'));
+      document.body.append(dialog);
+      dialog.addEventListener('close',()=>{
+        dialogAnchor?.setAttribute('aria-expanded','false');
+        if (dialogAnchor?.isConnected) dialogAnchor.focus({preventScroll:true});
+        dialogAnchor=null;
+      });
+      dialog.addEventListener('keydown',event=>event.stopPropagation());
+      dialog.addEventListener('pointerdown',event=>{
+        const rect=dialog.getBoundingClientRect();
+        if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();
+      });
+    }
+    dialogAnchor=nextAnchor;
+    nextAnchor.setAttribute('aria-expanded','true');
+    dialog.querySelector('.author-profile-dialog-content').replaceChildren(cardFor(post,{interactiveIdentity:false,actionLabel:'View on X ↗'}));
+    dialog.showModal();
+    return true;
+  }
   function focusPreview(){popup?.querySelector('.author-preview-identity,.author-preview-open')?.focus()}
-  const api={show,hide,focusPreview,enrichment,profileURL,placement,normalizeBio,bioTokens,additionalLinks,prewarm};
+  const api={show,hide,open,hasCard,cardFor,focusPreview,enrichment,profileURL,placement,normalizeBio,bioTokens,additionalLinks,prewarm};
   global.AuthorProfileViewer=api;
   if(typeof module!=='undefined'&&module.exports)module.exports=api;
 })(typeof window!=='undefined'?window:globalThis);

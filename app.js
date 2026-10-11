@@ -415,6 +415,14 @@ function showPostInfo(node){
 }
 for(const feedRoot of [$('#feed'),$('#compact-feed')]){
  const showProfile=node=>{const post=readingPostByURL(node.closest('.post-reading')?.querySelector('.post-view-on-x')?.href);if(post)AuthorProfileViewer.show({anchor:node,post})};
+ feedRoot.addEventListener('click',event=>{
+  if(!matchMedia('(max-width:760px)').matches)return;
+  const link=event.target.closest?.('.post-profile-trigger-group a');
+  if(!link)return;
+  const post=readingPostByURL(link.closest('.post-reading')?.querySelector('.post-view-on-x')?.href);
+  if(!AuthorProfileViewer.open({anchor:link,post}))return;
+  event.preventDefault();event.stopImmediatePropagation();
+ },true);
  feedRoot.addEventListener('pointerover',event=>{const node=event.target.closest?.('.post-profile-trigger-group');if(node&&!node.contains(event.relatedTarget))showProfile(node)});
  feedRoot.addEventListener('pointerout',event=>{const node=event.target.closest?.('.post-profile-trigger-group');if(node&&!node.contains(event.relatedTarget))AuthorProfileViewer.hide(event.relatedTarget)});
  feedRoot.addEventListener('focusin',event=>{const node=event.target.closest?.('.post-profile-trigger-group');if(node)showProfile(node)});

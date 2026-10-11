@@ -31,3 +31,17 @@
 .author-profile-preview :is(.author-preview-identity,.author-preview-open):hover{background:var(--button-hover,var(--sky-soft))}
 .author-profile-preview a:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
 @media(max-width:1000px){.post-reading-head .post-profile-trigger-group{flex:1 1 55%;max-width:calc(100% - 85px)}.post-reading-head .post-profile-trigger-group .post-author{flex-basis:auto;order:1}}
+
+/* Click/tap uses the existing first profile card, with one explicit X action. */
+.author-profile-dialog { width:min(420px,calc(100vw - 28px)); max-height:calc(100dvh - 40px); box-sizing:border-box; padding:0; border:1px solid var(--theme-line,var(--blue-line)); border-radius:6px; background:var(--blue-page); color:var(--theme-text,#fff); overflow:hidden; }
+.author-profile-dialog[open] { display:flex; flex-direction:column; }
+.author-profile-dialog::backdrop { background:rgba(0,0,0,.55); }
+.author-profile-dialog-head { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 18px; flex:0 0 auto; }
+.author-profile-dialog-head h2 { margin:0; font:600 17px/1.4 system-ui,sans-serif; }
+.author-profile-dialog-head button { width:32px; height:32px; padding:0; border:0; border-radius:4px; background:var(--button-hover,var(--sky-soft)); color:inherit; font:24px/1 system-ui,sans-serif; cursor:pointer; }
+.author-profile-dialog-content { min-height:0; overflow:auto; overscroll-behavior:contain; }
+.author-profile-dialog .author-profile-card { border:0; box-shadow:none; overflow:visible; background:transparent; }
+.author-profile-dialog .author-preview-open { margin-left:auto; }
+.author-profile-dialog :is(.author-preview-bio,.author-preview-links) a { color:var(--theme-accent-text,#75baff); text-decoration:underline; text-underline-offset:2px; }
+.author-profile-dialog :focus-visible { outline:2px solid var(--theme-accent-text,var(--sky)); outline-offset:2px; }
+@media(max-width:760px) { .author-profile-dialog .author-preview-bio { font-size:16px; line-height:1.5; } .author-profile-dialog .author-preview-meta,.author-profile-dialog .author-preview-links,.author-profile-dialog .author-preview-stats { font-size:13px; } }

@@ -139,6 +139,15 @@ window.MobileSite = (() => {
       const head = item.querySelector('.post-reading-head');
       const info = item.querySelector('.post-info-row');
       if (!head || !info) return;
+      const profilePost = bridge.post(Number(item.dataset.feedIndex))?.post;
+      const hasProfile = media.matches && AuthorProfileViewer.hasCard(profilePost);
+      head.querySelectorAll('.post-profile-trigger-group a').forEach(link => {
+        if (!link.hasAttribute('data-profile-original-label')) link.dataset.profileOriginalLabel = link.getAttribute('aria-label') || '';
+        const label = hasProfile ? `Open ${profilePost.xAuthorName || profilePost.author || profilePost.xUsername} profile card` : link.dataset.profileOriginalLabel;
+        if (label) link.setAttribute('aria-label', label); else link.removeAttribute('aria-label');
+        link.setAttribute('aria-controls', hasProfile ? 'author-profile-dialog' : 'author-profile-preview');
+        if (hasProfile) link.setAttribute('aria-haspopup', 'dialog'); else link.removeAttribute('aria-haspopup');
+      });
       let metadata = head.querySelector('.mobile-post-metadata');
       if (media.matches) {
         if (!metadata) {
