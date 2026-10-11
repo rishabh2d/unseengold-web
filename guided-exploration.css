@@ -10,6 +10,8 @@
 .guided-source-bar nav { display: flex; align-items: center; gap: 8px; flex: 0 0 auto; }
 .guided-source-bar button { font: inherit; padding: 6px 8px; color: inherit; background: transparent; border: 0px; border-radius: 3px; cursor: pointer; white-space: nowrap; }
 .guided-source-bar button[aria-pressed="true"], .guided-source-bar button:hover { color: var(--theme-text,var(--sky)); background: var(--button-hover); }
+.guided-source-bar button[hidden] { display: none; }
+.guided-embed-notice { font-size: 13px; line-height: 1.5; color: var(--theme-muted,var(--sky)); margin: 0 0 12px; }
 .guided-stop a { color: var(--theme-accent-text,var(--sky)); text-decoration: none; }
 .guided-stop a:hover { text-decoration: underline; }
 .guided-layout { display: grid; grid-template-columns: minmax(0px, 3fr) minmax(0px, 1fr); align-items: stretch; border: 1px solid var(--blue-line); border-radius: 4px; overflow: hidden; }
@@ -28,6 +30,11 @@
 .guided-companion-label { display: block; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--theme-muted,var(--sky)); margin-bottom: 22px; }
 .guided-companion-copy h3 { font-size: 19px; line-height: 1.25; font-weight: 600; letter-spacing: -0.02em; margin: 0px 0px 14px; overflow-wrap: anywhere; }
 .guided-companion-copy p { font-size: 14px; line-height: 1.6; margin: 0px; overflow-wrap: anywhere; }
+.guided-page-notes { margin-top: 22px; }
+.guided-stop[data-guided-view="reader"] .guided-page-notes { display: none; }
+.guided-page-notes details { border-top: 1px solid var(--blue-line); padding: 12px 0; }
+.guided-page-notes summary { cursor: pointer; font-size: 13px; line-height: 1.5; }
+.guided-page-notes p { font-size: 13px; line-height: 1.6; margin: 12px 0 0; overflow-wrap: anywhere; }
 .guided-companion-hint { display: block; font-size: 11px; line-height: 1.5; color: var(--theme-muted,var(--sky)); margin-top: 26px; }
 .guided-live iframe { display: block; width: 100%; height: 100%; border: 0px; background: rgb(255, 255, 255); }
 .guided-source-credit { display: flex; gap: 8px; flex-wrap: wrap; padding-top: 10px; font-size: 11px; line-height: 1.5; color: var(--theme-muted,var(--sky)); }

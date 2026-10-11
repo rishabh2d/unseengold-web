@@ -53,7 +53,9 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://cdn.openai.com/ctf-cdn/intelligent-ui/bill-splitter-v5.html",
           "https://openai.com/index/gpt-6-for-everyone/"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://openai.com/index/gpt-6-for-everyone/",
@@ -105,13 +107,16 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://openai.com/index/gpt-6-for-everyone/"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://learn.chatgpt.com/docs/visualizations#prompt-with-an-outcome-and-controls",
         "title": "Ask for the decision, then give it a useful control.",
         "intro": "You do not need to design the whole interface. Start with the question you want to understand, the information it should use and what you want to change. That gives the tool a purpose.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "How to ask for useful interactive explanations",
         "sections": [
           {
@@ -145,7 +150,9 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://learn.chatgpt.com/docs/visualizations#prompt-with-an-outcome-and-controls"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://chatgpt.com/",
@@ -186,7 +193,10 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://chatgpt.com/",
           "https://openai.com/index/gpt-6-for-everyone/"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       }
     ]
   },
@@ -197,7 +207,7 @@ window.GuidedExplorationData = [
         "url": "https://www.primeintellect.ai/blog/prime-agent-rust",
         "title": "The most useful part of the swarm may be how it checked its work.",
         "intro": "The huge agent count catches your eye. The reusable idea is smaller: give each change a clear test, then separate building it from judging it.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Rewriting Prime Agent in Rust",
         "sections": [
           {
@@ -231,13 +241,15 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://www.primeintellect.ai/blog/prime-agent-rust"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://www.primeintellect.ai/blog/prime-agent",
         "title": "An agent needs a working environment, not just a bigger conversation.",
         "intro": "Before the Rust rewrite came the architecture: a place to keep state, run code and coordinate help. That is what Prime Agent adds around a language model.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Prime Agent: A self-improving RLM agent",
         "sections": [
           {
@@ -271,7 +283,9 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://www.primeintellect.ai/blog/prime-agent"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://arxiv.org/abs/2608.23552",
@@ -311,7 +325,10 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://arxiv.org/abs/2608.23552"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://github.com/PrimeIntellect-ai/prime-agent",
@@ -351,7 +368,10 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://github.com/PrimeIntellect-ai/prime-agent"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       }
     ]
   },
@@ -398,7 +418,9 @@ window.GuidedExplorationData = [
           "https://playground.google/helpcenter",
           "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
         ],
-        "originalTitle": "The Playground website"
+        "originalTitle": "The Playground website",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://playground.google/game/8921298488096585028",
@@ -440,7 +462,10 @@ window.GuidedExplorationData = [
           "https://labs.google/playground",
           "https://playground.google/helpcenter"
         ],
-        "originalTitle": "Snooze Jump"
+        "originalTitle": "Snooze Jump",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://playground.google/game/5355497785016539420",
@@ -482,7 +507,10 @@ window.GuidedExplorationData = [
           "https://labs.google/playground",
           "https://playground.google/helpcenter"
         ],
-        "originalTitle": "Octo Pop"
+        "originalTitle": "Octo Pop",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://playground.google/",
@@ -523,7 +551,10 @@ window.GuidedExplorationData = [
           "https://playground.google/",
           "https://playground.google/helpcenter"
         ],
-        "originalTitle": "Playground: explore and create"
+        "originalTitle": "Playground: explore and create",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "The sign-in page blocks embedded viewing."
       },
       {
         "url": "https://playground.google/helpcenter",
@@ -564,7 +595,10 @@ window.GuidedExplorationData = [
           "https://playground.google/helpcenter",
           "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
         ],
-        "originalTitle": "Playground access, export and sharing"
+        "originalTitle": "Playground access, export and sharing",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://spark.unity.com/demo/space-corridor/",
@@ -606,13 +640,16 @@ window.GuidedExplorationData = [
           "https://unity.com/spark",
           "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
         ],
-        "originalTitle": "Unity Spark: Space Corridor"
+        "originalTitle": "Unity Spark: Space Corridor",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://unity.com/spark",
         "title": "From a prompt to a real editor: the next promise to watch.",
         "intro": "Google and Unity describe a future where conversational creation meets professional game tooling. The interesting bridge is the ability to keep working after the first generated scene.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "An editor changes what happens after the first draft.",
@@ -647,7 +684,9 @@ window.GuidedExplorationData = [
           "https://unity.com/spark",
           "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
         ],
-        "originalTitle": "Unity Spark"
+        "originalTitle": "Unity Spark",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   },
@@ -694,13 +733,15 @@ window.GuidedExplorationData = [
           "https://okihome.ai/faq",
           "https://okihome.ai/preorder"
         ],
-        "originalTitle": "Oki Home: the product and demos"
+        "originalTitle": "Oki Home: the product and demos",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://okihome.ai/preorder",
         "title": "The real price is $1,799. The $59 is a reservation.",
         "intro": "Here is the buying picture without making you decode the checkout: a 2 TB Memchip is included, the deposit is credited toward the launch machine, and the remaining balance comes later.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "What you pay now and what you owe later.",
@@ -735,13 +776,15 @@ window.GuidedExplorationData = [
           "https://okihome.ai/preorder",
           "https://okihome.ai/reservation-terms"
         ],
-        "originalTitle": "Oki Home: reservation and price"
+        "originalTitle": "Oki Home: reservation and price",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://okihome.ai/faq",
         "title": "A home AI still has to fit your actual day.",
         "intro": "The practical questions begin after the launch video: can you use it away from home, what can you install, and what still needs the internet? These are the details that turn a nice device into a workable routine.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "The box stays home; your connection does not.",
@@ -776,13 +819,15 @@ window.GuidedExplorationData = [
           "https://okihome.ai/faq",
           "https://okihome.ai/"
         ],
-        "originalTitle": "Oki Home: practical FAQ"
+        "originalTitle": "Oki Home: practical FAQ",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://okihome.ai/privacy",
         "title": "Local AI is useful. Knowing where local ends is even more useful.",
         "intro": "The privacy story becomes clearer once you separate the home machine from optional connected features. You can understand that boundary before trusting it with a large personal archive.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Local-first is a foundation, not a blanket guarantee.",
@@ -817,13 +862,15 @@ window.GuidedExplorationData = [
           "https://okihome.ai/privacy",
           "https://okihome.ai/faq"
         ],
-        "originalTitle": "What stays local—and what may leave"
+        "originalTitle": "What stays local—and what may leave",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://okihome.ai/reservation-terms",
         "title": "A hardware promise should leave you a clear way back.",
         "intro": "Before reserving, the useful detail is what happens if you change your mind or the delivery plan changes. The terms separate the refundable reservation from the later purchase.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Cancel the reservation without paying for the machine.",
@@ -858,13 +905,15 @@ window.GuidedExplorationData = [
           "https://okihome.ai/reservation-terms",
           "https://okihome.ai/preorder"
         ],
-        "originalTitle": "Oki reservation terms"
+        "originalTitle": "Oki reservation terms",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://okihome.ai/about",
         "title": "The longer ambition is a computer that remembers with you.",
         "intro": "Oki’s company story connects the box to a broader idea: personal context should become useful in everyday work. That is a more interesting goal than selling another device with an AI label.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Meet the team behind the promise.",
@@ -899,7 +948,9 @@ window.GuidedExplorationData = [
           "https://okihome.ai/about",
           "https://okihome.ai/"
         ],
-        "originalTitle": "The team behind Oki"
+        "originalTitle": "The team behind Oki",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   },
@@ -945,7 +996,9 @@ window.GuidedExplorationData = [
           "https://inferencex.semianalysis.com/inference/minimax-m3",
           "https://x.com/SemiAnalysis_/status/2108605857684750581"
         ],
-        "originalTitle": "Explore the MiniMax M3 benchmark"
+        "originalTitle": "Explore the MiniMax M3 benchmark",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://inferencex.semianalysis.com/calculator",
@@ -986,7 +1039,9 @@ window.GuidedExplorationData = [
           "https://inferencex.semianalysis.com/calculator",
           "https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/"
         ],
-        "originalTitle": "Try the inference cost calculator"
+        "originalTitle": "Try the inference cost calculator",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://inferencex.semianalysis.com/profit-estimator-per-gigawatt",
@@ -1027,13 +1082,15 @@ window.GuidedExplorationData = [
           "https://inferencex.semianalysis.com/profit-estimator-per-gigawatt",
           "https://x.com/SemiAnalysis_/status/2108604229988319724"
         ],
-        "originalTitle": "Change the profit assumptions"
+        "originalTitle": "Change the profit assumptions",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://vllm.ai/blog/2026-10-09-vera-rubin-preview",
         "title": "The software is part of the chip’s performance story.",
         "intro": "vLLM’s engineering preview shows why buying newer hardware is not the whole upgrade. Kernels and memory placement help turn the rack’s capabilities into useful model-serving speed.",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Different tests explain the different multipliers.",
@@ -1067,7 +1124,9 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://vllm.ai/blog/2026-10-09-vera-rubin-preview"
         ],
-        "originalTitle": "vLLM's Rubin engineering preview"
+        "originalTitle": "vLLM's Rubin engineering preview",
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/",
@@ -1108,7 +1167,10 @@ window.GuidedExplorationData = [
           "https://www.nvidia.com/en-us/data-center/vera-rubin-nvl72/",
           "https://inferencex.semianalysis.com/calculator"
         ],
-        "originalTitle": "See the actual Rubin rack"
+        "originalTitle": "See the actual Rubin rack",
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       }
     ]
   },
@@ -1119,7 +1181,7 @@ window.GuidedExplorationData = [
         "url": "https://skills.wheresryan.sh/anatomy/collection",
         "title": "Some ideas click the moment you can move them.",
         "intro": "A queue, a cache and a mutex are easy to name and harder to picture. Anatomy’s collection gives those invisible rules a physical form. Start with an idea you already know, then see whether the mechanism teaches it more clearly.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Anatomy: live collection",
         "sections": [
           {
@@ -1165,7 +1227,9 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://skills.wheresryan.sh/anatomy/collection"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://github.com/wheresryan22/anatomy",
@@ -1218,13 +1282,16 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://github.com/wheresryan22/anatomy",
           "https://github.com/wheresryan22/anatomy/blob/main/references/3d.md"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://skills.wheresryan.sh/anatomy/how-i-built-it",
         "title": "The interesting part is how the agent checks its own picture.",
         "intro": "Polish is easy to notice. Wrong joints, impossible overlaps and a misleading mechanism are easier to miss. The creator’s walkthrough shows the feedback loop behind the finished illustrations—and where human judgment still belongs.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Anatomy: how I built it",
         "sections": [
           {
@@ -1271,7 +1338,9 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://skills.wheresryan.sh/anatomy/how-i-built-it",
           "https://github.com/wheresryan22/anatomy/blob/main/references/verify.md"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   },
@@ -1282,7 +1351,7 @@ window.GuidedExplorationData = [
         "url": "https://shaders.com/react",
         "title": "A memorable website does not have to start with a graphics engine.",
         "intro": "Light, texture and movement can give a page its own character. Shaders lets frontend developers compose those effects with familiar component props. Here is the useful bridge from a visual idea to something you can still edit in your codebase.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Shaders for React",
         "sections": [
           {
@@ -1317,13 +1386,15 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://shaders.com/react",
           "https://github.com/shader-effects-inc/shaders"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://shaders.com/docs/guide/mcp",
         "title": "Give your coding agent a vocabulary, then a connection.",
         "intro": "“Make it look amazing” leaves an agent guessing. A documented library gives it named effects and real controls. A connected workflow lets it bring an existing design into the application rather than reinventing that design from scratch.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Shaders MCP and agent workflow",
         "sections": [
           {
@@ -1371,13 +1442,15 @@ window.GuidedExplorationData = [
           "https://shaders.com/docs/guide/mcp",
           "https://shaders.com/docs/guide/agent-skill",
           "https://shaders.com/docs/guide/cli"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://shaders.com/pricing",
         "title": "The foundation is free. The shortcuts are what you buy.",
         "intro": "A release can sound like everything has suddenly become free. The useful distinction here is more precise: build with the open components for free, then decide whether a curated library and faster workflow are worth paying for.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Shaders pricing and license scope",
         "sections": [
           {
@@ -1424,13 +1497,15 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://shaders.com/pricing",
           "https://github.com/shader-effects-inc/shaders/blob/main/LICENSE"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://shaders.com/docs/guide/performance",
         "title": "Make the effect earn its milliseconds.",
         "intro": "The impressive demo is only half the story. Your visitors also need the page to load, respond and stay readable. The performance guide gives you concrete places to look when a beautiful composition becomes an expensive one.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Shaders performance guide",
         "sections": [
           {
@@ -1478,7 +1553,9 @@ window.GuidedExplorationData = [
           "https://shaders.com/docs/guide/performance",
           "https://shaders.com/pricing",
           "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   },
@@ -1538,7 +1615,10 @@ window.GuidedExplorationData = [
           "https://github.com/mudler/LocalRecall/blob/main/rag/persistency.go",
           "https://github.com/mudler/LocalRecall/blob/main/routes.go"
         ],
-        "embed": false
+        "embed": false,
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml",
@@ -1592,7 +1672,10 @@ window.GuidedExplorationData = [
           "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml",
           "https://github.com/mudler/LocalRecall/blob/main/main.go"
         ],
-        "embed": false
+        "embed": false,
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go",
@@ -1647,7 +1730,10 @@ window.GuidedExplorationData = [
           "https://github.com/mudler/LocalRecall/blob/main/main.go",
           "https://github.com/mudler/LocalRecall"
         ],
-        "embed": false
+        "embed": false,
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       }
     ]
   },
@@ -1659,7 +1745,7 @@ window.GuidedExplorationData = [
         "title": "The next bottleneck may be how often your agents need you.",
         "intro": "Two agents can work in parallel and still wait on the same person. One’s product page makes that bottleneck visible: a question arrives, you choose an answer, and the right conversation continues. Here is the workflow to look for before deciding whether you need another app.",
         "originalTitle": "One product, setup and pricing",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Bring the human decisions into one place.",
@@ -1706,14 +1792,16 @@ window.GuidedExplorationData = [
           "https://getone.one/",
           "https://getone.one/terms",
           "https://herdr.dev/"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://getone.one/docs/remote-machines",
         "title": "The laptop can close. The server still needs a human route back in.",
         "intro": "The launch’s phone promise becomes more useful when the work is running elsewhere. This setup guide shows how a Linux machine joins the same inbox without making your phone an SSH client. The dependencies matter as much as the convenience.",
         "originalTitle": "One remote machines setup guide",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Start with agents already working on the server.",
@@ -1759,14 +1847,16 @@ window.GuidedExplorationData = [
         "sourceURLs": [
           "https://getone.one/docs/remote-machines",
           "https://getone.one/#faq"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://getone.one/privacy",
         "title": "An app that understands your work has to see some of it.",
         "intro": "Voice and screen context are the appeal. They are also the reason to inspect the data flow before using the app on a private project. One publishes a detailed policy; the useful distinction is where history is stored versus where request context is processed.",
         "originalTitle": "One privacy policy",
-        "mode": "reader",
+        "mode": "live",
         "sections": [
           {
             "heading": "Local history does not mean local processing.",
@@ -1813,7 +1903,9 @@ window.GuidedExplorationData = [
           "https://getone.one/privacy",
           "https://getone.one/docs/remote-machines",
           "https://getone.one/#faq"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   },
@@ -1824,7 +1916,7 @@ window.GuidedExplorationData = [
         "url": "https://casp.ac/reports/intelligence-explosion",
         "title": "The pivotal moment is when better AI starts making the next AI.",
         "intro": "Hinton’s post is short because the real argument is in the paper. Here is a guided route through it: how the loop would work, what could slow it down, and why the authors think uncertainty is a reason to prepare. You can get the mechanism without accepting the forecast.",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "What if automating AI R&D triggers an intelligence explosion?",
         "sections": [
           {
@@ -1872,7 +1964,9 @@ window.GuidedExplorationData = [
           "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf",
           "https://arxiv.org/abs/2609.36054",
           "https://creativecommons.org/licenses/by/4.0/"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       },
       {
         "url": "https://arxiv.org/abs/2507.23181",
@@ -1912,13 +2006,16 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://arxiv.org/abs/2507.23181"
-        ]
+        ],
+        "embeddingStatus": "blocked",
+        "embeddingCheckedDate": "2026-10-10",
+        "embeddingReason": "This website does not allow embedded viewing."
       },
       {
         "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
         "title": "Watch the length of the task, not the size of the launch.",
         "intro": "METR gives you a concrete lens for the next agent announcement: what length of human task can it finish, at what success rate?",
-        "mode": "reader",
+        "mode": "live",
         "originalTitle": "Measuring AI Ability to Complete Long Software Tasks",
         "sections": [
           {
@@ -1952,7 +2049,9 @@ window.GuidedExplorationData = [
         },
         "sourceURLs": [
           "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
-        ]
+        ],
+        "embeddingStatus": "unrestricted",
+        "embeddingCheckedDate": "2026-10-10"
       }
     ]
   }
