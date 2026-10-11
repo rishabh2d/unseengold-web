@@ -68,11 +68,12 @@
   position:absolute;top:0;bottom:42px;width:15%;z-index:1;
   display:none;align-items:center;justify-content:center;
   margin:0;padding:0;border:0;border-radius:0;
-  background:color-mix(in srgb,var(--blue-panel) 20%,transparent);color:#fff;
+  background:transparent;color:#fff;
   font:500 12px/1.2 system-ui,sans-serif;cursor:pointer;transition:none;
 }
 .insight-video-skip-back{left:0}
 .insight-video-skip-forward{right:0}
+.insight-video-skip:hover{background:color-mix(in srgb,var(--blue-panel) 20%,transparent)}
 .insight-video-player:has(> video:hover,.insight-video-skip:hover) > .insight-video-skip {display:flex}
 .insight-video-player.is-post-expanded > .insight-video-skip{bottom:0}
 .insight-video-player.is-post-expanded .insight-video-controls{z-index:2}
