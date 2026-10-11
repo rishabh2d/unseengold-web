@@ -67,6 +67,7 @@ window.MobileVideoFactory = (() => {
       if (!entry) return;
       const slot = document.createElement('div');
       slot.className = 'mobile-video-slot';
+      slot.style.height = `${entry.player.getBoundingClientRect().height}px`;
       entry.player.before(slot);
       const playing = !video.paused;
       if (document.body.moveBefore) document.body.moveBefore(entry.player, null);
