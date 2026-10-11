@@ -33,5 +33,15 @@ window.YouTubeReadingData = {
     "summary": true,
     "transcript": true,
     "chapters": false
+  },
+  "ssmLLWD5JgQ": {
+    "summary": true,
+    "transcript": false,
+    "chapters": false
+  },
+  "IkdziSLYzHw": {
+    "summary": true,
+    "transcript": false,
+    "chapters": true
   }
 };

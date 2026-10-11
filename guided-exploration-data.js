@@ -1111,5 +1111,849 @@ window.GuidedExplorationData = [
         "originalTitle": "See the actual Rubin rack"
       }
     ]
+  },
+  {
+    "id": "https://x.com/wheresryan22/status/2108948624004526516",
+    "stops": [
+      {
+        "url": "https://skills.wheresryan.sh/anatomy/collection",
+        "title": "Some ideas click the moment you can move them.",
+        "intro": "A queue, a cache and a mutex are easy to name and harder to picture. Anatomy’s collection gives those invisible rules a physical form. Start with an idea you already know, then see whether the mechanism teaches it more clearly.",
+        "mode": "reader",
+        "originalTitle": "Anatomy: live collection",
+        "sections": [
+          {
+            "heading": "A familiar concept makes the first visit easier.",
+            "text": "The collection includes a marble run for a message queue, a bookcase for an LRU cache and a tank-and-key mechanism for a mutex. Each connects a computing rule to something you can manipulate. Choose the metaphor you can explain back to someone else.",
+            "helperTitle": "Pick a question, not a pretty thumbnail.",
+            "helperText": "What rule does the movement make obvious? That is the test of a useful explainer.",
+            "highlights": [
+              {
+                "phrase": "tank-and-key mechanism",
+                "explanation": "A mutex controls access to shared state. This figure uses the key as a visible exclusive-access metaphor."
+              }
+            ]
+          },
+          {
+            "heading": "Try the finished thing before commissioning another.",
+            "text": "The collection supplies live figures, named React imports and custom elements. That is a shorter path than asking an agent to recreate an example you already like. Our suggested first test: embed one figure beside a paragraph that readers usually find confusing.",
+            "helperTitle": "A practical next step",
+            "helperText": "Choose one existing figure and keep the surrounding explanation short.",
+            "highlights": [
+              {
+                "phrase": "custom elements",
+                "explanation": "These expose a figure as an HTML element for pages that do not use React; follow the collection’s import and registration example."
+              }
+            ]
+          },
+          {
+            "heading": "The visual language should serve the explanation.",
+            "text": "The author offers themes and color tokens for the figures. Keep the useful contrast: the mechanism should be readable and the important moving part easy to follow. Our view: if readers remember the ornament but cannot explain the rule, simplify the presentation.",
+            "helperTitle": "The goal is understanding",
+            "helperText": "A small accurate interaction can teach more than a large elaborate scene.",
+            "highlights": [
+              {
+                "phrase": "color tokens",
+                "explanation": "Named styling values let you adapt the figure’s palette. They do not change the mechanism being explained."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Pick a question, not a pretty thumbnail.",
+          "text": "What rule does the movement make obvious? That is the test of a useful explainer."
+        },
+        "sourceURLs": [
+          "https://skills.wheresryan.sh/anatomy/collection"
+        ]
+      },
+      {
+        "url": "https://github.com/wheresryan22/anatomy",
+        "title": "Your next technical article could contain a working explanation.",
+        "intro": "Instead of asking for a beautiful diagram, give the agent the rule you want the reader to understand. Anatomy provides the construction kit; your job is to give the explanation a purpose and check its meaning.",
+        "mode": "reader",
+        "originalTitle": "Anatomy repository and installation",
+        "sections": [
+          {
+            "heading": "Give it the behavior that matters.",
+            "text": "Anatomy’s examples include a token-bucket limiter and a database connection pool. A good request names the behavior, the actual counts or thresholds, and where the output belongs. Our example: explain why a request waits when all connections are busy, with controls for arrivals and completions.",
+            "helperTitle": "Prompt for the relationship",
+            "helperText": "Names, numbers and the decision the reader should understand beat a vague request for visual polish.",
+            "highlights": [
+              {
+                "phrase": "all connections are busy",
+                "explanation": "This is our suggested teaching goal, not a claim that a specific generated pool figure has already been tested."
+              }
+            ]
+          },
+          {
+            "heading": "Install the skill; keep the finished source.",
+            "text": "The README’s Claude Code command is npx skills add wheresryan22/anatomy -g -a claude-code. The project supports standalone HTML, SVG and React output. You receive editable source, so the figure can live in documentation instead of disappearing inside a chat.",
+            "helperTitle": "You keep something useful",
+            "helperText": "A source artifact can be reviewed, versioned and changed with the article it accompanies.",
+            "highlights": [
+              {
+                "phrase": "editable source",
+                "explanation": "The project describes output as a build script and generated page, or geometry and React components. Review the result before shipping it."
+              }
+            ]
+          },
+          {
+            "heading": "A small first build makes feedback cheaper.",
+            "text": "Our recommendation: begin with one mechanism and one meaningful interaction. Inspect its labels, readout and movement before requesting a larger scene. The repository’s 3D guide marks that mode beta; more depth and more parts introduce additional review work.",
+            "helperTitle": "Start with the smallest useful object",
+            "helperText": "The best first figure answers one question well.",
+            "highlights": [
+              {
+                "phrase": "3D guide",
+                "explanation": "The project documents limited demonstrated coverage and asks builders to measure performance rather than assume every complex scene will remain smooth."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Prompt for the relationship",
+          "text": "Names, numbers and the decision the reader should understand beat a vague request for visual polish."
+        },
+        "sourceURLs": [
+          "https://github.com/wheresryan22/anatomy",
+          "https://github.com/wheresryan22/anatomy/blob/main/references/3d.md"
+        ]
+      },
+      {
+        "url": "https://skills.wheresryan.sh/anatomy/how-i-built-it",
+        "title": "The interesting part is how the agent checks its own picture.",
+        "intro": "Polish is easy to notice. Wrong joints, impossible overlaps and a misleading mechanism are easier to miss. The creator’s walkthrough shows the feedback loop behind the finished illustrations—and where human judgment still belongs.",
+        "mode": "reader",
+        "originalTitle": "Anatomy: how I built it",
+        "sections": [
+          {
+            "heading": "One model should tell the whole story.",
+            "text": "The author puts the numerical behavior into a shared model, so movement and readout use the same state. That reduces the chance of a dial saying one thing while the drawing does another. It still depends on choosing the right model in the first place.",
+            "helperTitle": "Consistency comes before polish",
+            "helperText": "Shared state prevents conflicting outputs; it does not certify the underlying assumptions.",
+            "highlights": [
+              {
+                "phrase": "shared model",
+                "explanation": "A single source for behavior and display keeps the visible numbers synchronized with the motion."
+              }
+            ]
+          },
+          {
+            "heading": "A geometry check cannot tell you everything.",
+            "text": "The walkthrough describes automatic checks for intersections, mounting and drawing order. It also explains that passing an audit is not sufficient: a visible seam can still be wrong because the check sees recorded geometry, not every rendered line.",
+            "helperTitle": "Why close-ups matter",
+            "helperText": "The automatic checks and visual review catch different kinds of mistakes.",
+            "highlights": [
+              {
+                "phrase": "passing an audit is not sufficient",
+                "explanation": "An automated check can validate the properties it measures while missing a rendering defect or a weak conceptual explanation."
+              }
+            ]
+          },
+          {
+            "heading": "Review the explanation, not only the artifact.",
+            "text": "The verification guide asks for desktop and phone captures, interaction checks and close-ups. Our final question is simpler: after using the figure, can a reader explain why the system behaves that way? Keep an ordinary text explanation available when the visual metaphor needs clarification.",
+            "helperTitle": "The reader is the final test",
+            "helperText": "A figure succeeds when the concept survives after the animation stops.",
+            "highlights": [
+              {
+                "phrase": "ordinary text explanation",
+                "explanation": "Our recommendation for a clearer and more accessible learning experience; this is not a claim that every existing figure includes a full alternative explanation."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Consistency comes before polish",
+          "text": "Shared state prevents conflicting outputs; it does not certify the underlying assumptions."
+        },
+        "sourceURLs": [
+          "https://skills.wheresryan.sh/anatomy/how-i-built-it",
+          "https://github.com/wheresryan22/anatomy/blob/main/references/verify.md"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/npm_i_shaders/status/2107467668009963819",
+    "stops": [
+      {
+        "url": "https://shaders.com/react",
+        "title": "A memorable website does not have to start with a graphics engine.",
+        "intro": "Light, texture and movement can give a page its own character. Shaders lets frontend developers compose those effects with familiar component props. Here is the useful bridge from a visual idea to something you can still edit in your codebase.",
+        "mode": "reader",
+        "originalTitle": "Shaders for React",
+        "sections": [
+          {
+            "heading": "Treat the effect as a small composition.",
+            "text": "The React page shows a Shader wrapper with a LinearGradient and CursorTrail inside it. The wrapper owns the canvas; the child components describe the layers. Our suggested experiment: begin with the gradient, then add the cursor behavior only if it improves the experience.",
+            "helperTitle": "Two layers are enough to understand the idea",
+            "helperText": "Learn what each layer contributes before adding more.",
+            "highlights": [
+              {
+                "phrase": "LinearGradient and CursorTrail",
+                "explanation": "The documented example combines a background generator with an interactive cursor effect. These are component names, not CSS classes."
+              }
+            ]
+          },
+          {
+            "heading": "Own the settings that make it yours.",
+            "text": "The official React page presents typed components and code exported from the editor. Our recommendation: keep a few important props visible in your application code, such as the colors and interaction intensity. A visual effect becomes maintainable when its purpose and controls are easy to find.",
+            "helperTitle": "Keep it editable",
+            "helperText": "A reusable component should remain understandable after the designer moves on.",
+            "highlights": [
+              {
+                "phrase": "important props",
+                "explanation": "The values you choose to expose should serve your design; this is editorial guidance, not a promise that every component uses identical prop names."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Two layers are enough to understand the idea",
+          "text": "Learn what each layer contributes before adding more."
+        },
+        "sourceURLs": [
+          "https://shaders.com/react",
+          "https://github.com/shader-effects-inc/shaders"
+        ]
+      },
+      {
+        "url": "https://shaders.com/docs/guide/mcp",
+        "title": "Give your coding agent a vocabulary, then a connection.",
+        "intro": "“Make it look amazing” leaves an agent guessing. A documented library gives it named effects and real controls. A connected workflow lets it bring an existing design into the application rather than reinventing that design from scratch.",
+        "mode": "reader",
+        "originalTitle": "Shaders MCP and agent workflow",
+        "sections": [
+          {
+            "heading": "Instructions and tools solve different problems.",
+            "text": "The Shaders skill teaches the component library and how to look up props. MCP can retrieve code for designs saved in your account and help edit them. The skill is reference material; connecting MCP is a separate step with account access.",
+            "helperTitle": "Know what you are enabling",
+            "helperText": "Knowledge of an API is different from permission to access a saved project.",
+            "highlights": [
+              {
+                "phrase": "reference material",
+                "explanation": "A skill supplies instructions. It does not itself connect to your account or unlock paid presets."
+              }
+            ]
+          },
+          {
+            "heading": "Bring a design into the project you already have.",
+            "text": "The CLI documentation describes installing a saved design as an ordinary component file and tracking it in a lock file. Updates can pull editor changes into the codebase; files edited by hand are left alone unless you explicitly force replacement.",
+            "helperTitle": "A workflow worth testing",
+            "helperText": "Try one saved effect and one small edit before adopting the workflow for an entire site.",
+            "highlights": [
+              {
+                "phrase": "files edited by hand",
+                "explanation": "The documented update behavior preserves local modifications and reports them. Inspect any forced update before using it."
+              }
+            ]
+          },
+          {
+            "heading": "The shortcut is useful when it leaves you in control.",
+            "text": "Our view: the best agent-assisted visual work ends in understandable source, not an unexplained animation. Ask the agent what it installed, which props change at runtime, and how the page behaves without the effect. Keep the account-connected part limited to the work you actually need.",
+            "helperTitle": "A good final handoff",
+            "helperText": "You should know where the source lives and how to remove or simplify it.",
+            "highlights": [
+              {
+                "phrase": "understandable source",
+                "explanation": "This is our quality criterion for an agent workflow, rather than a verified claim that all generated effects meet it."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Know what you are enabling",
+          "text": "Knowledge of an API is different from permission to access a saved project."
+        },
+        "sourceURLs": [
+          "https://shaders.com/docs/guide/mcp",
+          "https://shaders.com/docs/guide/agent-skill",
+          "https://shaders.com/docs/guide/cli"
+        ]
+      },
+      {
+        "url": "https://shaders.com/pricing",
+        "title": "The foundation is free. The shortcuts are what you buy.",
+        "intro": "A release can sound like everything has suddenly become free. The useful distinction here is more precise: build with the open components for free, then decide whether a curated library and faster workflow are worth paying for.",
+        "mode": "reader",
+        "originalTitle": "Shaders pricing and license scope",
+        "sections": [
+          {
+            "heading": "Start with the part you can keep.",
+            "text": "The pricing page lists Free at $0: the open-source components, editor and code export. The engine and framework bindings are MIT licensed. That gives you a low-cost way to test a real effect in your own page before choosing a paid workflow.",
+            "helperTitle": "A sensible first step",
+            "helperText": "Make one effect yourself and find out what the library saves you.",
+            "highlights": [
+              {
+                "phrase": "MIT licensed",
+                "explanation": "The license applies to the open-source package. Hosted presets and platform features have separate terms."
+              }
+            ]
+          },
+          {
+            "heading": "Pay for the time you actually save.",
+            "text": "Pro is listed at $199 per year on the checked page, with curated presets, ready-to-use sections, media exports and other workflow features. Regional pricing applies; a Lifetime option exists but its amount was not verified. The price here was checked October 10, 2026.",
+            "helperTitle": "Compare the workflow, not just the screenshot",
+            "helperText": "The paid library may be valuable when it shortens repeated client or product work.",
+            "highlights": [
+              {
+                "phrase": "$199 per year",
+                "explanation": "This is the annual amount displayed when checked, not a guarantee of the checkout price in every region."
+              }
+            ]
+          },
+          {
+            "heading": "A polished preset is still part of your product.",
+            "text": "Our recommendation: review the license of the assets you choose and test the page on the hardware your audience uses. Buying a preset can save design time. It does not remove your responsibility for readability, accessibility or performance.",
+            "helperTitle": "Keep the product usable",
+            "helperText": "The effect should enhance a page that works without it.",
+            "highlights": [
+              {
+                "phrase": "save design time",
+                "explanation": "An editorial evaluation of the likely value, not a measured productivity result or a promise of return on investment."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "A sensible first step",
+          "text": "Make one effect yourself and find out what the library saves you."
+        },
+        "sourceURLs": [
+          "https://shaders.com/pricing",
+          "https://github.com/shader-effects-inc/shaders/blob/main/LICENSE"
+        ]
+      },
+      {
+        "url": "https://shaders.com/docs/guide/performance",
+        "title": "Make the effect earn its milliseconds.",
+        "intro": "The impressive demo is only half the story. Your visitors also need the page to load, respond and stay readable. The performance guide gives you concrete places to look when a beautiful composition becomes an expensive one.",
+        "mode": "reader",
+        "originalTitle": "Shaders performance guide",
+        "sections": [
+          {
+            "heading": "Some layers do more work than others.",
+            "text": "The guide distinguishes generators from filters that sample neighboring pixels. Blur and glass-like filters can need extra render passes; nesting can multiply that work. Start with the simplest composition that achieves the look, then add one effect at a time.",
+            "helperTitle": "Know where the work goes",
+            "helperText": "Extra passes matter more than a long list of impressive component names.",
+            "highlights": [
+              {
+                "phrase": "extra render passes",
+                "explanation": "A pass renders into another image before that result is combined with later layers."
+              }
+            ]
+          },
+          {
+            "heading": "Transparent does not mean free.",
+            "text": "The documentation says an invisible layer with opacity zero still renders, while visible=false removes it from the composition. It also notes that larger canvases and higher pixel densities can cost more. Those are useful levers when an effect looks fine on your laptop but feels heavy elsewhere.",
+            "helperTitle": "A practical first check",
+            "helperText": "Remove work that should stay off; do not merely hide its result.",
+            "highlights": [
+              {
+                "phrase": "opacity zero still renders",
+                "explanation": "Use the documented visibility control for layers that remain off; changing composition itself has a cost, so it is not a substitute for animating opacity."
+              }
+            ]
+          },
+          {
+            "heading": "Keep a fallback that respects the reader.",
+            "text": "Shaders has no WebGL fallback. MDN documents secure-context and GPU-adapter requirements for WebGPU. Our recommendation: retain a static or CSS version that keeps the text and controls readable, and measure the animated path on real target devices.",
+            "helperTitle": "The content comes first",
+            "helperText": "A missing visual effect should never mean a missing page.",
+            "highlights": [
+              {
+                "phrase": "static or CSS version",
+                "explanation": "This is a suggested application-level fallback. We are not claiming Shaders automatically supplies it for every effect."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Know where the work goes",
+          "text": "Extra passes matter more than a long list of impressive component names."
+        },
+        "sourceURLs": [
+          "https://shaders.com/docs/guide/performance",
+          "https://shaders.com/pricing",
+          "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/gitrepos/status/2109131908974026789",
+    "stops": [
+      {
+        "url": "https://github.com/mudler/LocalRecall",
+        "title": "Your agent can forget the chat and still find the document.",
+        "intro": "The useful promise is a place to look things up again. Imagine a project assistant finding the exact note behind an answer instead of relying on whatever survived the conversation. Here is what this small service contributes to that workflow.",
+        "originalTitle": "LocalRecall repository",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "Put the knowledge somewhere you can inspect.",
+            "text": "LocalRecall organizes files into collections and offers a web UI alongside a REST API. Its job is to store and retrieve material that another application can use. Picture a shelf of project notes with a search desk in front: the answer-writing agent can consult it, but the shelf does not choose the final answer.",
+            "helperTitle": "The missing piece",
+            "helperText": "This gives an application an inspectable retrieval service. You still bring the agent and decide when it should search.",
+            "highlights": [
+              {
+                "phrase": "store and retrieve",
+                "explanation": "The public API exposes collection management, uploads and searches. It does not expose a complete conversational answer endpoint."
+              }
+            ]
+          },
+          {
+            "heading": "Upload is only the beginning.",
+            "text": "The ingestion code breaks supported document text into chunks and sends those pieces to the configured embedding service. At query time, search asks the storage engine for related results. Markdown, plain text and PDF have a text-extraction path; other uploaded assets may remain raw files without searchable passages.",
+            "helperTitle": "Know what entered the index",
+            "helperText": "Check extracted text and returned passages. A file appearing in the UI does not prove its contents can be found.",
+            "highlights": [
+              {
+                "phrase": "searchable passages",
+                "explanation": "The code distinguishes raw-only assets from files with semantic chunks. This matters for image-heavy or scanned documents."
+              }
+            ]
+          },
+          {
+            "heading": "Make the first question one you already know.",
+            "text": "Our suggested starting point is modest: a handful of project notes and questions whose answers you can verify. Compare exact names with paraphrased questions. Then ask something the notes never covered. A useful memory should reveal relevant source material; it should also let you notice when that material is missing.",
+            "helperTitle": "A small experiment with a clear result",
+            "helperText": "Judge retrieved passages first. Add answer generation only after retrieval is doing something useful.",
+            "highlights": [
+              {
+                "phrase": "relevant source material",
+                "explanation": "This is our evaluation suggestion, not a measured result or a guarantee that LocalRecall finds every answer."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "The missing piece",
+          "text": "This gives an application an inspectable retrieval service. You still bring the agent and decide when it should search."
+        },
+        "sourceURLs": [
+          "https://github.com/mudler/LocalRecall",
+          "https://github.com/mudler/LocalRecall/blob/main/rag/persistency.go",
+          "https://github.com/mudler/LocalRecall/blob/main/routes.go"
+        ],
+        "embed": false
+      },
+      {
+        "url": "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml",
+        "title": "“Local” becomes meaningful when every arrow stays on your machine.",
+        "intro": "The setup file is more revealing than the slogan. It shows which service creates embeddings, where the knowledge lives and what must already be available before you disconnect. That is the route to an offline system you can reason about.",
+        "originalTitle": "LocalRecall Docker Compose configuration",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "There is a model service behind the memory.",
+            "text": "The supplied Compose stack runs LocalAI with granite-embedding-107m-multilingual, a PostgreSQL service and the LocalRecall server. LocalRecall points its embedding requests to the LocalAI container. The placeholder API-key value in this example is part of local configuration; it is not evidence that a paid OpenAI account is required.",
+            "helperTitle": "Follow the embedding URL",
+            "helperText": "The configured endpoint determines where document and query embeddings are computed. Keep that local if offline operation is your goal.",
+            "highlights": [
+              {
+                "phrase": "embedding requests",
+                "explanation": "An embedding turns text into a numeric representation used by search. The endpoint providing it is separate from the storage server."
+              }
+            ]
+          },
+          {
+            "heading": "Download first; disconnect after the setup works.",
+            "text": "Container images, model assets and dependencies must be present before a disconnected run can work. Online web pages or repositories also cannot refresh while offline. Our reading of the claim is therefore a locally provisioned retrieval service, not a promise that an empty laptop can install itself without a connection.",
+            "helperTitle": "What offline can mean here",
+            "helperText": "Test an already prepared collection with the network disconnected. Initial provisioning is a separate step.",
+            "highlights": [
+              {
+                "phrase": "locally provisioned",
+                "explanation": "The Compose file names external container images and a model. Those assets need to exist locally before the system can use them offline."
+              }
+            ]
+          },
+          {
+            "heading": "Keep the shelf when the containers stop.",
+            "text": "The example mounts persistent volumes for the database, uploaded assets and model files. Those locations are part of the knowledge base, not disposable decoration. For a real project, plan backups and verify restart behavior with your own collection before treating the service as long-term memory.",
+            "helperTitle": "The operational question",
+            "helperText": "Which files and database volumes would you restore if this machine failed? Start with the mounted state.",
+            "highlights": [
+              {
+                "phrase": "persistent volumes",
+                "explanation": "The Compose file mounts data paths outside the transient container filesystem. Backup and recovery behavior still needs your own validation."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Follow the embedding URL",
+          "text": "The configured endpoint determines where document and query embeddings are computed. Keep that local if offline operation is your goal."
+        },
+        "sourceURLs": [
+          "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml",
+          "https://github.com/mudler/LocalRecall/blob/main/main.go"
+        ],
+        "embed": false
+      },
+      {
+        "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go",
+        "title": "A useful memory earns trust one returned passage at a time.",
+        "intro": "The next step is not a bigger model. It is a small retrieval contract: what goes in, what comes back, and who is allowed to ask. This is where a promising demo starts to become a dependable part of your own application.",
+        "originalTitle": "LocalRecall API routes and authentication",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "Give the caller a bounded search.",
+            "text": "The search endpoint accepts a query and max_results, then returns the matching results and their count. Your application can inspect those results before handing them to a model. Limiting the result count is useful, but it does not prove that the top matches contain the answer or that a model will cite them correctly.",
+            "helperTitle": "Read the evidence before the answer",
+            "helperText": "The returned result is the retrieval output. Accuracy of a generated response is another step to evaluate.",
+            "highlights": [
+              {
+                "phrase": "max_results",
+                "explanation": "This parameter bounds the number of returned search results. It is not a confidence threshold or a guarantee of relevance."
+              }
+            ]
+          },
+          {
+            "heading": "Combine precise names with broader meaning.",
+            "text": "The PostgreSQL configuration exposes weights for BM25 keyword search and vector similarity. Exact project identifiers and loosely phrased concepts can benefit from different signals. Our suggested test is to try both kinds of question against your corpus and inspect the difference before choosing a blend.",
+            "helperTitle": "Why two search signals exist",
+            "helperText": "Keyword matching helps with literal terms; semantic similarity helps with related wording. Tune against actual questions.",
+            "highlights": [
+              {
+                "phrase": "different signals",
+                "explanation": "The repository describes configurable hybrid search for its PostgreSQL engine. We have not measured which weighting is best for your collection."
+              }
+            ]
+          },
+          {
+            "heading": "Keep private memory private at the boundary.",
+            "text": "The code only enables its bearer-key middleware when API_KEYS is supplied, while the default listen address is :8080. That makes local convenience and remote exposure different operating choices. Before serving sensitive notes beyond your machine, configure authentication and restrict access deliberately. This review checked those code paths, not every deployment property.",
+            "helperTitle": "A concrete configuration check",
+            "helperText": "An empty API_KEYS setting means this middleware does not add an access check. Review the network boundary too.",
+            "highlights": [
+              {
+                "phrase": "only enables",
+                "explanation": "This is observable in registerAPIRoutes: the authentication middleware is conditional on a nonempty key list."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Read the evidence before the answer",
+          "text": "The returned result is the retrieval output. Accuracy of a generated response is another step to evaluate."
+        },
+        "sourceURLs": [
+          "https://github.com/mudler/LocalRecall/blob/main/routes.go",
+          "https://github.com/mudler/LocalRecall/blob/main/main.go",
+          "https://github.com/mudler/LocalRecall"
+        ],
+        "embed": false
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/ky__zo/status/2107549434280284460",
+    "stops": [
+      {
+        "url": "https://getone.one/",
+        "title": "The next bottleneck may be how often your agents need you.",
+        "intro": "Two agents can work in parallel and still wait on the same person. One’s product page makes that bottleneck visible: a question arrives, you choose an answer, and the right conversation continues. Here is the workflow to look for before deciding whether you need another app.",
+        "originalTitle": "One product, setup and pricing",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "Bring the human decisions into one place.",
+            "text": "The page presents an Inbox for questions and finished work, with a toolbar showing agent states. Its Router accepts spoken or typed requests and directs them to an existing agent or starts another. Your coding tools remain the workers. Our reading of the opportunity is less window hunting when several projects need a decision at once.",
+            "helperTitle": "Notice the human queue",
+            "helperText": "The interesting output is not more code generated. It is a question reaching you with enough context to answer.",
+            "highlights": [
+              {
+                "phrase": "coding tools",
+                "explanation": "One’s FAQ defines it as a coordination app on top of coding agents, rather than a replacement coding agent."
+              }
+            ]
+          },
+          {
+            "heading": "Try the session you actually use.",
+            "text": "The published Mac requirement is macOS 13 or later on Apple silicon or Intel. The FAQ describes herdr as the runtime for controlling terminal agents, with a move step for sessions still in another terminal. A phone beta and browser remote add another access path. Compatibility is therefore a workflow question, not just a logo on a landing page.",
+            "helperTitle": "A useful trial goal",
+            "helperText": "Verify your agent, terminal and phone path. Do not assume visibility means every control is available in place.",
+            "highlights": [
+              {
+                "phrase": "a move step",
+                "explanation": "The FAQ says moving a terminal agent into herdr closes it there and reopens the same conversation in herdr. Desktop-app integration has separate rules."
+              }
+            ]
+          },
+          {
+            "heading": "Buy the coordination layer, not an imagined bundle of agents.",
+            "text": "The current FAQ lists a limited Free tier, Pro monthly or yearly, and a limited lifetime offer. It says the underlying coding agents keep using your own subscriptions. Lifetime brings your own API key. The older Terms retain free-service wording, so use the current selected checkout to confirm price and billing before purchasing.",
+            "helperTitle": "What the price covers",
+            "helperText": "One and your coding agents are separate costs. Prices were checked Oct 10, 2026 and can change.",
+            "highlights": [
+              {
+                "phrase": "your own subscriptions",
+                "explanation": "The pricing section explicitly says your coding agents stay on the plans you already pay for."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Notice the human queue",
+          "text": "The interesting output is not more code generated. It is a question reaching you with enough context to answer."
+        },
+        "sourceURLs": [
+          "https://getone.one/",
+          "https://getone.one/terms",
+          "https://herdr.dev/"
+        ]
+      },
+      {
+        "url": "https://getone.one/docs/remote-machines",
+        "title": "The laptop can close. The server still needs a human route back in.",
+        "intro": "The launch’s phone promise becomes more useful when the work is running elsewhere. This setup guide shows how a Linux machine joins the same inbox without making your phone an SSH client. The dependencies matter as much as the convenience.",
+        "originalTitle": "One remote machines setup guide",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "Start with agents already working on the server.",
+            "text": "The guide requires a Linux x64 or arm64 machine and Claude Code or Codex installed and signed in. The connector runs as the same user as the agents, and remote agents run in herdr. One does not install, update or sign in those coding tools for you. This is a control path for an existing working environment.",
+            "helperTitle": "Check the starting point",
+            "helperText": "The server must already be able to run your coding agent. One connects it to your decision interface.",
+            "highlights": [
+              {
+                "phrase": "same user",
+                "explanation": "Herdr restricts access to its owning user, so the guide requires the connector and agents to run under that account."
+              }
+            ]
+          },
+          {
+            "heading": "An outgoing connection carries the conversation.",
+            "text": "The connector opens an outgoing connection rather than listening on a public port. The guide describes encryption to approved devices and signed control messages. Its manual installation path lets you inspect the connector and verify the download checksum. Those are documented design properties; this panel is not an independent security audit.",
+            "helperTitle": "Follow the trust boundary",
+            "helperText": "The remote connection and its device approvals are distinct from AI requests sent by the Mac app.",
+            "highlights": [
+              {
+                "phrase": "approved devices",
+                "explanation": "The guide says a device must be approved and its control messages signed. Account access alone is not described as sufficient machine-control authority."
+              }
+            ]
+          },
+          {
+            "heading": "Keep the boring dependencies in the picture.",
+            "text": "A running connector, herdr and signed-in agent are needed for the remote path. The guide includes status and doctor commands for checking these pieces and a service setup for surviving logout or reboot. If the machine is offline, a phone inbox cannot make it compute. Our practical takeaway is to test reconnection before relying on unattended work.",
+            "helperTitle": "The reliability question",
+            "helperText": "Can you recover from an offline machine or signed-out agent? The documented diagnostics help identify which piece stopped.",
+            "highlights": [
+              {
+                "phrase": "test reconnection",
+                "explanation": "This is our suggested evaluation. We did not install a remote connector or verify availability during an outage."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Check the starting point",
+          "text": "The server must already be able to run your coding agent. One connects it to your decision interface."
+        },
+        "sourceURLs": [
+          "https://getone.one/docs/remote-machines",
+          "https://getone.one/#faq"
+        ]
+      },
+      {
+        "url": "https://getone.one/privacy",
+        "title": "An app that understands your work has to see some of it.",
+        "intro": "Voice and screen context are the appeal. They are also the reason to inspect the data flow before using the app on a private project. One publishes a detailed policy; the useful distinction is where history is stored versus where request context is processed.",
+        "originalTitle": "One privacy policy",
+        "mode": "reader",
+        "sections": [
+          {
+            "heading": "Local history does not mean local processing.",
+            "text": "The policy says conversation history, working memory and agent summaries are stored on your Mac. It also describes sending relevant words, screenshots and agent context to AI providers to process requests, plus provider processing for background summaries. These can both be true. Local storage is not a claim that your prompts never leave the device.",
+            "helperTitle": "Separate storage from processing",
+            "helperText": "Ask where the working copy lives and where the model request goes. They are different questions.",
+            "highlights": [
+              {
+                "phrase": "Local storage",
+                "explanation": "The policy explicitly describes local history alongside external AI processing. This is a statement of the vendor’s policy, not a traffic measurement."
+              }
+            ]
+          },
+          {
+            "heading": "A remote channel and a model request have different boundaries.",
+            "text": "The remote-machine guide describes encrypted traffic to approved devices. One’s FAQ separately says a Mac request can send context through its server to AI providers, or straight to OpenAI with your own key. Do not extend a claim about the server connector to every AI interaction in the product.",
+            "helperTitle": "Read each route separately",
+            "helperText": "Encryption for connected-machine traffic does not imply end-to-end encryption from you through an AI provider.",
+            "highlights": [
+              {
+                "phrase": "encrypted traffic",
+                "explanation": "The product documentation explicitly distinguishes remote-machine traffic from request content processed by AI providers."
+              }
+            ]
+          },
+          {
+            "heading": "Let the trial include a privacy decision.",
+            "text": "Our suggestion is to try the product first on a non-sensitive task, inspect the requested permissions and read which provider accounts you connect. The policy lists Microphone, Screen Recording, Accessibility and Automation on Mac. Review that fit against your own work before treating convenient agent supervision as an automatic default.",
+            "helperTitle": "A practical fit check",
+            "helperText": "The tradeoff is easier context sharing with more access to your working environment. Choose it deliberately.",
+            "highlights": [
+              {
+                "phrase": "non-sensitive task",
+                "explanation": "This is our suggested evaluation approach. It is not a vendor guarantee or a claim that we inspected the running app."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Separate storage from processing",
+          "text": "Ask where the working copy lives and where the model request goes. They are different questions."
+        },
+        "sourceURLs": [
+          "https://getone.one/privacy",
+          "https://getone.one/docs/remote-machines",
+          "https://getone.one/#faq"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/geoffreyhinton/status/2106122709285368061",
+    "stops": [
+      {
+        "url": "https://casp.ac/reports/intelligence-explosion",
+        "title": "The pivotal moment is when better AI starts making the next AI.",
+        "intro": "Hinton’s post is short because the real argument is in the paper. Here is a guided route through it: how the loop would work, what could slow it down, and why the authors think uncertainty is a reason to prepare. You can get the mechanism without accepting the forecast.",
+        "mode": "reader",
+        "originalTitle": "What if automating AI R&D triggers an intelligence explosion?",
+        "sections": [
+          {
+            "heading": "Picture a research team that can improve its own tools.",
+            "text": "An AI researcher finds a training method that uses less compute. The improvement makes future AI researchers cheaper to run, so the same hardware can support more research. Alternatively, it makes the next model more capable. Both routes can strengthen the following research cycle. This is a conditional mechanism in the paper, not a claim that today’s systems already run the whole loop.",
+            "helperTitle": "Follow the feedback",
+            "helperText": "An improvement matters twice if it helps with a task and also helps build the next tool.",
+            "highlights": [
+              {
+                "phrase": "same hardware",
+                "explanation": "Cheaper inference can increase the number of automated researchers without buying additional machines. Their usefulness still depends on reliable research capability."
+              }
+            ]
+          },
+          {
+            "heading": "The brakes deserve as much attention as the accelerator.",
+            "text": "The paper identifies diminishing returns, limited compute and data, tasks that resist automation, and time-consuming processes such as training runs. A growing research workforce may duplicate ideas or wait for experiments. The authors argue that acceleration could overcome these frictions, but repeatedly describe the evidence as preliminary, mixed or indirect.",
+            "helperTitle": "Read the uncertainty",
+            "helperText": "Ask which constraint dominates in a real lab. A bigger team is useful only if it can produce more validated discoveries.",
+            "highlights": [
+              {
+                "phrase": "wait for experiments",
+                "explanation": "Research labor and experimental throughput are separate resources. A faster proposer of ideas may still need a slow experiment to find out whether an idea works."
+              }
+            ]
+          },
+          {
+            "heading": "A timeline is the output of assumptions, not a clock.",
+            "text": "The supplementary model illustrates acceleration after full automation under chosen returns-to-research estimates. It also explains how historical compute growth can distort those estimates and why mathematical growth cannot continue without physical limits. This guide adapts Chan, Winter and coauthors’ paper in our own words; the arXiv record licenses it under CC BY 4.0.",
+            "helperTitle": "The useful reading habit",
+            "helperText": "When you see a dramatic date, ask what had to be true before the model started counting.",
+            "highlights": [
+              {
+                "phrase": "after full automation",
+                "explanation": "The model’s acceleration calculation assumes that the relevant R&D work is already automated. It does not estimate when that condition will be reached."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "The paper’s core question",
+          "text": "Can better automated researchers make better successors quickly enough to outrun the remaining bottlenecks?"
+        },
+        "sourceURLs": [
+          "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf",
+          "https://arxiv.org/abs/2609.36054",
+          "https://creativecommons.org/licenses/by/4.0/"
+        ]
+      },
+      {
+        "url": "https://arxiv.org/abs/2507.23181",
+        "title": "A million researchers still need somewhere to run their experiments.",
+        "intro": "This is the most useful counterweight to the headline. The limiting resource might be neither ideas nor intelligence, but the ability to test those ideas at the scale that matters. A paper cited by Hinton’s team examines that question and gets different answers from different models.",
+        "mode": "reader",
+        "originalTitle": "Will Compute Bottlenecks Prevent an Intelligence Explosion?",
+        "sections": [
+          {
+            "heading": "More minds do not automatically buy more experiments.",
+            "text": "Whitfill and Wu study four frontier AI labs from 2014–2024. Their baseline model suggests that research compute and cognitive labor can substitute for one another. A model accounting for frontier experiment scale instead makes them complements. The distinction changes whether abundant automated labor can compensate for limited compute.",
+            "helperTitle": "The fork in the argument",
+            "helperText": "Substitutes can replace one another; complements need to grow together.",
+            "highlights": [
+              {
+                "phrase": "complements",
+                "explanation": "In this model, increasing one input works best when the other also increases. This does not by itself prove which regime future AI research will occupy."
+              }
+            ]
+          },
+          {
+            "heading": "Treat the disagreement as a research question.",
+            "text": "The paper’s two specifications produce divergent results. Our reading: watch whether useful new methods can be validated on small runs before committing to frontier-scale experiments. Cheap tests that transfer would support acceleration; ever larger required tests would strengthen the bottleneck. Neither possibility is settled by how many agents a lab can launch.",
+            "helperTitle": "What would change your mind?",
+            "helperText": "Look for evidence about experiment costs and transfer to larger models, rather than another confident prediction.",
+            "highlights": [
+              {
+                "phrase": "transfer",
+                "explanation": "A result transfers when what worked in the smaller experiment remains useful at the larger scale. That is a question to test, not a guarantee."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "Ideas versus tests",
+          "text": "Look at the relationship between research labor and experiment compute. That relationship decides whether more researchers buy faster progress."
+        },
+        "sourceURLs": [
+          "https://arxiv.org/abs/2507.23181"
+        ]
+      },
+      {
+        "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+        "title": "Watch the length of the task, not the size of the launch.",
+        "intro": "METR gives you a concrete lens for the next agent announcement: what length of human task can it finish, at what success rate?",
+        "mode": "reader",
+        "originalTitle": "Measuring AI Ability to Complete Long Software Tasks",
+        "sections": [
+          {
+            "heading": "A time horizon is a capability measure, not a stopwatch.",
+            "text": "METR benchmarks multi-step software and reasoning tasks against how long appropriately skilled humans take. A 50% time horizon is the human task duration at which the agent has a 50% chance of success. It does not say that every task of that length succeeds or that the agent takes that long to run.",
+            "helperTitle": "Check the denominator",
+            "helperText": "Human task duration and AI wall-clock runtime are different measurements.",
+            "highlights": [
+              {
+                "phrase": "50% chance of success",
+                "explanation": "Half-success reliability can be informative for research. It may still require costly review before a business can trust the result."
+              }
+            ]
+          },
+          {
+            "heading": "Keep the task and the workplace in view.",
+            "text": "METR warns that benchmark performance does not directly establish real-world usefulness. Our practical follow-up: measure a representative task in your own workflow, including the review burden of checking and correcting the result.",
+            "helperTitle": "Bring it back to your work",
+            "helperText": "Measure a representative task and the time spent correcting the result. That is closer to useful productivity.",
+            "highlights": [
+              {
+                "phrase": "review burden",
+                "explanation": "An agent can finish a benchmark yet still make a real workflow slower if checking, correcting and integrating its work takes too much human time."
+              }
+            ]
+          }
+        ],
+        "guide": {
+          "title": "A better question for the next launch",
+          "text": "What can it finish autonomously, how reliably, and how much oversight does the result need?"
+        },
+        "sourceURLs": [
+          "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+        ]
+      }
+    ]
   }
 ];

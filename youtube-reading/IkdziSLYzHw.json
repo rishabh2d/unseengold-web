@@ -1,0 +1,42 @@
+{
+  "id": "IkdziSLYzHw",
+  "sourceURL": "https://www.youtube.com/watch?v=IkdziSLYzHw",
+  "collectedDate": "2026-10-10",
+  "summary": "Hinton traces neural-network ideas into modern language models, contrasting learned representations with symbolic approaches. This is background for his perspective, rather than a presentation of the new paper.",
+  "summarySource": "Editorial summary of YouTube-provided summary",
+  "chapters": [
+    {
+      "time": 0,
+      "text": "Paradigms of intelligence"
+    },
+    {
+      "time": 94,
+      "text": "Backpropagation training"
+    },
+    {
+      "time": 283,
+      "text": "Language processing issues"
+    },
+    {
+      "time": 381,
+      "text": "Unifying meaning theories"
+    },
+    {
+      "time": 547,
+      "text": "Family tree learning model"
+    },
+    {
+      "time": 716,
+      "text": "How the neural network learns"
+    },
+    {
+      "time": 873,
+      "text": "Evolution of language models"
+    },
+    {
+      "time": 1157,
+      "text": "Lego analogy for language"
+    }
+  ],
+  "chaptersNote": "Chapter labels provided by YouTube; eight visible source labels captured."
+}

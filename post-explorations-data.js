@@ -912,5 +912,785 @@ window.PostExplorationData = [
       0
     ],
     "previewURL": "https://okihome.ai/"
+  },
+  {
+    "id": "https://x.com/wheresryan22/status/2108948624004526516",
+    "postId": "2108948624004526516",
+    "overview": "Anatomy lets a coding agent explain an idea by building a machine you can move, inspect and understand.",
+    "annotationTargets": [
+      0
+    ],
+    "questions": [
+      {
+        "question": "What does the skill actually add to Claude?",
+        "answer": "A reusable set of drawing instructions, geometry tools and examples. Claude reads the skill when the request matches, then writes an interactive figure as source code. Installing Anatomy does not train a new model or turn a text prompt into a precomputed video.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Anatomy: how the skill is built",
+            "url": "https://skills.wheresryan.sh/anatomy/how-i-built-it"
+          },
+          {
+            "title": "Claude Code: how skills load",
+            "url": "https://code.claude.com/docs/en/skills"
+          }
+        ]
+      },
+      {
+        "question": "Can I use a finished figure without generating a new one?",
+        "answer": "Yes. The official collection publishes live examples and an anatomy-figures package, with React imports and custom elements for non-React pages. Start with a working example when it already explains your subject; use the skill when you need a different mechanism.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Live collection and integration examples",
+            "url": "https://skills.wheresryan.sh/anatomy/collection"
+          }
+        ]
+      },
+      {
+        "question": "Does “one line” mean it finishes instantly?",
+        "answer": "No. One line describes the request, not the work required. The author’s site budgets 30–90 minutes for a Figure, 2–4 hours for a Hero, and 6 hours or more for an Epic. Those are the author’s estimates; complexity, review and the agent’s environment change the outcome.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Anatomy: size and time budgets",
+            "url": "https://skills.wheresryan.sh/anatomy"
+          }
+        ]
+      },
+      {
+        "question": "Is the physics or engineering automatically correct?",
+        "answer": "A convincing moving drawing is not an engineering validation. Anatomy asks the agent to collect true numbers and share a model between the motion and readout, then inspect geometry and screenshots. That can catch inconsistencies, but a subject expert still needs to check the assumptions and whether the mechanism faithfully explains the concept.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Anatomy: verification workflow",
+            "url": "https://github.com/wheresryan22/anatomy/blob/main/references/verify.md"
+          },
+          {
+            "title": "Anatomy: construction and model",
+            "url": "https://skills.wheresryan.sh/anatomy/how-i-built-it"
+          }
+        ]
+      },
+      {
+        "question": "What happens if the reader cannot run WebGL?",
+        "answer": "The core figure is SVG. The project says the SVG should remain understandable without its WebGL effects; reduced-motion mode stills the animation. Verify your exported figure separately, because a page whose meaning depends on a shader needs a readable alternative.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Anatomy: output and limits",
+            "url": "https://github.com/wheresryan22/anatomy"
+          }
+        ]
+      },
+      {
+        "question": "Why a machine instead of a diagram with arrows?",
+        "answer": "A mechanism can reveal a relationship through movement: requests wait, a queue advances, or a resource returns to a pool. Anatomy’s author uses physical metaphors to make those relationships inspectable. Our judgment: this works best when the motion teaches a rule, rather than merely making a page look busy.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Anatomy: objects, not diagrams",
+            "url": "https://skills.wheresryan.sh/anatomy"
+          }
+        ]
+      },
+      {
+        "question": "Where is the useful boundary between illustration and 3D?",
+        "answer": "The project reserves true 3D for motion that needs depth, such as a turning dial. Its 3D runtime is explicitly beta, with a narrow set of demonstrated examples. A simpler SVG figure is a sensible first choice when a sliding part or readable cutaway already explains the idea.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Anatomy: 3D status and scope",
+            "url": "https://github.com/wheresryan22/anatomy/blob/main/references/3d.md"
+          }
+        ]
+      },
+      {
+        "question": "What is free, and what can still cost money?",
+        "answer": "The Anatomy repository is MIT licensed. Its instructions and drawing kit are free to inspect and reuse under that license, but the coding agent that builds a new figure can still consume a paid subscription or model usage. Browse the existing collection first if you only want to learn or embed an already-built example.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Anatomy MIT license",
+            "url": "https://github.com/wheresryan22/anatomy/blob/main/LICENSE"
+          },
+          {
+            "title": "Finished figures",
+            "url": "https://skills.wheresryan.sh/anatomy/collection"
+          }
+        ]
+      }
+    ],
+    "videos": [],
+    "resources": [
+      {
+        "kind": "Interactive collection",
+        "title": "A mechanism you can learn with your hands",
+        "url": "https://skills.wheresryan.sh/anatomy/collection",
+        "description": "Browse the author’s finished examples before deciding what to build.",
+        "embed": false
+      },
+      {
+        "kind": "Open-source skill",
+        "title": "Turn your own explanation into a working object",
+        "url": "https://github.com/wheresryan22/anatomy",
+        "description": "Source, installation commands and complete example builds.",
+        "embed": false,
+        "price": "MIT-licensed source · model usage separate"
+      },
+      {
+        "kind": "Behind the build",
+        "title": "How a beautiful figure earns your trust",
+        "url": "https://skills.wheresryan.sh/anatomy/how-i-built-it",
+        "description": "The creator’s walkthrough of models, geometry, motion and verification.",
+        "embed": false
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/npm_i_shaders/status/2107467668009963819",
+    "postId": "2107467668009963819",
+    "overview": "Shaders turns GPU visual effects into reusable frontend components, with an open-source core and a separate paid preset library.",
+    "annotationTargets": [
+      1
+    ],
+    "questions": [
+      {
+        "question": "What is actually free after this announcement?",
+        "answer": "The rendering engine, shader components and framework bindings are MIT licensed. The hosted design editor and code export are free too, but the preset library, sections and other platform features have separate terms. Open source applies to the core package; it does not make every Pro asset free.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "What the release opens",
+            "url": "https://shaders.com/updates/shaders-is-open-source"
+          },
+          {
+            "title": "Repository license boundary",
+            "url": "https://github.com/shader-effects-inc/shaders"
+          }
+        ]
+      },
+      {
+        "question": "Why build from components instead of raw WGSL?",
+        "answer": "Components expose named props and a composition model, so you can tune an effect without rewriting its pixel program. The author calls the library production-tested; we have not benchmarked that claim. The useful difference is a reusable starting point with documentation, not a guarantee that every combination performs well.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Author’s rationale",
+            "url": "https://shaders.com/updates/shaders-is-open-source"
+          },
+          {
+            "title": "React composition example",
+            "url": "https://shaders.com/react"
+          }
+        ]
+      },
+      {
+        "question": "Can I use it in my existing frontend?",
+        "answer": "The package publishes bindings for React, Vue, Svelte, Solid and plain JavaScript. The pricing FAQ says Next.js and Nuxt work when the Shader component renders client-side. Inspect the integration for your framework rather than replacing your application stack to add an effect.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Framework examples",
+            "url": "https://github.com/shader-effects-inc/shaders"
+          },
+          {
+            "title": "Framework and client-side requirements",
+            "url": "https://shaders.com/pricing"
+          }
+        ]
+      },
+      {
+        "question": "Will it work for every visitor?",
+        "answer": "Shaders targets WebGPU and explicitly has no WebGL fallback. Browser support alone is not the whole story: a usable GPU adapter and secure context matter too. Provide a readable static or CSS fallback so the page remains useful when the effect cannot initialize.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Renderer compatibility",
+            "url": "https://shaders.com/pricing"
+          },
+          {
+            "title": "MDN: WebGPU requirements",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API"
+          }
+        ]
+      },
+      {
+        "question": "How do I stop a striking background slowing the page down?",
+        "answer": "The project’s performance guide identifies neighboring-pixel filters, masks and nested render passes as sources of extra work. Start with a small composition, then measure on your actual target devices and display sizes. The guide’s timing estimates are project figures, not our independent measurements.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "What makes an effect expensive",
+            "url": "https://shaders.com/docs/guide/performance"
+          }
+        ]
+      },
+      {
+        "question": "What is a shader doing that ordinary CSS does not?",
+        "answer": "A shader computes pixels on the GPU. WebGPU gives browser code access to that GPU through a graphics API; Shaders packages visual effects behind frontend components. Our rule of thumb: use CSS for a simple layout or static gradient, and reach for shader effects when the changing visual behavior earns the added complexity.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "MDN: WebGPU concepts",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebGPU_API"
+          },
+          {
+            "title": "Shaders component model",
+            "url": "https://github.com/shader-effects-inc/shaders"
+          }
+        ]
+      },
+      {
+        "question": "What is the difference between the agent skill and MCP?",
+        "answer": "The skill supplies reference instructions about components, props and workflow. MCP connects an agent to tools and your Shaders account, so it can retrieve and install saved designs. The docs say free accounts can connect; accessing the curated Pro library still requires Pro.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Skill: reference material",
+            "url": "https://shaders.com/docs/guide/agent-skill"
+          },
+          {
+            "title": "MCP: account-connected tools",
+            "url": "https://shaders.com/docs/guide/mcp"
+          }
+        ]
+      },
+      {
+        "question": "What would I be paying for, and how much?",
+        "answer": "The checked pricing page lists Free at $0 and Pro at $199 per year, with regional pricing and a separate Lifetime option. Pro adds curated presets, sections, media exports and workflow features. Start free if you want to compose your own effect; pay when the library or workflow saves enough time. Prices checked October 10, 2026; no Lifetime amount was verified.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Current pricing and billing terms",
+            "url": "https://shaders.com/pricing"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=ssmLLWD5JgQ",
+        "title": "Shaders is Open Source — WebGPU Effects for React, Vue, Svelte, Solid, JS & Framer",
+        "description": "The team’s official release video, linked directly from its announcement. See the intended visual language, then use the guides above to check the licensing and implementation tradeoffs."
+      }
+    ],
+    "resources": [
+      {
+        "kind": "Frontend components",
+        "title": "A visual effect you can tune like any other component",
+        "url": "https://shaders.com/react",
+        "description": "Framework examples and a catalog of effects.",
+        "embed": false
+      },
+      {
+        "kind": "Agent workflow",
+        "title": "Keep the visual design editable in your real project",
+        "url": "https://shaders.com/docs/guide/mcp",
+        "description": "How account-connected tools differ from a reference skill.",
+        "embed": false
+      },
+      {
+        "kind": "Product and pricing",
+        "title": "Choose the free foundation before paying for the shortcuts",
+        "url": "https://shaders.com/pricing",
+        "description": "Understand where the open-source package ends and Pro begins.",
+        "embed": false,
+        "price": "Free $0 · Pro $199/year · checked Oct 10, 2026"
+      },
+      {
+        "kind": "Performance guide",
+        "title": "Make the effect beautiful without making the page wait",
+        "url": "https://shaders.com/docs/guide/performance",
+        "description": "Render passes, filter costs and practical choices to measure.",
+        "embed": false
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/gitrepos/status/2109131908974026789",
+    "postId": "2109131908974026789",
+    "overview": "Give an agent a searchable bookshelf on your own machine, without replacing the model that reads it.",
+    "annotationTargets": [
+      0
+    ],
+    "questions": [
+      {
+        "question": "What does LocalRecall actually add to an agent?",
+        "answer": "A collection of documents the agent can search. LocalRecall manages uploads, stored files and retrieval through a web UI and REST API. The search route returns matching results; your agent still decides how to use them in an answer. It supplies the retrieval part of RAG, rather than a complete chat application.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Repository and API",
+            "url": "https://github.com/mudler/LocalRecall"
+          },
+          {
+            "title": "Search handler",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go"
+          }
+        ]
+      },
+      {
+        "question": "Is “no internet” true straight after installation?",
+        "answer": "It can operate locally when its embedding endpoint, model files and document collection are available on your machine. The supplied Docker Compose configuration pairs it with LocalAI for embeddings. Downloading images and models, or refreshing online sources, still needs a connection. Using a cloud embedding URL also changes where your document text goes.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Actual local stack configuration",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml"
+          },
+          {
+            "title": "Embedding endpoint configuration",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/main.go"
+          }
+        ]
+      },
+      {
+        "question": "Does “no GPU” tell me how fast it will be?",
+        "answer": "No. The project advertises operation without a GPU, but that is a hardware requirement claim, not a latency result. Indexing and querying depend on the embedding model, CPU, collection size and storage engine. No throughput or accuracy benchmark was established in this review.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Maintainer hardware claim",
+            "url": "https://github.com/mudler/LocalRecall"
+          },
+          {
+            "title": "Embedding model and engine settings",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/main.go"
+          }
+        ]
+      },
+      {
+        "question": "Can I upload a folder of images and expect semantic search?",
+        "answer": "The current ingestion code extracts text and creates searchable chunks for PDF, .txt and .md files. Other file types can be kept as raw assets without semantic chunks. A stored file is therefore not necessarily a searchable file. A scanned PDF also needs usable extracted text; storage alone is not OCR.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "File handling and text extraction",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/rag/persistency.go"
+          }
+        ]
+      },
+      {
+        "question": "Which database should I start with?",
+        "answer": "Chromem is the default file-based engine. The supplied PostgreSQL setup adds a separate database and supports a configurable mixture of keyword and vector search. The maintainer recommends PostgreSQL for production, but a small local evaluation can start with the simpler engine. Choose using retrieval results and operating needs, not the word “production” by itself.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Storage options",
+            "url": "https://github.com/mudler/LocalRecall"
+          },
+          {
+            "title": "Default engine",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/main.go"
+          },
+          {
+            "title": "PostgreSQL compose setup",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml"
+          }
+        ]
+      },
+      {
+        "question": "Is it ready to expose on a public server?",
+        "answer": "Not just by starting it. The server defaults to :8080, and bearer-key checks are installed only when API_KEYS is configured. Put authentication and appropriate network restrictions in place before making a private knowledge collection remotely reachable. We reviewed the configuration and handler, not a complete deployment security audit.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Listen address and optional keys",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/main.go"
+          },
+          {
+            "title": "Conditional authentication middleware",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go"
+          }
+        ]
+      },
+      {
+        "question": "Why keep a retrieval memory instead of retraining a model?",
+        "answer": "Retrieval lets an application look up source material when it needs it. Updating a collection does not require teaching that document to the answer model through training. Our practical reading: this is useful for changing project notes or product documentation, provided the search returns the right passage and the agent respects its context.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Collection upload and retrieval API",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go"
+          },
+          {
+            "title": "Persistent document processing",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/rag/persistency.go"
+          }
+        ]
+      },
+      {
+        "question": "What would a meaningful first test look like?",
+        "answer": "Use a small document set you understand, then ask questions with known answers: an exact identifier, a paraphrased concept and something absent from the documents. Inspect the retrieved passages before judging the final answer. This is our suggested evaluation, not a benchmark reported by the maintainer. It separates weak retrieval from a model inventing an answer.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Search API and returned results",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go"
+          }
+        ]
+      },
+      {
+        "question": "What am I paying for, and who maintains it?",
+        "answer": "The repository is published by mudler, whose license names Ettore Di Giacinto, and uses the MIT license. There is no software license purchase in that license; you still supply compute, storage and an embedding service, which may cost money if hosted. Gitrepos is the account sharing the discovery, not the repository maintainer.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Project maintainer and repository",
+            "url": "https://github.com/mudler/LocalRecall"
+          },
+          {
+            "title": "MIT license",
+            "url": "https://github.com/mudler/LocalRecall/blob/main/LICENSE"
+          },
+          {
+            "title": "Original discovery post",
+            "url": "https://x.com/gitrepos/status/2109131908974026789"
+          }
+        ]
+      }
+    ],
+    "videos": [],
+    "resources": [
+      {
+        "kind": "Repository",
+        "title": "A memory shelf your agent can actually search",
+        "url": "https://github.com/mudler/LocalRecall",
+        "price": "MIT licensed · your compute and storage",
+        "description": "Understand the document-to-retrieval path before adding it to a chatbot.",
+        "embed": false
+      },
+      {
+        "kind": "Setup",
+        "title": "Follow the data before you call it offline",
+        "url": "https://github.com/mudler/LocalRecall/blob/main/docker-compose.yml",
+        "description": "The actual Compose file reveals the embedding service, database and persistent volumes.",
+        "embed": false
+      },
+      {
+        "kind": "API",
+        "title": "Let a real question prove whether the memory helps",
+        "url": "https://github.com/mudler/LocalRecall/blob/main/routes.go",
+        "description": "Trace the upload, search and authentication routes, then evaluate them against your own documents.",
+        "embed": false
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/ky__zo/status/2107549434280284460",
+    "postId": "2107549434280284460",
+    "overview": "When several agents need you at once, One turns their questions into one inbox you can answer from your Mac or phone.",
+    "annotationTargets": [
+      0
+    ],
+    "questions": [
+      {
+        "question": "Is One another agent, or a place to manage the ones I already run?",
+        "answer": "A coordination app. Its FAQ says your existing coding agents write the code; One shows their status, gathers questions and passes along your requests. The current site lists Claude Code, Codex, OpenCode and other tools. The value to evaluate is easier supervision, not a new coding model.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Official product and FAQ",
+            "url": "https://getone.one/"
+          }
+        ]
+      },
+      {
+        "question": "What does the phone option actually require today?",
+        "answer": "The current FAQ offers an iPhone/iPad TestFlight beta for iOS 17 or later, plus a phone-browser option at getone.one/remote without notifications. Pairing requires the code shown by One on your Mac and approval there. This is current website information, separate from the author’s launch-time reply that App Store approval was pending.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Current phone availability",
+            "url": "https://getone.one/#faq"
+          },
+          {
+            "title": "Author’s verified launch post",
+            "url": "https://x.com/ky__zo/status/2107549434280284460"
+          }
+        ]
+      },
+      {
+        "question": "Do agents keep working when my laptop sleeps?",
+        "answer": "Agents running on the Mac need that Mac awake with One open. The current site says agents on a connected Linux server remain reachable from your phone when the Mac is off. Those remote agents still need a running server, its connector and their own installed, signed-in coding tools.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Remote-machine prerequisites",
+            "url": "https://getone.one/docs/remote-machines"
+          },
+          {
+            "title": "Mac sleep distinction",
+            "url": "https://getone.one/#faq"
+          }
+        ]
+      },
+      {
+        "question": "Can it control an existing terminal session without changing anything?",
+        "answer": "There are integration boundaries. The FAQ says answering, stopping or messaging terminal agents through One requires herdr; sessions in other terminals remain visible, but answering happens there. Moving a terminal conversation into herdr is a migration step. Supported desktop-app sessions are described separately, so test your actual setup during the trial.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Terminal integration requirements",
+            "url": "https://getone.one/#faq"
+          },
+          {
+            "title": "Herdr runtime",
+            "url": "https://herdr.dev/"
+          }
+        ]
+      },
+      {
+        "question": "What is the real price beyond the launch video?",
+        "answer": "As checked Oct 10, the FAQ lists Free at 25 requests/day to One’s AI; Pro at $12.99/month ($6.99 first month) or $119.88/year after a three-day trial; and a limited $229 lifetime offer with your own API key. Coding-agent subscriptions remain separate. The older Terms page still says the service is free, so confirm the selected checkout terms rather than relying on the launch post.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Current pricing and FAQ",
+            "url": "https://getone.one/#pricing"
+          },
+          {
+            "title": "Dated Terms with older fee wording",
+            "url": "https://getone.one/terms"
+          }
+        ]
+      },
+      {
+        "question": "Does a central inbox also keep my work fully local?",
+        "answer": "No. One’s privacy policy says requests can send your voice, a screenshot and relevant agent activity to AI providers. It stores working history locally and says it does not keep a server-side content archive. That is different from saying data never leaves your machine. The encrypted remote-machine channel is a separate boundary.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Data flow and retention",
+            "url": "https://getone.one/privacy"
+          },
+          {
+            "title": "Remote encryption boundary",
+            "url": "https://getone.one/docs/remote-machines"
+          }
+        ]
+      },
+      {
+        "question": "Why does an agent inbox matter more as I add agents?",
+        "answer": "Our interpretation: parallel work creates more moments when a human must answer, choose or review. Gathering those interruptions makes the human decision queue visible. It can reduce searching between windows, but the product’s convenience claims do not establish how much throughput you personally gain.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Inbox and status interface",
+            "url": "https://getone.one/#what-it-is"
+          }
+        ]
+      },
+      {
+        "question": "Who stays responsible if voice routing sends the wrong instruction?",
+        "answer": "You do. The Terms explicitly say recognition and routing can be wrong, and One does not sandbox, review or approve the actions your agents take. The product describes a two-second undo window for answers, but that is a convenience, not a replacement for reading the destination and reviewing consequential work.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Routing limitations and responsibility",
+            "url": "https://getone.one/terms"
+          },
+          {
+            "title": "Undo feature description",
+            "url": "https://getone.one/#what-it-is"
+          }
+        ]
+      },
+      {
+        "question": "What should I try before buying an extra coordination layer?",
+        "answer": "Our suggested test: connect two supported agents working on different tasks, answer one real question, verify which session received it, then try the phone path you would actually use. Check whether centralizing interruptions helps more than the extra runtime, account and privacy requirements cost you. We have not installed or benchmarked One for this panel.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Setup and supported platforms",
+            "url": "https://getone.one/#how-it-works"
+          },
+          {
+            "title": "Remote setup requirements",
+            "url": "https://getone.one/docs/remote-machines"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=Xq7jUy7dch4",
+        "title": "i've built this and i want you to try it",
+        "description": "The founder’s video, embedded on One’s own product page. Watch how the creator presents the agent inbox, then compare the promise with the setup, pricing and privacy details above. Official placement and YouTube title/channel metadata verified; no transcript or playback claim is made here."
+      }
+    ],
+    "resources": [
+      {
+        "kind": "Product",
+        "title": "Put the interruptions somewhere you can answer them",
+        "url": "https://getone.one/",
+        "price": "Free tier · Pro $12.99/month · limited $229 lifetime offer · checked Oct 10",
+        "description": "A tour of what the coordination layer contributes, and what your existing agents still do."
+      },
+      {
+        "kind": "Remote setup",
+        "title": "Walk away from the laptop, keep the decision channel",
+        "url": "https://getone.one/docs/remote-machines",
+        "description": "How remote Linux agents stay reachable, and the dependencies that make it work."
+      },
+      {
+        "kind": "Privacy",
+        "title": "A convenient control room needs a clear view of its data",
+        "url": "https://getone.one/privacy",
+        "description": "Where screen context, voice and agent activity travel when you issue a request."
+      }
+    ]
+  },
+  {
+    "id": "https://x.com/geoffreyhinton/status/2106122709285368061",
+    "postId": "2106122709285368061",
+    "overview": "AI that improves the next AI could accelerate research—but the feedback loop still has real bottlenecks.",
+    "questions": [
+      {
+        "question": "What exactly is improving itself?",
+        "answer": "The research process, not necessarily one chatbot editing its own weights. Better AI can propose experiments, write and test training code, or improve data and inference. If those advances produce more capable or cheaper AI researchers, the next research cycle has more effective labor. That feedback loop is the paper’s mechanism; assistance on a few tasks alone does not close it.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "Has an intelligence explosion already happened?",
+        "answer": "No. The September 2026 paper says AI R&D productivity gains have not yet reached the threshold for the acceleration it describes. It assembles evidence for a possible pathway and calls for preparation. Hinton’s “quite soon” is his assessment, not a measured countdown or an observed event.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "Does the paper give a date or a probability?",
+        "answer": "It does not establish either. A tentative task-horizon extrapolation points to months-long research tasks by mid-2028. A separate stylized model produces a roughly tenfold acceleration after about 1.5 years of full automation under specific assumptions. Those are different conditional calculations; neither says an explosion will begin in 2028 or assigns a probability to it.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "What is the strongest reason the loop could stall?",
+        "answer": "Experiments may require more compute as frontier models get larger. More AI researchers cannot help proportionally if they all need scarce experimental capacity. Whitfill and Wu fit two models to historical frontier-lab data: one treats research labor and compute as substitutes, the other as complements. That disagreement makes the scale of experiments a serious unresolved question, not a detail the headline settles.",
+        "perspective": "post",
+        "sources": [
+          {
+            "title": "Whitfill and Wu: competing models of the compute bottleneck",
+            "url": "https://arxiv.org/abs/2507.23181"
+          },
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "Why is this different from ordinary AI progress?",
+        "answer": "Ordinary progress can come from more investment, hardware and human researchers. This hypothesis asks whether AI’s own research contributions could sustain acceleration without those outside inputs growing. Software improvements can return to the research pipeline much faster than a new chip factory can be built. The pivotal claim is about the pace of successive improvements, not a single benchmark record.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "If most code is AI-written, isn’t research already automated?",
+        "answer": "No. Producing code leaves experiment choice, evaluation, interpreting failure and deciding what to deploy. The paper distinguishes AI-generated code from whole R&D tasks completed with limited human supervision. Our practical test: measure successful end-to-end work and the human time needed to supervise it, rather than equating the number of generated lines with the number of replaced researchers.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "Who is behind this, and is it an official lab forecast?",
+        "answer": "The 22 named authors include Hinton, Yoshua Bengio, Andrew Barto, Jakub Pachocki and researchers in economics, policy and technical AI. The paper explicitly says its views do not necessarily represent their affiliated organizations. Read it as a joint research and policy argument, rather than an announcement that Google, OpenAI or Anthropic has achieved autonomous self-improvement.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Author list and affiliation disclaimer",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          },
+          {
+            "title": "arXiv publication record",
+            "url": "https://arxiv.org/abs/2609.36054"
+          }
+        ]
+      },
+      {
+        "question": "What should I watch instead of another dramatic prediction?",
+        "answer": "Look for longer tasks completed reliably, independent replication and demonstrable productivity gains inside real workflows. METR’s task horizon measures human task duration at a specified AI success rate; it is not the number of hours the AI ran. Useful follow-up questions are whether the results transfer to messy work, whether the system cheats the evaluation, and how much human intervention remains.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "METR: task-horizon method and limitations",
+            "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+          },
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      },
+      {
+        "question": "Why prepare now if the outcome is uncertain?",
+        "answer": "The authors argue that safeguards and institutions take time to build, while a research feedback loop might accelerate quickly. They propose better measurement, oversight of internal deployment and advance response plans. They also acknowledge costs from slowing beneficial progress and the risk that new powers favor one company. Our takeaway: demand evidence and reversible preparedness, rather than treating either inevitable catastrophe or automatic abundance as established.",
+        "perspective": "context",
+        "sources": [
+          {
+            "title": "Chan, Winter, Hinton and coauthors: full paper and supplementary analysis",
+            "url": "https://casp.ac/__l5e/assets-v1/5efd4b41-deb5-4513-a0a3-b4f82d2b79ea/intelligence-explosion.pdf"
+          }
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "kind": "paper",
+        "title": "The mechanism, the brakes and the policy argument",
+        "url": "https://casp.ac/reports/intelligence-explosion",
+        "description": "A guided reading of the September 2026 CASP paper, with its conditional claims and uncertainty kept in view."
+      },
+      {
+        "kind": "paper",
+        "title": "The experiment-compute bottleneck",
+        "url": "https://arxiv.org/abs/2507.23181",
+        "description": "A competing economic analysis shows why scarce experimental capacity may matter more than the size of an automated research workforce."
+      },
+      {
+        "kind": "research",
+        "title": "A concrete way to watch agent progress",
+        "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+        "description": "METR’s task-horizon methodology explains what autonomous task completion does and does not tell us."
+      }
+    ],
+    "videos": [
+      {
+        "url": "https://www.youtube.com/watch?v=IkdziSLYzHw",
+        "title": "Will AI outsmart human intelligence? - with 'Godfather of AI' Geoffrey Hinton",
+        "description": "Hinton explains his perspective in his own voice at The Royal Institution. This 2025 lecture predates the September 2026 paper: watch it for background on digital intelligence and control concerns, rather than as a presentation of the new report."
+      }
+    ],
+    "annotationTargets": [
+      0
+    ],
+    "verifiedAt": "2026-10-10",
+    "verification": "Original X text and metrics retained from UG3 signed-in Chrome ledger. CASP full 15-page PDF, including supplementary model and notes, reviewed; arXiv author record and CC BY 4.0 license checked. Compute paper and METR methodology reviewed as primary sources. Royal Institution video title/channel/embed metadata verified through YouTube oEmbed and official Ri source. Playback and caption availability not tested; no generated transcript."
   }
 ];

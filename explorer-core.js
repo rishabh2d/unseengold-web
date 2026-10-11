@@ -10,8 +10,8 @@
   const filtered=posts.filter(p=>!p.xUnavailable&&(s.category==='All'||p.category===s.category)&&meets(p.xLikes,s.likes)&&meets(p.xBookmarks,s.bookmarks)&&meets(ratio(p),s.ratio)&&meets(p[fields[s.metric]],s.minimum)&&(!s.days||(Date.parse(p.date)>=now-s.days*86400000&&Date.parse(p.date)<=now)));
   return s.sort==='Feed order'?filtered:filtered.sort((a,b)=>score(b)-score(a)||a.url.localeCompare(b.url));
  }
- // Keep the five active redesign pilots at the front across daily batches.
- const pinnedStatusIds=['2107800195748737042','2107894997538525580','2108672479007047952','2108604228440658369','2107504364168597863'];
+ // Keep the five original pilots first, followed by the selected expanded discoveries.
+ const pinnedStatusIds=["2107800195748737042","2107894997538525580","2108672479007047952","2108604228440658369","2107504364168597863","2108948624004526516","2107467668009963819","2109131908974026789","2107549434280284460","2106122709285368061"];
  const statusId=post=>post?.url?.match(/\/status\/(\d+)/)?.[1]||post?.url;
  const pinRank=new Map(pinnedStatusIds.map((id,index)=>[id,index]));
  function prioritize(posts){
