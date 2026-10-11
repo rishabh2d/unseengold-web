@@ -14,7 +14,6 @@
 :root[data-light-theme=true] .post-view-control[aria-pressed=true]{color:var(--light-ink,#172026)}
 .post-body{min-width:0;opacity:1;transform:translateY(0);transition:opacity .18s ease,transform .18s ease}
 #feed.is-view-changing .post-body{opacity:0;transform:translateY(5px)}
-.feed-item[data-left-view=teen] .post-quick-summary{display:none!important}
 .feed-item[data-left-view=teen] .post-reading .post-text.teen-post-text{font-size:clamp(26px,2.1vw,38px);line-height:1.4;letter-spacing:-.025em;max-width:31ch}
 .post-highlight,.post-highlight.is-active{box-shadow:none!important;text-decoration:none!important}
 .post-highlight *{text-decoration:none!important}
@@ -67,3 +66,124 @@
 .post-reading-head .post-author:hover,
 .post-reading-head .post-author:focus-visible{background:var(--sky-soft);text-decoration:none}
 @media(max-width:650px){.post-reading-head .post-x-logo{flex-basis:26px;width:26px;height:30px}.post-reading-head .post-x-logo .x-mark{width:18px;height:18px}}
+
+
+
+button.post-avatar-link { padding:0; border:0; background:transparent; }
+#author-profile-viewer { width:min(560px,calc(100vw - 32px)); max-height:min(760px,80dvh); padding:22px; border:1px solid var(--blue-line); border-radius:4px; background:var(--blue-panel); color:var(--theme-text,#fff); overflow:auto; overscroll-behavior:contain; box-shadow:0 24px 80px #0006; }
+#author-profile-viewer::backdrop { background:#0007; }
+.author-profile-back { padding:7px 11px; border:1px solid var(--blue-line); border-radius:3px; background:transparent; color:inherit; margin-bottom:20px; }
+.author-profile-header { display:flex; gap:18px; align-items:center; margin-bottom:24px; }
+.author-profile-avatar { display:grid; place-items:center; flex:0 0 72px; height:72px; border:1px solid var(--blue-line); font-size:28px; background:var(--sky-soft); }
+.author-profile-avatar img { width:100%; height:100%; object-fit:cover; }
+.author-profile-header h2 { margin:0 0 5px; font-size:27px; font-weight:600; }
+.author-profile-header p { margin:0; color:var(--theme-muted); }
+.author-profile-posts h3 { font-size:14px; font-weight:500; margin:0 0 12px; color:var(--theme-muted); }
+.author-profile-bio { white-space:pre-wrap; line-height:1.5; }
+.author-profile-post { display:flex; flex-direction:column; gap:12px; text-align:left; width:100%; padding:18px 0; border:0; border-top:1px solid var(--blue-line); background:transparent; color:inherit; font-size:17px; line-height:1.45; }
+.author-profile-post > span { display:-webkit-box; -webkit-line-clamp:5; -webkit-box-orient:vertical; overflow:hidden; white-space:pre-wrap; }
+.author-profile-post small { color:var(--theme-muted); font-size:12px; }
+.author-profile-post:hover,.author-profile-back:hover { background:var(--button-hover,var(--sky-soft)); }
+
+/* Avatar, reading icons, author identity, and likes share the profile row. */
+.post-reading-head { gap:6px; }
+.post-reading-head .post-view-controls { order:2; margin-left:0; }
+.post-reading-head .post-x-logo { order:3; }
+.post-reading-head .post-author { order:1; flex:1 1 auto; margin:0; }
+.post-reading-head .post-actions-likes { order:4; flex:0 0 auto; flex-direction:column; align-items:flex-end; gap:0; margin:0 0 0 auto; line-height:1.2; }
+.post-reading-head .post-actions-likes strong { font-size:42px; line-height:1.1; }
+@media(max-width:1000px) { .post-reading-head .post-actions-likes strong { font-size:34px; } }
+@media(max-width:650px) { .post-reading-head { flex-wrap:wrap; } .post-reading-head .post-author { order:5; flex-basis:100%; } }
+/* Let the larger count reach the panel edge without crowding author identity. */
+body[data-feed-layout=panels] #feed .post-reading-head { width:calc(100% + 42px); }
+@media(max-width:1250px) { body[data-feed-layout=panels] #feed .post-reading-head { width:calc(100% + 14px); } }
+@media(max-width:1000px) { .post-reading-head { flex-wrap:wrap; } .post-reading-head .post-author { order:5; flex-basis:100%; } }
+@media(max-width:650px) { body[data-feed-layout=panels] #feed .post-reading-head { width:100%; } }
+.post-reading-head .post-author { padding:4px 0; }
+
+/* Hover tint hugs author text rather than filling the remaining header width. */
+.post-reading-head .post-author-copy { width:fit-content; max-width:100%; border-radius:3px; }
+.post-reading-head .post-author:is(:hover,:focus-visible),
+.post-reading-head .post-avatar-link:is(:hover,:focus-visible) + .post-author { background:transparent; }
+.post-reading-head .post-author:is(:hover,:focus-visible) .post-author-copy,
+.post-reading-head .post-avatar-link:is(:hover,:focus-visible) + .post-author .post-author-copy { background:var(--sky-soft); box-shadow:0 0 0 4px var(--sky-soft); }
+.post-reading-head .post-x-logo { width:26px; flex-basis:26px; }
+.post-reading-head .post-author { flex:0 1 auto; }
+
+/* Notes stay visible; the arrow runs from the loose circle to its own sentence. */
+.scribble-line { position:relative; row-gap:12px; margin-bottom:1em; }
+.scribble-text { line-height:1.6; }
+.scribble-ring.post-highlight { padding:.1em .25em; border-width:1.5px; background:transparent; cursor:help; color:inherit; }
+.scribble-ring.post-highlight:is(:hover,:focus-visible) { background:var(--sky-soft); color:inherit; outline:none; }
+.scribble-note { margin-left:22px; font-size:calc(clamp(15px,1.15vw,19px) + 1pt); line-height:1.25; }
+.scribble-arrows { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; fill:none; stroke:currentColor; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; }
+.scribble-line .scribble-note::before { content:none!important; }
+.post-highlight-popup-answer ul { margin:0; padding-left:1.15em; white-space:normal; }
+.post-highlight-popup-answer li { margin:0 0 .7em; }
+.post-highlight-popup-answer li:last-child { margin-bottom:0; }
+
+:root[data-theme] .scribble-ring.post-highlight { background:transparent; color:var(--theme-text); }
+:root[data-theme] .scribble-ring.post-highlight:is(:hover,:focus-visible,.is-explaining) { background:var(--sky-soft); color:var(--theme-text); }
+
+/* Bring the whole left post closer to the panel edge. */
+#feed .feed-item { padding-left:32px; }
+@media(max-width:1250px) { #feed .feed-item { padding-left:28px; } }
+@media(max-width:650px) { #feed .feed-item { padding-left:20px; } }
+
+/* Date sits directly below the profile row; footer actions are design placeholders. */
+.post-date-row { align-self:flex-start; margin-top:-6px; font-size:14px; color:var(--theme-muted); }
+.post-date-row a { display:inline-block; padding:4px 6px; margin-left:-6px; border-radius:3px; }
+.post-date-row a:is(:hover,:focus-visible) { background:color-mix(in srgb,var(--blue-page) 84%,#000 16%); color:var(--theme-text); }
+.post-design-actions { justify-content:flex-start; flex-wrap:wrap; gap:8px; padding-top:10px; }
+.post-design-actions button { padding:10px 12px; border:0; border-radius:3px; background:transparent; color:var(--theme-text); font-size:14px; line-height:1.3; font-weight:500; transition:background .15s ease; }
+.post-design-actions button:is(:hover,:focus-visible) { background:rgb(0 0 0 / 8%); color:var(--theme-text); }
+@media(max-width:650px) { .post-design-actions button { font-size:13px; padding:9px 10px; } }
+@media(prefers-reduced-motion:reduce) { .post-design-actions button { transition:none; } }
+
+/* Follow the post currently displayed in the right panel without hiding the paper texture. */
+#feed .feed-item { transition:background-color .15s ease; }
+#feed .feed-item[aria-current=true] { background-color:rgb(0 0 0 / 8%); }
+@media(prefers-reduced-motion:reduce) { #feed .feed-item { transition:none; } }
+
+/* Highlighted phrases replace circles; softer connectors terminate in a note-side dot. */
+:root[data-theme] .scribble-ring.post-highlight { border:0; border-radius:3px; padding:.08em .12em; background:var(--sky-soft); color:var(--theme-text); }
+:root[data-theme] .scribble-ring.post-highlight:is(:hover,:focus-visible,.is-explaining) { background:color-mix(in srgb,var(--sky) 38%,transparent); color:var(--theme-text); }
+.scribble-arrows { color:color-mix(in srgb,var(--theme-text,#fff) 32%,transparent); stroke-width:1.2; }
+.scribble-arrows circle { fill:currentColor; stroke:none; }
+
+/* Keep a sentence's explanations together, in source order, below its right half. */
+.scribble-right { gap:12px; }
+
+/* Keep the likes label beside its count in the profile row. */
+.post-reading-head .post-actions-likes { flex-direction:row; align-items:baseline; gap:6px; }
+
+.feed-item[data-left-view=whiteboard] .scribble-note { font-size:calc(clamp(11px,.8vw,14px) + 1pt); }
+@media(max-width:650px) { .feed-item[data-left-view=whiteboard] .scribble-note { font-size:calc(13px + 1pt); } }
+
+/* Return to ordinary line spacing once a passage is clear of nearby annotations. */
+.feed-item .scribble-line.is-plain { display:block; line-height:1.3; margin-bottom:.18em; }
+
+/* Let notes use either half of the reading surface instead of forcing long rightward paths. */
+.scribble-left,.scribble-right { gap:12px; }
+
+/* Give short connectors a visible run before the handwritten explanation. */
+.scribble-line:not(.is-plain) { row-gap:clamp(30px,2vw,40px); }
+
+/* The original words are the hover target; handwritten notes remain plain. */
+:root[data-theme] .scribble-ring.post-highlight { border:0; border-radius:3px; padding:.08em .12em; background:var(--sky-soft); color:var(--theme-text); }
+:root[data-theme] .scribble-ring.post-highlight:is(:hover,:focus-visible,.is-explaining) { background:color-mix(in srgb,var(--sky) 38%,transparent); color:var(--theme-text); }
+
+/* Compact details row beneath the profile, before the original post. */
+.post-reading .post-info-row { display:flex; align-items:center; flex-wrap:nowrap; gap:clamp(2px,.5vw,8px); width:100%; max-width:none; font-size:clamp(12px,1vw,14px); color:#000; }
+.post-reading .post-info-row :is(a,button) { display:inline-block; flex:0 0 auto; padding:5px 4px; margin:0; border:0; border-radius:3px; background:transparent; color:#000; font:inherit; line-height:1.35; white-space:nowrap; text-decoration:none; cursor:pointer; transition:background-color 120ms ease; }
+.post-reading .post-info-row > .post-date-link { margin-left:-4px; }
+.post-reading .post-info-row :is(a,button):is(:hover,:focus-visible,.is-explaining) { background:color-mix(in srgb,var(--blue-page) 84%,#000 16%); color:#000; }
+@media(max-width:650px) { .post-reading .post-info-row { gap:1px; font-size:clamp(9px,2.3vw,12px); } .post-reading .post-info-row :is(a,button) { padding:5px 2px; } }
+:root[data-light-theme="false"] .post-reading .post-info-row,
+:root[data-light-theme="false"] .post-reading .post-info-row :is(a,button) { color:var(--theme-text,#fff); }
+
+.post-reading .post-info-row{margin-top:-6px}
+.post-date-footer{display:flex;justify-content:flex-end;align-self:stretch;width:100%;padding:0;margin:0;color:var(--theme-text,#000);font-size:14px;line-height:1.4;background:transparent;pointer-events:none}
+.post-date-footer time{color:inherit;background:transparent;cursor:default}
+
+.post-reading-head .post-actions-likes{transform:translate(-8px,6px) scale(1.1);transform-origin:right center}

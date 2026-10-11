@@ -41,7 +41,7 @@
 .theme-swatch-mint-switchboard{background:linear-gradient(135deg,#a9e0bd 55%,#237c61 55%)}
 
 /* Keep the fine graph-paper texture while translating each card palette to a page. */
-:root[data-theme-family="shortcut"] :is(.post-stage,#insights){background-image:linear-gradient(var(--theme-grid) 1px,transparent 1px),linear-gradient(90deg,var(--theme-grid) 1px,transparent 1px);background-size:40px 40px}
+:root[data-theme-family="shortcut"] :is(.post-stage,.compact-post-full,#insights){background-image:linear-gradient(var(--theme-grid) 1px,transparent 1px),linear-gradient(90deg,var(--theme-grid) 1px,transparent 1px);background-size:40px 40px}
 :root[data-theme="transit-ticket"] .folder-bar{border-bottom:3px dashed #a45041}
 :root[data-theme="safety-label"] .folder-bar{border-bottom:4px solid #161813}
 :root[data-theme="editorial"] :is(.storyline-head h2,.more-like-this-head h2){font-family:Georgia,serif;font-weight:400}

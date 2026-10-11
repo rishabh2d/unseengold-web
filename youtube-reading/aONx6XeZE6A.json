@@ -1,0 +1,1038 @@
+{
+  "id": "aONx6XeZE6A",
+  "sourceURL": "https://www.youtube.com/watch?v=aONx6XeZE6A",
+  "collectedDate": "2026-10-10",
+  "summary": "I tried Google Playground, Google's brand-new AI game maker, and built a playable game in about 5 minutes. Gemini, Nano Banana and Lyria generate the code, art and music from a single prompt.",
+  "summarySource": "Creator description",
+  "transcript": [
+    {
+      "time": 0,
+      "text": "What if I told you that Google just"
+    },
+    {
+      "time": 2,
+      "text": "built a place where you type a few"
+    },
+    {
+      "time": 3,
+      "text": "lines, wait about 5 minutes, and get a"
+    },
+    {
+      "time": 6,
+      "text": "real playable game? With its own art,"
+    },
+    {
+      "time": 9,
+      "text": "its own music, its own animations. No"
+    },
+    {
+      "time": 13,
+      "text": "code, no game engine, nothing to"
+    },
+    {
+      "time": 15,
+      "text": "install. Hi everyone, I'm Akana, and"
+    },
+    {
+      "time": 18,
+      "text": "this is Build Code Labs. Google Labs"
+    },
+    {
+      "time": 21,
+      "text": "opened a platform called Playground on"
+    },
+    {
+      "time": 23,
+      "text": "October 7th, and I got in on the very"
+    },
+    {
+      "time": 26,
+      "text": "first days. I made two games. I played"
+    },
+    {
+      "time": 29,
+      "text": "games other people made. One of them"
+    },
+    {
+      "time": 31,
+      "text": "genuinely scared me. And I'll tell you"
+    },
+    {
+      "time": 34,
+      "text": "what works, what breaks, and what to"
+    },
+    {
+      "time": 36,
+      "text": "know before you try it yourself. Let's"
+    },
+    {
+      "time": 38,
+      "text": "start with the basics. Google Playground"
+    },
+    {
+      "time": 41,
+      "text": "is an experimental game platform from"
+    },
+    {
+      "time": 43,
+      "text": "Google Labs. You describe a game in"
+    },
+    {
+      "time": 45,
+      "text": "plain text, and it builds something that"
+    },
+    {
+      "time": 47,
+      "text": "runs right in your browser, on a phone,"
+    },
+    {
+      "time": 50,
+      "text": "a tablet, or a laptop. Behind the"
+    },
+    {
+      "time": 52,
+      "text": "scenes, three Google models work"
+    },
+    {
+      "time": 54,
+      "text": "together. Gemini handles the game logic."
+    },
+    {
+      "time": 57,
+      "text": "Nano Banana draws the characters and the"
+    },
+    {
+      "time": 59,
+      "text": "backgrounds. And Lyria, Google"
+    },
+    {
+      "time": 62,
+      "text": "DeepMind's music model, makes the"
+    },
+    {
+      "time": 63,
+      "text": "soundtrack and the sound effects. So,"
+    },
+    {
+      "time": 66,
+      "text": "one prompt turns into code, art, and"
+    },
+    {
+      "time": 68,
+      "text": "music all at once. Now, the part you"
+    },
+    {
+      "time": 71,
+      "text": "need to hear before you get excited."
+    },
+    {
+      "time": 74,
+      "text": "It's not open to everyone yet. Right"
+    },
+    {
+      "time": 77,
+      "text": "now, Playground is available in the"
+    },
+    {
+      "time": 78,
+      "text": "United States only, for people 18 and"
+    },
+    {
+      "time": 81,
+      "text": "older with a Google account. Google says"
+    },
+    {
+      "time": 83,
+      "text": "more countries are coming, but there's"
+    },
+    {
+      "time": 85,
+      "text": "no date. For my region, it said it isn't"
+    },
+    {
+      "time": 88,
+      "text": "available yet. So, here's my honest"
+    },
+    {
+      "time": 90,
+      "text": "story. I connected through a VPN set to"
+    },
+    {
+      "time": 93,
+      "text": "the US. A browser extension didn't work."
+    },
+    {
+      "time": 96,
+      "text": "A desktop VPN app did. And I want to be"
+    },
+    {
+      "time": 99,
+      "text": "very clear. I'm sharing what happened to"
+    },
+    {
+      "time": 101,
+      "text": "me, not telling you to do the same."
+    },
+    {
+      "time": 104,
+      "text": "Getting around a region limit can go"
+    },
+    {
+      "time": 105,
+      "text": "against Google's rules, and I don't want"
+    },
+    {
+      "time": 108,
+      "text": "anyone risking their account. If you're"
+    },
+    {
+      "time": 110,
+      "text": "in the US, wonderful. Go and try it. If"
+    },
+    {
+      "time": 113,
+      "text": "you're not, the safest thing is to wait"
+    },
+    {
+      "time": 115,
+      "text": "for the official rollout. You can follow"
+    },
+    {
+      "time": 117,
+      "text": "along on my screen without any risk."
+    },
+    {
+      "time": 120,
+      "text": "Okay, let's go in. I press start. It"
+    },
+    {
+      "time": 123,
+      "text": "asks me to sign in with Google and then"
+    },
+    {
+      "time": 125,
+      "text": "to create a Play Games profile. Don't"
+    },
+    {
+      "time": 127,
+      "text": "worry, that's not a purchase. It's just"
+    },
+    {
+      "time": 130,
+      "text": "your gamer name for likes, follows, and"
+    },
+    {
+      "time": 132,
+      "text": "leaderboards. I created one and we're"
+    },
+    {
+      "time": 135,
+      "text": "in. The first thing I see is a gallery"
+    },
+    {
+      "time": 137,
+      "text": "full of games made by other users. This"
+    },
+    {
+      "time": 140,
+      "text": "is the explore page. Before a game"
+    },
+    {
+      "time": 142,
+      "text": "appears there, it goes through a"
+    },
+    {
+      "time": 144,
+      "text": "community guidelines check and players"
+    },
+    {
+      "time": 146,
+      "text": "can report it. So, let's play the very"
+    },
+    {
+      "time": 149,
+      "text": "first one. I click play."
+    },
+    {
+      "time": 152,
+      "text": "Sound on."
+    },
+    {
+      "time": 153,
+      "text": "And it's loading and loading."
+    },
+    {
+      "time": 157,
+      "text": ">> [sighs]"
+    },
+    {
+      "time": 157,
+      "text": ">> The start screen looked beautiful, but"
+    },
+    {
+      "time": 160,
+      "text": "then"
+    },
+    {
+      "time": 161,
+      "text": "the game didn't start."
+    },
+    {
+      "time": 163,
+      "text": "I tried again. Nothing."
+    },
+    {
+      "time": 165,
+      "text": "Another game, same thing. To be fair,"
+    },
+    {
+      "time": 168,
+      "text": "maybe it's a beta problem or my VPN"
+    },
+    {
+      "time": 170,
+      "text": "connection. I can't say for sure. So,"
+    },
+    {
+      "time": 173,
+      "text": "let's do the thing I came for, create"
+    },
+    {
+      "time": 176,
+      "text": "our own game. I press create. First"
+    },
+    {
+      "time": 179,
+      "text": "choice, 2D or 3D, then single player or"
+    },
+    {
+      "time": 182,
+      "text": "multiplayer, then a text box with"
+    },
+    {
+      "time": 185,
+      "text": "ready-made starter prompts if you don't"
+    },
+    {
+      "time": 187,
+      "text": "know where to begin."
+    },
+    {
+      "time": 188,
+      "text": "I'll start with 2D because it's simpler."
+    },
+    {
+      "time": 191,
+      "text": "I picked a starter prompt for a"
+    },
+    {
+      "time": 192,
+      "text": "speedrunner game, a character running"
+    },
+    {
+      "time": 195,
+      "text": "and jumping through a city as fast as"
+    },
+    {
+      "time": 197,
+      "text": "possible. I press send. I couldn't find"
+    },
+    {
+      "time": 200,
+      "text": "credits or a price anywhere. So, how"
+    },
+    {
+      "time": 202,
+      "text": "does it work? Playing games is free."
+    },
+    {
+      "time": 205,
+      "text": "Creating games runs on weekly tokens."
+    },
+    {
+      "time": 208,
+      "text": "Free users get a limited weekly"
+    },
+    {
+      "time": 210,
+      "text": "allowance and Google says free accounts"
+    },
+    {
+      "time": 212,
+      "text": "may have to join a waitlist."
+    },
+    {
+      "time": 214,
+      "text": "People with a Google One AI plan get in"
+    },
+    {
+      "time": 217,
+      "text": "right away with higher limits."
+    },
+    {
+      "time": 219,
+      "text": "Google hasn't said how many tokens you"
+    },
+    {
+      "time": 221,
+      "text": "get. One thing I really like, tokens are"
+    },
+    {
+      "time": 224,
+      "text": "only spent once the game actually"
+    },
+    {
+      "time": 226,
+      "text": "compiles and plays. If it fails or times"
+    },
+    {
+      "time": 229,
+      "text": "out, you get them back. Now, this is the"
+    },
+    {
+      "time": 232,
+      "text": "part I love. Before it builds the game,"
+    },
+    {
+      "time": 234,
+      "text": "it asks me about assets. It shows me a"
+    },
+    {
+      "time": 237,
+      "text": "list, the character, the background, the"
+    },
+    {
+      "time": 240,
+      "text": "music tracks, the sound effects, and I"
+    },
+    {
+      "time": 242,
+      "text": "can generate everything with one tap."
+    },
+    {
+      "time": 245,
+      "text": "Some of my assets didn't generate the"
+    },
+    {
+      "time": 247,
+      "text": "first time, so I pressed generate again"
+    },
+    {
+      "time": 249,
+      "text": "for the missing ones. When they all"
+    },
+    {
+      "time": 251,
+      "text": "turned purple, they were ready, and I"
+    },
+    {
+      "time": 253,
+      "text": "confirmed. You can also bring your own"
+    },
+    {
+      "time": 255,
+      "text": "art. Playground accepts PNG and JPG"
+    },
+    {
+      "time": 260,
+      "text": "reference images. So, you can upload"
+    },
+    {
+      "time": 262,
+      "text": "your own drawing and let the AI turn it"
+    },
+    {
+      "time": 264,
+      "text": "into a character."
+    },
+    {
+      "time": 265,
+      "text": "It doesn't take video, though."
+    },
+    {
+      "time": 267,
+      "text": "I couldn't tell if you can swap an asset"
+    },
+    {
+      "time": 269,
+      "text": "afterwards, so if you find out, tell me"
+    },
+    {
+      "time": 271,
+      "text": "in the comments. Then, it makes a plan."
+    },
+    {
+      "time": 274,
+      "text": "It chooses a color palette and plans how"
+    },
+    {
+      "time": 276,
+      "text": "the assets fit together. Our game is a"
+    },
+    {
+      "time": 279,
+      "text": "speed runner, so let's hope it's quick."
+    },
+    {
+      "time": 282,
+      "text": "And wow, it even made the animation. The"
+    },
+    {
+      "time": 285,
+      "text": "character has real animation frames."
+    },
+    {
+      "time": 288,
+      "text": "That's amazing. And then, ready,"
+    },
+    {
+      "time": 291,
+      "text": "playable."
+    },
+    {
+      "time": 293,
+      "text": "I can't believe it. It took about 5"
+    },
+    {
+      "time": 296,
+      "text": "minutes, start to finish, for a game"
+    },
+    {
+      "time": 298,
+      "text": "with a character, a city, music, and"
+    },
+    {
+      "time": 301,
+      "text": "animation. Let's play. Wait, wait,"
+    },
+    {
+      "time": 304,
+      "text": "what's happening? These boxes. When I"
+    },
+    {
+      "time": 307,
+      "text": "touch one, I get stuck inside it. Come"
+    },
+    {
+      "time": 310,
+      "text": "on, come on. There."
+    },
+    {
+      "time": 312,
+      "text": "Huh, and there are taxis. I can't shoot"
+    },
+    {
+      "time": 315,
+      "text": "fire or anything. It's just a runner,"
+    },
+    {
+      "time": 317,
+      "text": "but still, I have to be honest about the"
+    },
+    {
+      "time": 319,
+      "text": "bugs. When I jump, the animation"
+    },
+    {
+      "time": 322,
+      "text": "glitches. Sometimes I press jump and"
+    },
+    {
+      "time": 324,
+      "text": "nothing happens. And look, when I land,"
+    },
+    {
+      "time": 327,
+      "text": "there's a little extra foot floating"
+    },
+    {
+      "time": 329,
+      "text": "over the character."
+    },
+    {
+      "time": 331,
+      "text": "Maybe I'm just playing badly. But for 5"
+    },
+    {
+      "time": 333,
+      "text": "minutes of work, it's really impressive."
+    },
+    {
+      "time": 336,
+      "text": "A few years ago, a game like this would"
+    },
+    {
+      "time": 338,
+      "text": "have taken a small team weeks. Now, it's"
+    },
+    {
+      "time": 341,
+      "text": "a few lines of text and a coffee break."
+    },
+    {
+      "time": 343,
+      "text": "So, let's go back to my games, press"
+    },
+    {
+      "time": 345,
+      "text": "create, and try the second test, a 3D"
+    },
+    {
+      "time": 348,
+      "text": "game with a Japanese theme. 3D must be"
+    },
+    {
+      "time": 351,
+      "text": "harder. And this time, it didn't ask me"
+    },
+    {
+      "time": 353,
+      "text": "for any assets. It went straight to"
+    },
+    {
+      "time": 355,
+      "text": "building. Oh, it's done already. And it"
+    },
+    {
+      "time": 358,
+      "text": "really is 3D. But honestly, it wasn't"
+    },
+    {
+      "time": 362,
+      "text": "the game I imagined. I didn't even"
+    },
+    {
+      "time": 364,
+      "text": "understand what I was supposed to do. I"
+    },
+    {
+      "time": 367,
+      "text": "should have written a clearer prompt"
+    },
+    {
+      "time": 368,
+      "text": "with a goal and rules. That's my lesson."
+    },
+    {
+      "time": 371,
+      "text": "With Playground, the more you think"
+    },
+    {
+      "time": 373,
+      "text": "about your prompt, the better your game."
+    },
+    {
+      "time": 376,
+      "text": "So, let's go back and see what other"
+    },
+    {
+      "time": 377,
+      "text": "people made. And this is where it got"
+    },
+    {
+      "time": 379,
+      "text": "interesting. I opened a game from the"
+    },
+    {
+      "time": 382,
+      "text": "gallery, and this one actually loaded."
+    },
+    {
+      "time": 385,
+      "text": "There's something to protect, and"
+    },
+    {
+      "time": 386,
+      "text": "enemies are coming. Who's coming?"
+    },
+    {
+      "time": 388,
+      "text": "Drones? I was waiting for zombies."
+    },
+    {
+      "time": 391,
+      "text": "Calm down, calm down. And listen, the"
+    },
+    {
+      "time": 394,
+      "text": "sound, the graphics, they're a 10 out of"
+    },
+    {
+      "time": 397,
+      "text": "10. It's not the kind of game you get"
+    },
+    {
+      "time": 399,
+      "text": "from one quick sentence. [music] Then I"
+    },
+    {
+      "time": 401,
+      "text": "noticed a badge at the top that says"
+    },
+    {
+      "time": 403,
+      "text": "Unity Spark. So, what is that? Unity"
+    },
+    {
+      "time": 406,
+      "text": "Spark is Google's professional companion"
+    },
+    {
+      "time": 409,
+      "text": "tool made with Unity for building more"
+    },
+    {
+      "time": 411,
+      "text": "advanced 3D games. But it's not open"
+    },
+    {
+      "time": 414,
+      "text": "yet. It's a closed beta coming later"
+    },
+    {
+      "time": 416,
+      "text": "this year, and a wait list is open now."
+    },
+    {
+      "time": 419,
+      "text": "Games made with Spark will be playable"
+    },
+    {
+      "time": 421,
+      "text": "inside Playground. So, that badge is a"
+    },
+    {
+      "time": 424,
+      "text": "preview of what's coming. Right now,"
+    },
+    {
+      "time": 426,
+      "text": "what I can make myself is fairly simple,"
+    },
+    {
+      "time": 428,
+      "text": "but soon, bigger games will be possible."
+    },
+    {
+      "time": 431,
+      "text": "And then,"
+    },
+    {
+      "time": 432,
+      "text": "oh no, the game crashed. It's still"
+    },
+    {
+      "time": 435,
+      "text": "beta, of course, but it was so good that"
+    },
+    {
+      "time": 438,
+      "text": "I opened another Spark game. And this"
+    },
+    {
+      "time": 440,
+      "text": "one is a horror game. What do I do?"
+    },
+    {
+      "time": 443,
+      "text": "What's happening? Okay, okay. I got"
+    },
+    {
+      "time": 446,
+      "text": "really scared. Die already, die! No!"
+    },
+    {
+      "time": 450,
+      "text": "I died. Wait, someone is opening the"
+    },
+    {
+      "time": 453,
+      "text": "door. It's an old lady."
+    },
+    {
+      "time": 456,
+      "text": "Hey, excuse me. I picked up some ammo"
+    },
+    {
+      "time": 459,
+      "text": "here. Okay. And honestly, a whole lot of"
+    },
+    {
+      "time": 462,
+      "text": "game was put in there. It's so good."
+    },
+    {
+      "time": 465,
+      "text": "Where is AI going, everyone? Seriously."
+    },
+    {
+      "time": 468,
+      "text": "Let's step out of that one. Now, the"
+    },
+    {
+      "time": 471,
+      "text": "full picture, because I don't want to"
+    },
+    {
+      "time": 473,
+      "text": "oversell this. Multiplayer is in early"
+    },
+    {
+      "time": 476,
+      "text": "preview, so don't expect a finished"
+    },
+    {
+      "time": 478,
+      "text": "experience. Global leaderboards only"
+    },
+    {
+      "time": 480,
+      "text": "work for single-player games that are"
+    },
+    {
+      "time": 482,
+      "text": "publicly listed. Games can be private,"
+    },
+    {
+      "time": 485,
+      "text": "shared by link, or published to the"
+    },
+    {
+      "time": 486,
+      "text": "gallery. And you can export your game as"
+    },
+    {
+      "time": 489,
+      "text": "a zip with the HTML,"
+    },
+    {
+      "time": 492,
+      "text": "JavaScript, CSS, and assets, which I"
+    },
+    {
+      "time": 495,
+      "text": "love. There are rules, too. No links to"
+    },
+    {
+      "time": 498,
+      "text": "outside websites, no gambling, and no"
+    },
+    {
+      "time": 501,
+      "text": "deceptive copies of existing games."
+    },
+    {
+      "time": 503,
+      "text": "Parody and homage are fine. Google says"
+    },
+    {
+      "time": 506,
+      "text": "it won't claim ownership of your games,"
+    },
+    {
+      "time": 508,
+      "text": "but you are responsible for what you"
+    },
+    {
+      "time": 510,
+      "text": "publish. And the terms say Google may"
+    },
+    {
+      "time": 512,
+      "text": "show ads on games, though it says it"
+    },
+    {
+      "time": 514,
+      "text": "will ask first. And a fair warning, some"
+    },
+    {
+      "time": 517,
+      "text": "in the industry, including Unity CEO,"
+    },
+    {
+      "time": 520,
+      "text": "say one-shot AI games aren't real game"
+    },
+    {
+      "time": 522,
+      "text": "development and could feel generic. I"
+    },
+    {
+      "time": 525,
+      "text": "think both things can be true. It's a"
+    },
+    {
+      "time": 527,
+      "text": "fantastic way to start, and real design"
+    },
+    {
+      "time": 530,
+      "text": "still takes thinking. So, here's my"
+    },
+    {
+      "time": 532,
+      "text": "verdict. What I loved: the speed, the"
+    },
+    {
+      "time": 535,
+      "text": "assets generated for you, the animation,"
+    },
+    {
+      "time": 538,
+      "text": "the chat-based editing, and how easy it"
+    },
+    {
+      "time": 540,
+      "text": "is to share. What's rough: the bugs, the"
+    },
+    {
+      "time": 543,
+      "text": "loading times, the limited access, and"
+    },
+    {
+      "time": 546,
+      "text": "the unclear token limits. Who it's for:"
+    },
+    {
+      "time": 549,
+      "text": "anyone who's always wanted to make a"
+    },
+    {
+      "time": 551,
+      "text": "game and never knew where to start. My"
+    },
+    {
+      "time": 553,
+      "text": "tips, if you get access: one, write a"
+    },
+    {
+      "time": 556,
+      "text": "detailed prompt. Say what the player"
+    },
+    {
+      "time": 558,
+      "text": "does, how they win, and what the world"
+    },
+    {
+      "time": 561,
+      "text": "looks like. Two, plan your assets before"
+    },
+    {
+      "time": 564,
+      "text": "you generate them. If your art is good,"
+    },
+    {
+      "time": 566,
+      "text": "your game will look much better. Three,"
+    },
+    {
+      "time": 569,
+      "text": "edit with chat. Change the gravity, the"
+    },
+    {
+      "time": 571,
+      "text": "rules, the characters, one thing at a"
+    },
+    {
+      "time": 574,
+      "text": "time. Four, try different genres:"
+    },
+    {
+      "time": 577,
+      "text": "Racing, role-playing, puzzle, trivia."
+    },
+    {
+      "time": 580,
+      "text": "And five, join the waitlist early and"
+    },
+    {
+      "time": 582,
+      "text": "get your spot while the road is clear."
+    },
+    {
+      "time": 585,
+      "text": "That's Google Play Ground. It surprised"
+    },
+    {
+      "time": 587,
+      "text": "me. It's not perfect, but it's something"
+    },
+    {
+      "time": 589,
+      "text": "new and it's only the beginning. Now I"
+    },
+    {
+      "time": 592,
+      "text": "want to hear from you. What game would"
+    },
+    {
+      "time": 594,
+      "text": "you build first? A platformer, a horror"
+    },
+    {
+      "time": 597,
+      "text": "game, a racing game? Tell me in the"
+    },
+    {
+      "time": 599,
+      "text": "comments and I'll try the best idea in"
+    },
+    {
+      "time": 601,
+      "text": "the next video. And when Unity Spark"
+    },
+    {
+      "time": 603,
+      "text": "opens, I'll test that too. If this video"
+    },
+    {
+      "time": 606,
+      "text": "helped you, please subscribe to Build"
+    },
+    {
+      "time": 608,
+      "text": "Code Labs and I'll see you in the next"
+    },
+    {
+      "time": 610,
+      "text": "one. Take care of yourselves. Bye-bye."
+    }
+  ],
+  "language": "en",
+  "captionType": "auto-generated",
+  "chapters": [
+    {
+      "time": 0,
+      "text": "I made a game with AI in 5 minutes"
+    },
+    {
+      "time": 47,
+      "text": "What Google Playground is (Gemini, Nano Banana, Lyria)"
+    },
+    {
+      "time": 91,
+      "text": "Who can use it: US only, 18+"
+    },
+    {
+      "time": 163,
+      "text": "Signing in and the Play Games profile"
+    },
+    {
+      "time": 194,
+      "text": "The Explore gallery"
+    },
+    {
+      "time": 253,
+      "text": "Game 1: a 2D speedrunner, tokens and assets"
+    },
+    {
+      "time": 484,
+      "text": "Game 2: a 3D test"
+    },
+    {
+      "time": 541,
+      "text": "Gallery games, Unity Spark and the horror game"
+    }
+  ],
+  "chaptersNote": "Creator-provided chapters; timestamps are approximate."
+}

@@ -1,0 +1,33 @@
+/* Scoped to the new reading batches; archived posts keep their presentation. */
+.collection-calendar{position:relative;flex:0 0 auto}
+#collection-calendar-toggle{padding:9px 11px;border:1px solid var(--blue-line);border-radius:3px;background:var(--blue-panel);color:var(--theme-text);white-space:nowrap;font-size:13px}
+#collection-calendar-toggle span{opacity:.65;margin-left:7px;font-size:11px}
+#collection-calendar-panel{position:absolute;right:0;top:calc(100% + 12px);z-index:40;width:290px;padding:16px;border:1px solid var(--blue-line);border-radius:4px;background:var(--blue-panel);color:var(--theme-text);box-shadow:0 12px 35px #0003}
+#collection-calendar-panel header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+#collection-calendar-panel button{border:1px solid transparent;border-radius:3px;background:transparent;color:inherit;padding:7px}
+#collection-calendar-panel button:hover:not(:disabled){background:var(--button-hover)}
+.calendar-weekdays,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px;text-align:center}
+.calendar-weekdays{opacity:.6;font-size:11px;margin-bottom:8px}
+.calendar-days button{display:flex;flex-direction:column;gap:3px;align-items:center;font-size:13px}
+.calendar-days small{font-size:9px;opacity:.65}
+.calendar-days button[aria-pressed=true]{background:var(--sky-soft)!important;border-color:var(--blue-line)!important}
+#collection-calendar-panel .calendar-today{width:100%;margin-top:12px;border-color:var(--blue-line)}
+#collection-calendar-panel p{font-size:11px;opacity:.65;line-height:1.4;margin-bottom:0}
+.reading-link-note{cursor:help;border-radius:3px}
+.reading-link-note:focus-visible{outline:1px dotted currentColor;outline-offset:5px}
+.reading-link-note:is(:hover,:focus-visible){background:rgb(0 0 0 / 3%)}
+.annotation-connector path{stroke:#fff;opacity:.7;stroke-width:1.4;stroke-dasharray:1 6}
+:root[data-light-theme=true] .annotation-connector path{stroke:#48515c;opacity:1}
+.annotation-connector circle{fill:#fff;opacity:.7}
+:root[data-light-theme=true] .annotation-connector circle{fill:#48515c;opacity:1}
+.qa-preview .threads.list.qa-view-grid:has(.lab-question){align-items:start}
+.qa-preview .threads.list.qa-view-grid .lab-question{min-height:0;height:auto;align-self:start;transition:background-color .14s ease}
+.qa-preview .threads.list.qa-view-grid .lab-expandable{cursor:pointer}
+.qa-preview .threads.list.qa-view-grid .lab-question .lab-answer-details[hidden]{display:none!important}
+#discussion-host .qa-preview .threads.list.qa-view-grid .lab-question .thread-answer p,
+#discussion-host .qa-preview .threads.list.qa-view-grid .lab-question:hover .thread-answer p{font-size:17px;line-height:1.5}
+.qa-preview .threads.list.qa-view-grid .lab-question .lab-answer-details p{margin-top:14px}
+.qa-preview .threads.list.qa-view-grid .lab-question.is-expanded{background:var(--button-hover)}
+.qa-preview .threads.list.qa-view-grid .lab-question.is-note-target{outline:1px dotted color-mix(in srgb,var(--theme-text) 40%,transparent);outline-offset:-4px}
+@media(max-width:760px){#collection-calendar-toggle span{display:none}#collection-calendar-toggle{padding:8px;font-size:12px}#collection-calendar-panel{position:fixed;right:12px;top:70px}.folder-bar-label{display:none}}
+

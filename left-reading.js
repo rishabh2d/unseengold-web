@@ -1,6 +1,28 @@
 /* Faithful, first-person reading adaptations for the posts in the local demo.
    Keep claims attributed to the original poster; these are not new posts. */
 window.LeftReading = {
+  details: {
+    '2026471955319189861': {
+      'off-path tool call': {
+        question: 'Why does one off-path tool call make the next step riskier?',
+        points: [
+          'It is an action that moves away from the actual task: for example, editing an unrelated file or using a tool on the wrong input.',
+          'Later steps may build on that mistaken result. The agent can continue confidently while drifting farther from the goal.',
+          'This post describes errors that compound during long runs. It does not mean every wrong action makes recovery impossible.',
+          'A useful distinction is whether the agent needs more knowledge, or needs to notice a bad step, check the result, and return to the task.'
+        ]
+      },
+      'reliability failures': {
+        question: 'How is a reliability failure different from a capability failure?',
+        points: [
+          'Capability is being able to solve a problem. Reliability is carrying that ability through the whole sequence of actions without losing the task.',
+          'An agent might know the right approach but use the wrong file, trust a failed tool result, or keep going after an incorrect step.',
+          'In a long run, later work can depend on earlier work. A small unnoticed mistake can therefore affect many later actions.',
+          'The author is emphasizing this distinction, rather than claiming that all agent failures have the same cause.'
+        ]
+      }
+    }
+  },
   teen: {
     '2105675143464763540': `I built e2e, a way to test an app with both regular checks and AI agents. A regular check asks, “Did this exact thing happen?” An agent can try to complete a larger goal, more like a person would. The tool is open source and works with web and mobile apps, on your computer or in an automated build.`,
     '2105704169009246248': `We built Griffin for live video conversations with AI. In our test, 48% of people speaking with it thought they were talking to a real person; earlier systems scored below 3%. Griffin is designed so both sides can listen and respond naturally, instead of taking stiff turns. Those are our reported results, not a guarantee that everyone will be fooled.`,

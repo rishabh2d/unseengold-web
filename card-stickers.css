@@ -1,0 +1,23 @@
+/* Decorative cutouts sit behind the reading surface, clipped at the card edges. */
+.feed-item:has(.post-edge-art){isolation:isolate}
+.post-edge-art{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;user-select:none}
+.post-edge-art img{position:absolute;display:block;max-width:none;object-fit:contain;filter:saturate(.65);opacity:.15}
+.feed-item:has(.post-edge-art) > .post-reading > :not(.post-edge-art){position:relative;z-index:1}
+.art-corner img{width:clamp(500px,112%,980px);left:-70px;top:-100px;transform:rotate(-13deg);opacity:.17}
+.art-swarm img{width:clamp(440px,92%,800px);left:-100px;top:-90px;transform:rotate(12deg);opacity:.16}
+.art-landscape img{width:130%;height:clamp(260px,32vw,490px);object-fit:contain;object-position:bottom;left:-15%;bottom:-38px;opacity:.17}
+.art-character img{width:clamp(540px,104%,900px);left:-50px;bottom:-75px;transform:rotate(9deg);opacity:.15}
+.art-top-left img,.art-top-right img,.art-bottom-left img,.art-bottom-right img,.art-edge-left img,.art-edge-right img,.art-bottom-spread img{width:clamp(500px,112%,1040px);filter:saturate(.8);opacity:.17}
+.art-top-left img{left:-24px;top:-24px}
+.art-top-right img{right:-24px;top:-24px}
+.art-bottom-left img{left:-24px;bottom:-30px}
+.art-bottom-right img{right:-24px;bottom:-30px}
+.art-edge-left img{left:-24px;bottom:-24px}
+.art-edge-right img{right:-24px;bottom:-24px}
+.art-bottom-spread img{width:124%;left:-12%;bottom:-24px}
+:root[data-light-theme=true] .post-edge-art img{filter:saturate(.65) brightness(.65)}
+@media(max-width:650px){
+  .art-corner img{left:-60px;top:-66px}
+  .art-swarm img{left:-130px;top:-105px}
+  .art-character img{left:-55px;bottom:-60px}
+}

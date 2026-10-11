@@ -482,7 +482,7 @@ body{padding-top:70px}
 /* Give attached post photos the full reading width in the right panel. */
 .insight-post-images{display:grid;grid-template-columns:1fr;gap:8px;width:100%;margin:18px 0 28px}
 .insight-post-images.multiple{display:flex;flex-wrap:nowrap;align-items:center;gap:3px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#666 #151515}
-.insight-post-images .insight-image-trigger{display:block;width:100%;min-width:0;padding:0;background:#151515;border:1px solid #303030;cursor:zoom-in}
+.insight-post-images .insight-image-trigger{display:block;width:100%;min-width:0;padding:0;background:transparent;border:0;cursor:zoom-in}
 .insight-post-images img{display:block;width:100%;height:auto;max-height:72vh;object-fit:contain}
 .insight-post-images.multiple .insight-image-trigger{flex:0 0 auto;width:auto;max-width:none}
 .insight-post-images.multiple img{width:auto;height:auto;max-width:min(84vw,900px);max-height:62vh;object-fit:contain}
@@ -685,7 +685,7 @@ body,.post-stage,#insights{background:var(--blue-page);color:#fff}
 .retweet-expanded-label{color:var(--sky)}
 .x-source-form,.x-import-dialog{background:var(--blue-deep);border-color:var(--blue-line)}
 #x-import-status{color:var(--sky)}
-.x-video-embed,.insight-post-images .insight-image-trigger{background:var(--blue-deep);border-color:var(--blue-line)}
+.x-video-embed{background:var(--blue-deep);border-color:var(--blue-line)}
 button:focus-visible,a:focus-visible{outline-color:var(--sky)}
 
 /* The linked-source toolbar is a white label strip against the blue reader. */
@@ -1019,3 +1019,31 @@ button:focus-visible,a:focus-visible{outline-color:var(--sky)}
 #discussion-host .insight-video-player{display:flex;flex-direction:column}
 #discussion-host .insight-video-player .insight-video-controls{position:static;inset:auto;transform:none;flex:0 0 34px;min-height:34px;gap:8px;padding:2px 0;background:transparent;border:0;box-shadow:none}
 #discussion-host .insight-video-player .insight-video-toggle{position:static;transform:none;flex:0 0 26px;width:26px;height:26px;padding:0;background:transparent;border:0;box-shadow:none;font-size:14px}
+
+/* Video controls stay beneath the media and appear only during interaction. */
+#discussion-host .insight-video-player .insight-video-controls { opacity:0; visibility:hidden; pointer-events:none; transition:opacity .12s ease; }
+#discussion-host .insight-video-player:hover .insight-video-controls,
+#discussion-host .insight-video-player:has(:focus-visible) .insight-video-controls { opacity:1; visibility:visible; pointer-events:auto; }
+#discussion-host .insight-video-player video:focus-visible { outline:1px solid #000; outline-offset:-1px; }
+@media(hover:none) { #discussion-host .insight-video-player .insight-video-controls { opacity:1; visibility:visible; pointer-events:auto; } }
+
+/* The next section starts without a second divider after the Questions grid. */
+.qa-preview > .discussion-content-section:has(> .threads.qa-view-grid) + section { border-top:0; }
+
+.discussion-content-toolbar.questions-toolbar{overflow:visible;scrollbar-width:none}
+.discussion-content-toolbar.questions-toolbar::-webkit-scrollbar{display:none}
+
+/* Missing or failed video sources keep a useful media surface. */
+.insight-video-preview{display:grid;place-items:center;aspect-ratio:16/9;min-height:160px;background:#000}
+.insight-video-preview img{grid-area:1/1;width:100%;height:100%;object-fit:contain;max-width:100%}
+.insight-video-fallback[hidden],.insight-video-preview img[hidden]{display:none!important}
+.insight-video-player.is-playback-unavailable video,
+#discussion-host .insight-video-player.is-playback-unavailable .insight-video-controls{display:none!important}
+
+/* Outline the right-panel video frame, keeping its controls outside the border. */
+#discussion-host .insight-video-player:not(.is-reading-float) > video,
+#discussion-host .insight-video-preview,
+#discussion-host .x-video-embed{box-sizing:border-box;border:1px solid #000}
+
+/* Give image media the same thin outline as the video frame. */
+#discussion-host .insight-image-trigger > img{box-sizing:border-box;border:1px solid #000}

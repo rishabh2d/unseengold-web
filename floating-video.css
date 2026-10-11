@@ -1,0 +1,87 @@
+.insight-video-slot{width:100%;min-width:0}
+.insight-post-images.multiple .insight-video-slot{flex:0 0 min(84vw,900px);width:min(84vw,900px)}
+#discussion-host .insight-video-player.is-reading-float,.insight-video-player.is-reading-float{position:fixed;left:var(--floating-video-left);top:var(--floating-video-top);width:var(--floating-video-width);z-index:8;background:#000;border:1px solid var(--theme-accent-text,var(--sky));box-shadow:0 6px 24px #0003;touch-action:none}
+.insight-video-player.is-reading-float video{width:100%;aspect-ratio:16/9;max-height:none;object-fit:contain;border:0;outline:0;cursor:grab}
+.insight-video-player.is-video-dragging video{cursor:grabbing}
+.insight-video-player.is-reading-float .insight-video-controls{display:none!important}
+.floating-video-close{display:none;position:absolute;top:6px;left:6px;width:25.2px;height:25.2px;padding:0;border:0;background:transparent;color:#fff;font:23.4px/1 system-ui;z-index:2;opacity:0;cursor:pointer}
+.is-reading-float .floating-video-close{display:grid;place-items:center}
+.is-reading-float:hover .floating-video-close{opacity:1}
+.is-reading-float .floating-video-close:hover{background:#000b;border:0}
+
+/* The time belongs to the scrubber, leaving the control row compact. */
+#discussion-host .insight-video-player .insight-video-controls{align-items:flex-start;flex-basis:42px;min-height:42px;gap:8px}
+.insight-video-timeline{display:flex;flex:1 1 auto;min-width:0;flex-direction:column;align-items:stretch;gap:1px}
+.insight-video-timeline .insight-video-seek{width:100%;flex:none;height:26px}
+.insight-video-timeline .insight-video-time{display:block;width:100%;text-align:center;font-size:10px;line-height:12px}
+.insight-video-size,.insight-video-mini{display:grid;place-items:center;flex:0 0 26px;width:26px;height:26px;padding:0;border:0;background:transparent;color:inherit;cursor:pointer}
+.insight-video-size svg,.insight-video-mini svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.insight-video-mini svg rect:last-child{fill:currentColor;stroke:none}
+.insight-video-size:hover,.insight-video-mini:hover{background:var(--sky-soft,#7773);border-radius:3px}
+/* Enlarged videos stay attached to their post and use the video's own aspect ratio. */
+.insight-video-player.is-post-expanded{position:fixed;left:var(--expanded-video-left);top:var(--expanded-video-top);width:var(--expanded-video-width);height:var(--expanded-video-height);z-index:15;background:transparent;border:0;overflow:hidden;box-shadow:0 8px 40px #0004}
+.insight-video-player.is-post-expanded > video{display:block;width:100%;height:100%;max-height:none;flex:none;object-fit:contain;border:1px solid #000}
+.insight-video-player.is-post-expanded .insight-video-controls{position:absolute;inset:auto 10px 6px;display:flex;align-items:flex-start;width:auto;min-height:42px;gap:8px;padding:0;background:transparent;border:0;color:white;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .12s ease;filter:drop-shadow(0 1px 2px #000)}
+.insight-video-player.is-post-expanded:hover .insight-video-controls,
+.insight-video-player.is-post-expanded:has(:focus-visible) .insight-video-controls{opacity:1;visibility:visible;pointer-events:auto}
+.insight-video-player.is-post-expanded :is(.insight-video-toggle,.insight-video-sound){width:26px;height:26px;font-size:14px}
+.insight-video-player.is-post-expanded .insight-video-seek{--blue-line:#ffffff8a;--theme-accent-text:#fff}
+.is-post-expanded .floating-video-close{display:grid;place-items:center;opacity:1;top:var(--expanded-video-close-top,6px);filter:drop-shadow(0 1px 2px #000)}
+.is-post-expanded:hover .floating-video-close,.is-post-expanded .floating-video-close:focus-visible{opacity:1}
+.is-post-expanded .floating-video-close:hover{background:#000b;border:0}
+@media(hover:none){.insight-video-player.is-post-expanded .insight-video-controls{opacity:1;visibility:visible;pointer-events:auto}}
+
+/* Match the sound control to the custom line icons and the current theme. */
+.insight-video-sound svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.insight-video-sound:hover{background:var(--sky-soft,#7773);border-radius:3px}
+.is-post-expanded .insight-video-sound:hover{background:#0005}
+.insight-video-volume{display:none!important}
+
+.insight-video-player.is-page-filling{background:#000;box-shadow:none}
+
+/* Full-page controls follow input activity, rather than permanent cursor hover. */
+.insight-video-player.is-page-filling:not(.controls-active) .insight-video-controls{opacity:0;visibility:hidden;pointer-events:none}
+.insight-video-player.is-page-filling:not(.controls-active) .floating-video-close{opacity:0;pointer-events:none}
+.insight-video-player.is-page-filling.controls-active .insight-video-controls{opacity:1;visibility:visible;pointer-events:auto}
+.insight-video-player.is-page-filling.controls-active .floating-video-close{opacity:1;pointer-events:auto}
+.is-page-filling .floating-video-close{transition:opacity .12s ease}
+
+.insight-video-player.is-video-moving{will-change:left,top,width,height;transform:none}
+.insight-video-player.is-video-moving video{height:100%;max-height:none;aspect-ratio:auto}
+
+/* Keyboard feedback occupies the reserved space while the scrubber is hidden. */
+.insight-video-player > .insight-video-shortcut {
+  position:absolute;left:0;right:0;bottom:7px;text-align:center;
+  color:var(--theme-text,#fff);font:400 10px/12px ui-monospace,SFMono-Regular,Menlo,monospace;
+  pointer-events:none;white-space:nowrap;
+}
+.insight-video-player > .insight-video-shortcut[hidden],
+.insight-video-player:not(.is-page-filling):hover > .insight-video-shortcut,
+.insight-video-player:has(.insight-video-controls :focus-visible) > .insight-video-shortcut {display:none}
+#discussion-host .insight-video-player:not(.is-page-filling):not(:hover):not(:has(.insight-video-controls :focus-visible)) .insight-video-controls,
+.insight-video-player.is-post-expanded:not(.is-page-filling):not(:hover):not(:has(.insight-video-controls :focus-visible)) .insight-video-controls {opacity:0;visibility:hidden;pointer-events:none}
+.insight-video-player:is(.is-post-expanded,.is-reading-float) > .insight-video-shortcut {color:#fff;filter:drop-shadow(0 1px 2px #000)}
+.insight-video-player.is-page-filling.controls-active > .insight-video-shortcut {display:none}
+
+/* Quiet edge seeking appears over the picture, never over the controls below. */
+.insight-video-skip {
+  position:absolute;top:0;bottom:42px;width:15%;z-index:1;
+  display:none;align-items:center;justify-content:center;
+  margin:0;padding:0;border:0;border-radius:0;
+  background:color-mix(in srgb,var(--blue-panel) 20%,transparent);color:#fff;
+  font:500 12px/1.2 system-ui,sans-serif;cursor:pointer;transition:none;
+}
+.insight-video-skip-back{left:0}
+.insight-video-skip-forward{right:0}
+.insight-video-player:has(> video:hover,.insight-video-skip:hover) > .insight-video-skip {display:flex}
+.insight-video-player.is-post-expanded > .insight-video-skip{bottom:0}
+.insight-video-player.is-post-expanded .insight-video-controls{z-index:2}
+.insight-video-player.is-reading-float > .insight-video-skip{bottom:0;background:transparent;font-size:calc(12px - 2pt)}
+.insight-video-player.is-video-dragging > .insight-video-skip{display:none}
+.insight-video-player.is-page-filling:not(.controls-active) > .insight-video-skip,
+.insight-video-player.is-playback-unavailable > .insight-video-skip{display:none}
+#discussion-host .insight-video-player .insight-video-toggle,
+.insight-video-player.is-post-expanded .insight-video-toggle{font-size:15.4px;transform:translateY(2px)}
+#discussion-host .insight-video-player .insight-video-toggle:hover,
+.insight-video-player.is-post-expanded .insight-video-toggle:hover{background:var(--sky-soft,#7773);border-radius:3px}
+.insight-video-player.is-post-expanded .insight-video-toggle:hover{background:#0005}

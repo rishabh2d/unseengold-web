@@ -1,0 +1,58 @@
+.qa-preview > .world-context { padding-top:44px; padding-bottom:24px; }
+.world-context .questions-section-heading { color:var(--theme-text,#fff); }
+.world-context-intro { color:var(--theme-muted,#d3eaff); font-size:clamp(13px,.85vw,15px); line-height:1.4; margin:0 0 16px; }
+.world-context-tree,.world-context-tree ul { list-style:none; padding:0; margin:0; }
+.world-context-tree ul { margin:6px 0 6px 7px; padding-left:clamp(18px,1.6vw,28px); border-left:1px solid var(--theme-line,var(--blue-line)); }
+.world-context-node { position:relative; padding:3px 0; color:var(--theme-muted,#d3eaff); font-size:clamp(13px,.92vw,17px); line-height:1.35; overflow-wrap:anywhere; }
+.world-context-tree ul > .world-context-node::before { content:''; position:absolute; top:calc(9px + .675em); right:100%; width:clamp(18px,1.6vw,28px); border-top:1px solid var(--theme-line,var(--blue-line)); }
+.world-context-label { display:flex; flex-wrap:wrap; align-items:center; gap:7px 12px; }
+.world-context-node.is-path > .world-context-box > .world-context-label,.world-context-node.is-current > .world-context-box > .world-context-label { font-weight:650; color:var(--theme-text,#fff); }
+.world-context-here { display:inline-block; border:1px solid var(--theme-line,var(--blue-line)); border-radius:3px; padding:1px 5px; font-size:10px; font-weight:600; white-space:nowrap; }
+.world-context-description { max-width:56ch; margin:5px 0 3px; font-size:clamp(13px,.85vw,15px); line-height:1.4; color:var(--theme-text,#fff); font-weight:400; }
+@media(max-width:650px) { .world-context-tree ul { padding-left:17px; margin-left:3px; } .world-context-tree ul > .world-context-node::before { width:17px; } }
+
+/* Informational topic rows keep the same appearance on hover. */
+.world-context-box { border:1px solid color-mix(in srgb,var(--theme-text,#fff) 16%,transparent); border-radius:4px; padding:5px 10px; background:rgba(0,0,0,.08); }
+.world-context-box .world-context-description { margin-bottom:0; }
+
+/* Temporary entity list for the Karpathy design review. */
+.key-entities-preview { padding:28px 0 36px; color:var(--theme-text,#172026); }
+.key-entities-preview .questions-section-heading { color:var(--theme-text,#172026); }
+.key-entities-preview-note { margin:0 0 16px; font-size:13px; color:var(--theme-muted,#586d81); }
+.key-entities-list { margin:0; padding:0; list-style:none; }
+.key-entities-list > li { padding:13px 0; border-bottom:1px solid color-mix(in srgb,var(--theme-text,#172026) 12%,transparent); }
+.key-entity-name { display:flex; align-items:center; gap:10px; font-size:19px; font-weight:600; }
+.key-entity-tag { font-size:11px; font-weight:500; color:var(--theme-muted,#586d81); }
+.key-entities-list p { margin:5px 0 0; color:var(--theme-muted,#586d81); font-size:14px; line-height:1.4; }
+
+/* The deepest hovered level stays active across the gaps between sibling rows. */
+.world-context {
+  --world-hover-ink:color-mix(in srgb,var(--theme-text,#fff) 70%,#fff 30%);
+  --world-hover-line:color-mix(in srgb,var(--world-hover-ink) 90%,transparent);
+}
+:root[data-light-theme=true] .world-context {
+  --world-hover-ink:color-mix(in srgb,var(--theme-text,#172026) 65%,#000 35%);
+}
+:is(.world-context-tree,.world-context-tree ul) { --world-hover-width:2px; }
+:is(.world-context-tree,.world-context-tree ul):has(> .world-context-node.is-current) {
+  --world-hover-width:1px;
+  --world-hover-line:color-mix(in srgb,var(--world-hover-ink) 35%,transparent);
+}
+.world-context-tree ul:hover:not(:has(ul:hover)) {
+  border-left:var(--world-hover-width) solid var(--world-hover-line);
+  padding-left:calc(clamp(18px,1.6vw,28px) - var(--world-hover-width) + 1px);
+}
+:is(.world-context-tree,.world-context-tree ul):hover:not(:has(ul:hover)) > .world-context-node::before {
+  border-top:var(--world-hover-width) solid var(--world-hover-line);
+}
+:is(.world-context-tree,.world-context-tree ul):hover:not(:has(ul:hover)) > .world-context-node > .world-context-box {
+  border:var(--world-hover-width) solid var(--world-hover-line);
+  padding:calc(6px - var(--world-hover-width)) calc(11px - var(--world-hover-width));
+  color:var(--world-hover-ink);
+}
+:is(.world-context-tree,.world-context-tree ul):hover:not(:has(ul:hover)) > .world-context-node > .world-context-box :is(.world-context-label,.world-context-description) {
+  color:var(--world-hover-ink);
+}
+@media(max-width:650px) {
+  .world-context-tree ul:hover:not(:has(ul:hover)) { padding-left:calc(18px - var(--world-hover-width)); }
+}

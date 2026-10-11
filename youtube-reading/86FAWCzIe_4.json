@@ -1,0 +1,65 @@
+{
+  "id": "86FAWCzIe_4",
+  "sourceURL": "https://www.youtube.com/watch?v=86FAWCzIe_4",
+  "collectedDate": "2026-10-10",
+  "summary": "Lean how to program with Nvidia CUDA and leverage GPUs for high-performance computing and deep learning. ",
+  "summarySource": "Creator description",
+  "transcript": [],
+  "language": "",
+  "captionType": "",
+  "chapters": [
+    {
+      "time": 0,
+      "text": "Intro"
+    },
+    {
+      "time": 1012,
+      "text": "Chapter 1 (Deep Learning Ecosystem)"
+    },
+    {
+      "time": 2263,
+      "text": "Chapter 2 (CUDA Setup)"
+    },
+    {
+      "time": 2823,
+      "text": "Chapter 3 (C/C++ Review)"
+    },
+    {
+      "time": 5747,
+      "text": "Chapter 4 (Intro to GPUs)"
+    },
+    {
+      "time": 6700,
+      "text": "Chapter 5 (Writing your First Kernels)"
+    },
+    {
+      "time": 14126,
+      "text": "Chapter 6 (CUDA API)"
+    },
+    {
+      "time": 20122,
+      "text": "Chapter 7 (Faster Matrix Multiplication)"
+    },
+    {
+      "time": 30156,
+      "text": "Chapter 8 (Triton)"
+    },
+    {
+      "time": 32683,
+      "text": "Chapter 9 (PyTorch Extensions)"
+    },
+    {
+      "time": 33490,
+      "text": "Chapter 10 (MNIST Multi-layer Perceptron)"
+    },
+    {
+      "time": 42073,
+      "text": "Chapter 11 (Next steps?)"
+    },
+    {
+      "time": 42878,
+      "text": "Outro "
+    }
+  ],
+  "chaptersNote": "Creator-provided chapters."
+}
