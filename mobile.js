@@ -11,6 +11,8 @@ window.MobileSite = (() => {
   const hoverTrigger = popupTrigger + ',.post-profile-trigger-group';
   let opened = false, savedScroll = 0, savedFeed, returnButton, popupAnchor, desktopLayout;
 
+  const playback = window.MobilePlayback = MobileVideoFactory.create({media, feed, scroller, insights, isDetailsOpen:() => opened});
+
   // Desktop floating/expanded modes rely on a visible companion feed panel.
   const desktopVideoBind = FloatingVideo.bind;
   FloatingVideo.bind = players => {
@@ -102,7 +104,7 @@ window.MobileSite = (() => {
     opened = true;
     closePopup();
     bridge.dismiss();
-    feed.querySelectorAll('.mobile-media-strip video').forEach(video => video.pause());
+    feed.querySelectorAll('.mobile-media-strip video').forEach(video => {if (!playback.isMini(video)) video.pause();});
     bridge.select(index);
     savedFeed = bridge.captureFeed();
     updateHeading();
@@ -112,6 +114,7 @@ window.MobileSite = (() => {
     toolbar.hidden = false;
     insights.scrollTop = 0;
     toolbar.querySelector('button').focus({preventScroll:true});
+    playback.schedule();
   }
   function back() {
     if (!opened) return;
@@ -120,12 +123,13 @@ window.MobileSite = (() => {
     document.body.classList.remove('mobile-details');
     stage.inert = false;
     folder.inert = false;
-    insights.querySelectorAll('video').forEach(video => video.pause());
+    insights.querySelectorAll('video').forEach(video => {if (!playback.isMini(video)) video.pause();});
     insights.querySelectorAll('iframe[src*="youtube"]').forEach(frame => frame.contentWindow?.postMessage(JSON.stringify({event:'command',func:'pauseVideo',args:[]}),new URL(frame.src).origin));
     bridge.restoreFeed(savedFeed);
     scroller.scrollTop = savedScroll;
     if (!returnButton?.isConnected) returnButton = feed.querySelector(`[data-feed-index="${savedFeed?.state.page}"] .mobile-details-button`);
     returnButton?.focus({preventScroll:true});
+    playback.schedule();
   }
   toolbar.querySelector('button').addEventListener('click', back);
   document.addEventListener('keydown', event => {if (media.matches && opened && event.key === 'Escape' && !popup.open) back()});
@@ -176,6 +180,7 @@ window.MobileSite = (() => {
         item.querySelectorAll('.mobile-details-button,.mobile-feed-attachments').forEach(node => node.remove());
       }
     });
+    playback.enhance();
     if (opened) updateHeading();
   }
   new MutationObserver(enhance).observe(feed, {childList:true,subtree:true});

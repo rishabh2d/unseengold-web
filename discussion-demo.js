@@ -524,7 +524,7 @@ function bindDiscussion() {
       for (const entry of entries) {
         if (!entry.isIntersecting || entry.intersectionRatio < .4) continue;
         const video = entry.target.querySelector('video');
-        if (!video || video.dataset.autoplayAttempted) continue;
+        if (!video || video.dataset.autoplayAttempted || window.MobilePlayback?.blocked(video)) continue;
         video.dataset.autoplayAttempted = 'true';
         activeDiscussionVideo = video;
         video.play().catch(error => { if (error?.name === 'AbortError') return; showVideoFallback(video); console.warn('Video playback unavailable:', error?.message || error); });
