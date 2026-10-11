@@ -65,7 +65,7 @@ const FloatingVideo = (() => {
     const css = entry.player.style;
     const width = parseFloat(css.getPropertyValue('--floating-video-width'));
     return {left:parseFloat(css.getPropertyValue('--floating-video-left')),
-      top:parseFloat(css.getPropertyValue('--floating-video-top')), width, height:width * 9 / 16};
+      top:parseFloat(css.getPropertyValue('--floating-video-top')), width, height:width / (entry.normalAspect || entry.video.videoWidth / entry.video.videoHeight || 16 / 9)};
   }
   function slide(entry, returning, initialRect) {
     const rect = initialRect || entry.player.getBoundingClientRect();
@@ -203,13 +203,15 @@ const FloatingVideo = (() => {
     if (!view || !card || view.width < 360) return false;
     // The mini player stays in the visible panel corner, independent of card content.
     const right = view.right - 12;
-    const width = Math.min(420, view.width * .48);
+    const aspect = entry.normalAspect || entry.video.videoWidth / entry.video.videoHeight || 16 / 9;
+    const width = Math.min(420, view.width * .48, (innerHeight - 24) * aspect);
     const left = Math.max(0, Math.min(innerWidth - width, entry.dragPosition?.left ?? right - width));
-    const top = Math.max(0, Math.min(innerHeight - width * 9 / 16, entry.dragPosition?.top ?? view.top + 12));
+    const top = Math.max(0, Math.min(innerHeight - width / aspect, entry.dragPosition?.top ?? view.top + 12));
     if (entry.dragPosition) entry.dragPosition = {left, top};
     entry.player.style.setProperty('--floating-video-left', `${left}px`);
     entry.player.style.setProperty('--floating-video-top', `${top}px`);
     entry.player.style.setProperty('--floating-video-width', `${width}px`);
+    entry.player.style.setProperty('--floating-video-aspect', String(aspect));
     entry.card = card;
     return true;
   }

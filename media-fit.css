@@ -1,0 +1,35 @@
+/* Attached media keeps its own proportions on the desktop site. */
+@media (min-width:761px) {
+  #feed .post-reading .media { align-items:start; }
+  #feed .post-reading .media > :is(img,video,a) { justify-self:start; }
+  #feed .post-reading .media :is(img,video),
+  #discussion-host .insight-image-trigger > img,
+  #discussion-host .insight-video-preview > img {
+    display:block; width:auto; height:auto; max-width:100%; max-height:72vh;
+    object-fit:contain; background:transparent; border:1px solid #3a3a3a;
+    box-sizing:border-box;
+  }
+  #discussion-host .insight-post-images { justify-items:start; align-items:start; }
+  #discussion-host .insight-post-images.multiple { align-items:flex-start; }
+  #discussion-host .insight-image-trigger,
+  #discussion-host .insight-video-slot,
+  #discussion-host .insight-video-player:not(.is-post-expanded):not(.is-reading-float):not(.is-cinema),
+  #discussion-host .insight-video-preview {
+    width:fit-content; max-width:100%; height:auto; min-height:0;
+    background:transparent;
+  }
+  #discussion-host .insight-post-images.multiple > :is(.insight-image-trigger,.insight-video-slot,.insight-video-preview) { flex:0 0 auto; }
+  #discussion-host .insight-video-player:not(.is-post-expanded):not(.is-reading-float):not(.is-cinema) > video {
+    display:block; width:auto; height:auto; max-width:100%; max-height:72vh;
+    object-fit:contain; background:transparent; border:1px solid #3a3a3a;
+    box-sizing:border-box;
+  }
+  #discussion-host .insight-video-preview { aspect-ratio:auto; border:0; }
+  #discussion-host .insight-video-preview:not(:has(img)) { width:300px; min-height:120px; border:1px solid #3a3a3a; }
+  .insight-video-player.is-post-expanded:not(.is-page-filling),
+  .insight-video-player.is-reading-float { background:transparent; border-color:#3a3a3a; }
+  .insight-video-player.is-reading-float > video { width:100%; height:auto; aspect-ratio:var(--floating-video-aspect,16/9); max-height:none; background:transparent; }
+  #post-image-preview { background:transparent; }
+  #post-image-preview img { background:transparent; border:1px solid #3a3a3a; }
+  .insight-video-player.is-post-expanded > video { background:transparent; border-color:#3a3a3a; }
+}
