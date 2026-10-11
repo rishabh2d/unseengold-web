@@ -160,15 +160,23 @@ window.MobileSite = (() => {
         }
         if (info.parentElement !== head) head.append(info);
         const content = item.querySelector('.post-reading-content');
-        if (content && !content.querySelector('.mobile-feed-attachments')) {
+        if (content && !content.dataset.mobileAttachmentsReady) {
           const attachment = bridge.attachments(Number(item.dataset.feedIndex));
-          if (attachment?.media || attachment?.links) {
+          if (attachment?.media) {
             const section = document.createElement('section');
             section.className = 'mobile-feed-attachments';
             section.setAttribute('aria-label', 'Original post attachments');
-            section.innerHTML = `${attachment.media ? `<div class="mobile-media-strip" aria-label="Attached images and videos">${attachment.media}</div>` : ''}${attachment.links ? `<div class="mobile-attached-links" aria-label="Attached web links">${attachment.links}</div>` : ''}`;
+            section.innerHTML = `<div class="mobile-media-strip" aria-label="Attached images and videos">${attachment.media}</div>`;
             content.querySelector('.post-thread-top').after(section);
           }
+          if (attachment?.links) {
+            const links = document.createElement('div');
+            links.className = 'mobile-attached-links';
+            links.setAttribute('aria-label', 'Attached web links');
+            links.innerHTML = attachment.links;
+            item.querySelector('.post-thread-band').after(links);
+          }
+          content.dataset.mobileAttachmentsReady = 'true';
         }
         // The same navigation row appears above and below the complete post.
         item.querySelectorAll('.post-thread-top').forEach(row => {
@@ -186,7 +194,9 @@ window.MobileSite = (() => {
           metadata.remove();
         }
         if (info.parentElement === head) head.after(info);
-        item.querySelectorAll('.mobile-details-button,.mobile-feed-attachments').forEach(node => node.remove());
+        item.querySelectorAll('.mobile-details-button,.mobile-feed-attachments,.mobile-attached-links').forEach(node => node.remove());
+        const content = item.querySelector('.post-reading-content');
+        if (content) delete content.dataset.mobileAttachmentsReady;
       }
     });
     playback.enhance();
