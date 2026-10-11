@@ -10,5 +10,17 @@
   const filtered=posts.filter(p=>!p.xUnavailable&&(s.category==='All'||p.category===s.category)&&meets(p.xLikes,s.likes)&&meets(p.xBookmarks,s.bookmarks)&&meets(ratio(p),s.ratio)&&meets(p[fields[s.metric]],s.minimum)&&(!s.days||(Date.parse(p.date)>=now-s.days*86400000&&Date.parse(p.date)<=now)));
   return s.sort==='Feed order'?filtered:filtered.sort((a,b)=>score(b)-score(a)||a.url.localeCompare(b.url));
  }
- const api={count,ratio,defaults,flatten,filter};if(typeof module!=='undefined')module.exports=api;else root.GoldExplorer=api;
+ // Keep the five active redesign pilots at the front across daily batches.
+ const pinnedStatusIds=['2107800195748737042','2107894997538525580','2108672479007047952','2108604228440658369','2107504364168597863'];
+ const statusId=post=>post?.url?.match(/\/status\/(\d+)/)?.[1]||post?.url;
+ const pinRank=new Map(pinnedStatusIds.map((id,index)=>[id,index]));
+ function prioritize(posts){
+  const pins=[],rest=[];for(const post of posts)(pinRank.has(statusId(post))?pins:rest).push(post);
+  pins.sort((a,b)=>pinRank.get(statusId(a))-pinRank.get(statusId(b)));
+  return [...pins,...rest];
+ }
+ function dailyCollection(posts,day,addedDay){
+  return prioritize(posts.filter(post=>pinRank.has(statusId(post))||addedDay(post)===day));
+ }
+ const api={count,ratio,defaults,flatten,filter,prioritize,dailyCollection,pinnedStatusIds};if(typeof module!=='undefined')module.exports=api;else root.GoldExplorer=api;
 })(globalThis);
