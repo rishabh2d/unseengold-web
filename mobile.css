@@ -112,10 +112,14 @@
   #feed .mobile-feed-attachments { display:grid; gap:12px; width:100%; min-width:0; margin:0 0 22px; }
   #feed .post-reading-content > .media { display:none; }
   #feed .mobile-media-strip { display:flex; gap:12px; width:100%; min-width:0; overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; scroll-snap-type:x proximity; }
-  #feed .mobile-media-strip > * { flex:0 0 calc(100% - 24px); width:calc(100% - 24px); max-width:none; height:260px; min-width:0; scroll-snap-align:start; object-fit:contain; background:#000; border-radius:5px; }
+  #feed .mobile-media-strip > * { flex:0 0 calc(100% - 24px); width:calc(100% - 24px); max-width:none; height:260px; min-width:0; scroll-snap-align:start; object-fit:contain; background:transparent; border:1px solid #3a3a3a; border-radius:5px; }
   #feed .mobile-media-strip > :only-child { flex-basis:100%; width:100%; }
   #feed .mobile-media-strip > a { display:grid; place-items:center; }
-  #feed .mobile-media-strip > a > img { display:block; width:100%; height:100%; object-fit:contain; }
+  #feed .mobile-media-strip > a > img { display:block; width:100%; height:100%; object-fit:contain; background:transparent; border:0; }
+  #feed .mobile-video-player video { background:transparent; border:0; }
+  #feed .mobile-video-controls { background:transparent; color:var(--theme-text,#fff); }
+  #feed .mobile-video-controls button { color:inherit; }
+  #feed .mobile-video-controls input { accent-color:var(--theme-text,#fff); }
   #feed .mobile-attached-links { width:100%; min-width:0; display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; font:13px/1.5 system-ui,sans-serif; }
   #feed .mobile-attached-links a { color:var(--theme-text,#fff); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
 }
