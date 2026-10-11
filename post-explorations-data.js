@@ -1518,7 +1518,7 @@ window.PostExplorationData = [
       {
         "url": "https://www.youtube.com/watch?v=Xq7jUy7dch4",
         "title": "i've built this and i want you to try it",
-        "description": "The founder’s video, embedded on One’s own product page. Watch how the creator presents the agent inbox, then compare the promise with the setup, pricing and privacy details above. Official placement and YouTube title/channel metadata verified; no transcript or playback claim is made here."
+        "description": "The founder’s August 2026 introduction, currently featured on One’s product page. See the idea behind the shared inbox, then use the current guides above for pricing, supported runtimes and phone access."
       }
     ],
     "resources": [

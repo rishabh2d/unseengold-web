@@ -6,7 +6,7 @@ Selected five candidates from the additional 25-post batch: Anatomy, Shaders, Lo
 
 - 43 sourced, initially collapsed questions across This post and Bigger picture.
 - 16 guided source tours, with contextual introductions and 45 exact hover phrases.
-- Three relevant YouTube videos: Shaders’ official release, One’s founder video, and a 2025 Royal Institution Hinton lecture labeled older background.
+- Three relevant YouTube videos: Shaders’ official release, One’s August 2026 founder introduction, and a 2025 Royal Institution Hinton lecture labeled older background.
 - Source-derived summaries for Shaders and Hinton, and eight observed Hinton chapters. One’s source description is just a product link, so it was not padded into a summary.
 - Supported topic hierarchies and described neighboring topics for the five selected records.
 - Original five pilots remain first, with Google Playground first; selected expanded discoveries follow in positions 6–10.
